@@ -1,0 +1,22 @@
+.main-page {
+  min-height: 900px;
+  background-image: url("/img/bg-main.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.main-page__content {
+  @include container;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: 900px;
+}
+
+.main-page__text {
+  text-align: right;
+  color: $darkShade75;
+  width: 297px;
+}

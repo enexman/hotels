@@ -1,14 +1,23 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
-@import "../../blocks/main/main";
+@import "../../blocks/header/header";
+@import "../../blocks/logo/logo";
+@import "../../blocks/main-nav/main-nav";
+@import "../../blocks/user-nav/user-nav";
+@import "../../blocks/main-page/main-page";
+@import "../../blocks/main-cards/main-cards";
+@import "../../blocks/main-form-elements/main-form-elements";
+@import "../../blocks/card-find/card-find";
 
 body {
   margin: 0;
   padding: 0;
   font-family: $mainFont;
-	font-size: $mainFontSize;
+  font-size: $mainFontSize;
   font-weight: $mainFontWeight;
+  color: $mainFontColor;
+  line-height: 24px;
 }
 
 //*, *:before, *:after { box-sizing: border-box; }

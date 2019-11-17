@@ -1,0 +1,6 @@
+.header {
+  @include container;
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+}
