@@ -9,6 +9,8 @@
 @import "../../blocks/main-cards/main-cards";
 @import "../../blocks/main-form-elements/main-form-elements";
 @import "../../blocks/card-find/card-find";
+@import "../../blocks/text-field/text-field";
+@import "../../blocks/dropdown/dropdown";
 
 body {
   margin: 0;
@@ -20,6 +22,6 @@ body {
   line-height: 24px;
 }
 
-//*, *:before, *:after { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: border-box; }
 
 a { text-decoration: none; }

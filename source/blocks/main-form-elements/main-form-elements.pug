@@ -1,0 +1,8 @@
+include ../text-field/text-field.pug
+
+main.main-form-elements
+	+textField('e-mail', 'Email', '', 'Text Field', 'default')
+	+textField('e-mail', 'Email', 'This is pretty awesome', 'Text Field', 'Hover / Focus')
+	+textField('text', 'ДД.ММ.ГГГГ', '', 'masked text field', 'default')
+	+textField('e-mail', 'Email', '', 'subscription text field', 'subscription')
+	include ../dropdown/dropdown.pug
