@@ -1,8 +1,14 @@
 include ../text-field/text-field.pug
+include ../dropdown/dropdown.pug
+- var values = [{ title: 'спальни', num: 2}, { title: 'кровати', num: 2}, { title: 'ванные комнаты', num: 0}];
 
 main.main-form-elements
 	+textField('e-mail', 'Email', '', 'Text Field', 'default')
 	+textField('e-mail', 'Email', 'This is pretty awesome', 'Text Field', 'Hover / Focus')
 	+textField('text', 'ДД.ММ.ГГГГ', '', 'masked text field', 'default')
 	+textField('e-mail', 'Email', '', 'subscription text field', 'subscription')
-	include ../dropdown/dropdown.pug
+	+dropdownDate('date Dropdown', '', 'ДД.ММ.ГГГГ')
+	+dropdown('Dropdown', 'default', 'Сколько гостей', false, values)
+	+dropdown('Dropdown', '', '19 авг - 23 авг', true, values)
+	+dropdownList('Dropdown', 'default', '2 спальни, 2 кровати...', false, values)
+	+dropdownList('Dropdown', 'expanded', '2 спальни, 2 кровати...', true, values, true)

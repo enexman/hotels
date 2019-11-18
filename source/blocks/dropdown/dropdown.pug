@@ -1,12 +1,49 @@
-.dropdown
-	h2.dropdown__title Сколько гостей
-	ul
-		li.dropdown__option
-			p.dropdown__text Спальни
-			.dropdown__buttons
-				button.dropdown__button -
-				span.dropdown__numeric 2
-				button.dropdown__button +
-		li.dropdown__option Чебурашка
-		li.dropdown__option Чебурашка
-		li.dropdown__option Чебурашка
+
+mixin dropdown(headerText, status, innerText, medium, isList, values)
+	- var mediumClass = (medium) ? ' dropdown--medium ' : ' dropdown--wide '
+
+	div(class='dropdown ' + mediumClass)
+		p.dropdown__top
+			span #{headerText}
+			span.dropdown__status #{status}
+		p.dropdown__title #{innerText}
+		if (isList && values)
+			ul
+				each val in values
+					- var disabled = (!val.num) ? 'dropdown__button--disabled' : ''
+					li.dropdown__option
+						p.dropdown__text #{val.title}
+						.dropdown__buttons
+							button(class='dropdown__button ' + disabled) -
+							span.dropdown__numeric #{val.num}
+							button.dropdown__button +
+
+mixin dropdownList(headerText, status, innerText, isList, values, form)
+
+	div(class='dropdown dropdown--medium')
+		p.dropdown__top
+			span #{headerText}
+			span.dropdown__status #{status}
+		p(class='dropdown__title dropdown__title--border-bottom') #{innerText}
+		if (isList)
+			ul
+				each val in values
+					- var disabled = (!val.num) ? 'dropdown__button--disabled' : ''
+					li.dropdown__option
+						p.dropdown__text #{val.title}
+						.dropdown__buttons
+							button(class='dropdown__button ' + disabled) -
+							span.dropdown__numeric #{val.num}
+							button.dropdown__button +
+				if(form)
+					li.dropdown__option
+						button.dropdown__button-bottom.dropdown__button-bottom--clear очистить
+						button.dropdown__button-bottom.dropdown__button-bottom--submit применить
+
+
+mixin dropdownDate(headerText, status, innerText)
+	div(class='dropdown dropdown--small')
+		p.dropdown__top
+			span #{headerText}
+			span.dropdown__status #{status}
+		p(class='dropdown__title dropdown__title--border-bottom') #{innerText}
