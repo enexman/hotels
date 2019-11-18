@@ -1,0 +1,69 @@
+.type__row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.type__title {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  color: $darkShade25;
+  width: 40px;
+  margin-right: 30px;
+
+  &--one {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &--two {
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  &--three {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &--four {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.type_text {
+
+  font-family: $secondFont;
+  font-style: normal;
+  font-weight: bold;
+  color: $darkShade100;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.type__text--one {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.type__text--two {
+  font-size: 19px;
+  line-height: 24px;
+}
+
+.type__text--three {
+  font-family: $mainFont;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.type__text--four {
+  font-family: $mainFont;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $darkShade75;
+}

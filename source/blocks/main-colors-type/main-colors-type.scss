@@ -1,0 +1,10 @@
+.main-colors-type {
+  background-image: url('/img/logo-gray.svg');
+  background-repeat: no-repeat;
+  //padding: 140px;
+}
+
+.main-colors-type__content {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,25 @@
+.square {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.square__color {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+}
+
+.square__wrapper {
+  width: 160px;
+  margin-left: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.square__text {
+  @include fontH2;
+  margin: 0;
+  margin-bottom: 3px;
+}

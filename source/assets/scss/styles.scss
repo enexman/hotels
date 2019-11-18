@@ -1,6 +1,12 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
+
+@import "../../blocks/colors-type-page/colors-type-page";
+@import "../../blocks/main-colors-type/main-colors-type";
+@import "../../blocks/square/square";
+@import "../../blocks/type/type";
+
 @import "../../blocks/header/header";
 @import "../../blocks/logo/logo";
 @import "../../blocks/main-nav/main-nav";

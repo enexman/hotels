@@ -1,0 +1,8 @@
+
+mixin square(color, text, opacity)
+	.square
+		div(style='background: ' + color + '; opacity: ' + opacity).square__color
+		.square__wrapper
+			p.square__text #{text}
+			p.square__text #{color}
+
