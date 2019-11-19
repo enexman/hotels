@@ -20,13 +20,15 @@ mixin dropdown(headerText, status, innerText, medium, isList, values)
 
 mixin dropdownList(headerText, status, innerText, isList, values, form)
 
+	- var open = + (isList) ? 'dropdown--open' : ''
+
 	div(class='dropdown dropdown--medium')
 		p.dropdown__top
 			span #{headerText}
 			span.dropdown__status #{status}
 		p(class='dropdown__title dropdown__title--border-bottom') #{innerText}
 		if (isList)
-			ul
+			ul(class=open)
 				each val in values
 					- var disabled = (!val.num) ? 'dropdown__button--disabled' : ''
 					li.dropdown__option

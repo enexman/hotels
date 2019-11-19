@@ -1,5 +1,10 @@
 include ../text-field/text-field.pug
 include ../dropdown/dropdown.pug
+include ../checkbox/checkbox.pug
+include ../checkbox-list/checkbox-list.pug
+include ../self-element/self-element.pug
+include ../radio/radio.pug
+
 - var values = [{ title: 'спальни', num: 2}, { title: 'кровати', num: 2}, { title: 'ванные комнаты', num: 0}];
 
 main.main-form-elements
@@ -11,4 +16,18 @@ main.main-form-elements
 	+dropdown('Dropdown', 'default', 'Сколько гостей', false, values)
 	+dropdown('Dropdown', '', '19 авг - 23 авг', true, values)
 	+dropdownList('Dropdown', 'default', '2 спальни, 2 кровати...', false, values)
-	+dropdownList('Dropdown', 'expanded', '2 спальни, 2 кровати...', true, values, true)
+	+dropdownList('Dropdown', 'expanded', '2 спальни, 2 кровати...', false, values, true)
+
+	+checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.', true, 220)
+	+checkbox('', 'На 1 этаже вас встретит специалист и проводит до номера.', false)
+
+- var values = [{title: '', text: 'Завтрак', checked: false, width: null}, {title: '', text: 'Письменный стол', checked: true, width: null}]
+- var open = true
+
+	+checkbox-list(false, values)
+	+checkbox-list(open, values)
+
+	+self-element("/img/insert-emoticon.svg", 'Комфорт', 'Шумопоглощающие стены')
+	+self-element("/img/location-city.svg", 'Удобство', 'Окно в каждой из спален')
+
+	+radio('test', 'Radio Buttons', [{ text: 'Мужчина', checked: true}, { text: 'Женщина', checked: false}])

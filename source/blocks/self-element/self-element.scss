@@ -1,0 +1,30 @@
+.self-element {
+  display: flex;
+  border-bottom: 1px solid  rgba(31, 32, 65, 0.1);
+  width: 280px;
+  padding: 20px 0;
+}
+
+.self-element__wrapper {
+  margin-left: 20px;
+}
+
+.self-element__title {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  color: $darkShade75;
+  margin: 0;
+}
+
+.self-element__text {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $darkShade50;
+  margin: 0;
+}

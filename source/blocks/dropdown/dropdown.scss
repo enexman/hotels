@@ -20,11 +20,16 @@
     width: 150px;
   }
 
+  &--open {
+    box-shadow: 0px 10px 20px $darkShade50;
+  }
   ul {
+    z-index: 1;
     width: 100%;
     padding: 0;
     list-style: none;
     position: absolute;
+    background: #ffffff;
     margin: 0;
     top: 69px;
     left: 0;
