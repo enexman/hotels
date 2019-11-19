@@ -1,0 +1,8 @@
+include ../like-button/like-button.pug
+include ../title-3lvl/title-3lvl.pug
+
+.like-buttons
+	+title-3lvl('like button')
+	.like-buttons__wrapper
+		+like-button(2, false)
+		+like-button(12, true)

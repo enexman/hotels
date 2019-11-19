@@ -1,0 +1,8 @@
+mixin toggle(text, checked)
+
+	div.toggle
+		label.toggle__label
+			input(type='checkbox' checked=checked).toggle__input
+			span.toggle__box
+			span.toggle__circle
+			p.toggle__text #{text}
