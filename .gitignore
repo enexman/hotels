@@ -9,7 +9,7 @@ node_modules
 # Dist & test
 test
 dist
-build
+#build
 picture
 
 # BD, logs
