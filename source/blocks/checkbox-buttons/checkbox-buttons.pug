@@ -1,6 +1,9 @@
 include ../checkbox/checkbox.pug
-.checkbox-buttons
-	p.checkbox-buttons__title Checkbox Buttons
-	+checkbox('', 'Можно курить', false)
-	+checkbox('', 'Можно с питомцами', true)
-	+checkbox('', 'Можно пригласить гостей (до 10 человек)', true, 230)
+include ../title-3lvl/title-3lvl.pug
+
+
+mixin checkbox-buttons(title, values)
+	.checkbox-buttons
+		+title-3lvl(title)
+		each val in values
+			+checkbox(val.title, val.text, val.checked, val.width)

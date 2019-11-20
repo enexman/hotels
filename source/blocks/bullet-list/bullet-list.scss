@@ -1,0 +1,25 @@
+.bullet-list {
+  max-width: 275px;
+}
+
+.bullet-list__item {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $darkShade75;
+  position: relative;
+  list-style: none;
+
+  &::after {
+    position: absolute;
+    left: -18px;
+    top: 7px;
+    border-radius: 50%;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: $darkShade25;
+  }
+}

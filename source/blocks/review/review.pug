@@ -1,0 +1,12 @@
+include ../like-button/like-button.pug
+mixin review(link, title, text, review)
+	.review
+		.review__user
+			p.review__img-wrapper
+				img(src=link)
+			.review__wrapper
+				p.review__title #{title}
+				p.review__text #{text}
+		.review__wrap
+			+like-button(12, true)
+			p.review__review #{review}

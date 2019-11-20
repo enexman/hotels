@@ -4,6 +4,9 @@ include ../checkbox/checkbox.pug
 include ../checkbox-list/checkbox-list.pug
 include ../self-element/self-element.pug
 include ../radio/radio.pug
+include ../checkbox-buttons/checkbox-buttons.pug
+include ../bullet-list/bullet-list.pug
+include ../review/review.pug
 
 - var values = [{ title: 'спальни', num: 2}, { title: 'кровати', num: 2}, { title: 'ванные комнаты', num: 0}];
 
@@ -18,14 +21,11 @@ main.main-form-elements
 	+dropdownList('Dropdown', 'default', '2 спальни, 2 кровати...', false, values)
 	+dropdownList('Dropdown', 'expanded', '2 спальни, 2 кровати...', false, values, true)
 
-	+checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.', true, 220)
-	+checkbox('', 'На 1 этаже вас встретит специалист и проводит до номера.', false)
+	+checkbox-buttons('Rich Checkbox Buttons', [{title: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.', checked: true, width: null}, {title: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист и проводит до номера.', checked: false, width: 300}])
 
-- var values = [{title: '', text: 'Завтрак', checked: false, width: null}, {title: '', text: 'Письменный стол', checked: true, width: null}]
-- var open = true
 
-	+checkbox-list(false, values)
-	+checkbox-list(open, values)
+	+checkbox-list(false, [{title: '', text: 'Завтрак', checked: false, width: null}])
+	+checkbox-list(true, [{title: '', text: 'Завтрак', checked: false, width: null}, {title: '', text: 'Письменный стол', checked: true, width: null}])
 
 	+self-element("/img/insert-emoticon.svg", 'Комфорт', 'Шумопоглощающие стены')
 	+self-element("/img/location-city.svg", 'Удобство', 'Окно в каждой из спален')
@@ -33,3 +33,9 @@ main.main-form-elements
 	+radio('test', 'Radio Buttons', [{ text: 'Мужчина', checked: true}, { text: 'Женщина', checked: false}])
 	include ../toggles/toggles.pug
 	include ../like-buttons/like-buttons.pug
+	include ../rate-buttons/rate-buttons.pug
+	+checkbox-buttons('Checkbox Buttons', [{title: '', text: 'Можно курить', checked: false, width: null}, {title: '', text: 'Можно с питомцами', checked: true, width: null}, {title: '', text: 'Можно пригласить гостей (до 10 человек)', checked: true, width: 230}])
+
+	+bullet-list('bullet list', ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+
+	+review('/img/murad.png', 'Мурад Сарафанов', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
