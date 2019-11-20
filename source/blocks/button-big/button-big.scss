@@ -1,0 +1,26 @@
+.button-big {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+
+  background-image: url("/img/arrow-forward-white.svg"), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-repeat: no-repeat;
+  background-position: 96% center;
+
+  border-radius: 22px;
+
+  width: 320px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:active,
+  &:focus {
+    opacity: 0.5;
+  }
+}

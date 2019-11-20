@@ -1,0 +1,15 @@
+include ../title-3lvl/title-3lvl.pug
+
+mixin range(title, min, max, description)
+	- var text = '' + min + '₽' + ' - ' + max + '₽'
+	.range
+		.range__wrapper
+			+title-3lvl(title)
+			p.range__text #{text}
+
+		.range__block
+			.range__line
+			.rang__fill-line
+			.range__point.range__point--min
+			.range__point.range__point--max
+		p.range__description #{description ? description : ''}

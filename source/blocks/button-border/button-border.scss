@@ -1,0 +1,52 @@
+.button-border {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+
+  color: $purple;
+  border-radius: 22px;
+  display: inline-block;
+  position: relative;
+
+  width: 99px;
+  height: 44px;
+
+  &:after {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 2px;
+    top: 2px;
+    width: 95px;
+    height: 40px;
+    background: #ffffff;
+    z-index: 2;
+    border-radius: 22px;
+    content: attr(data-title);
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 99px;
+    height: 44px;
+    z-index: 1;
+    border-radius: 22px;
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+
+  &:active:before,
+  &:focus:before {
+    opacity: 0.5;
+  }
+
+  &--focus:before {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,3 @@
+mixin button(title, focus)
+	- var classFocus = focus ? ' button--focus ' : ''
+	a(href="#nowhere" class=classFocus).button #{title}

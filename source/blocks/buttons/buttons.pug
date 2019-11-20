@@ -1,0 +1,18 @@
+include ../button/button.pug
+include ../button-border/button-border.pug
+include ../button-stroke/button-stroke.pug
+include ../button-big/button-big.pug
+include ../title-3lvl/title-3lvl.pug
+
+.buttons
+	+title-3lvl('buttons')
+	.buttons__row
+		+button('CLICK ME')
+		+button('CLICK ME', true)
+	.buttons__row
+		+button-border('CLICK ME')
+		+button-border('CLICK ME', true)
+	.buttons__row
+		+button-stroke('CLICK ME')
+		+button-stroke('CLICK ME', true)
+	+button-big('перейти к оплате')

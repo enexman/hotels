@@ -1,0 +1,20 @@
+.button-stroke {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $purple;
+
+  display: inline-block;
+
+  &:active,
+  &:focus {
+    color: $darkShade50;
+  }
+
+  &--focus {
+    color: $darkShade50;
+  }
+}
