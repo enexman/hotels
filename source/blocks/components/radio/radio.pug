@@ -1,6 +1,7 @@
 mixin radio(name, title, values)
 	.radio
-		p.radio__title #{title}
+		if (title)
+			p.radio__title #{title}
 		.radio__list
 			each val in values
 				div.radio__item

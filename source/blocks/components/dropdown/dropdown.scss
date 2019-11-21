@@ -2,7 +2,7 @@
   background: #FFFFFF;
   border: 1px solid transparent;
   position: relative;
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
   min-height: 70px;
   font-size: 12px;
   font-family: $mainFont;
@@ -149,4 +149,12 @@
   &--submit {
     color: $purple;
   }
+}
+
+@media (max-width: $tabletWidth) {
+  .dropdown--wide {
+    box-sizing: border-box;
+    width: 260px;
+  }
+
 }

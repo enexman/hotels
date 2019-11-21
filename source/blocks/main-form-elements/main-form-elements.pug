@@ -1,13 +1,13 @@
-include ../text-field/text-field.pug
-include ../dropdown/dropdown.pug
-include ../checkbox/checkbox.pug
+include ../components/text-field/text-field.pug
+include ../components/dropdown/dropdown.pug
+include ../components/checkbox/checkbox.pug
 include ../checkbox-list/checkbox-list.pug
-include ../self-element/self-element.pug
-include ../radio/radio.pug
+include ../components/self-element/self-element.pug
+include ../components/radio/radio.pug
 include ../checkbox-buttons/checkbox-buttons.pug
-include ../bullet-list/bullet-list.pug
-include ../review/review.pug
-include ../range/range.pug
+include ../components/bullet-list/bullet-list.pug
+include ../components/review/review.pug
+include ../components/range/range.pug
 
 
 - var values = [{ title: 'спальни', num: 2}, { title: 'кровати', num: 2}, { title: 'ванные комнаты', num: 0}];
@@ -44,7 +44,7 @@ main.main-form-elements
 
 	+range('Range Slider', '5 000' , '10 000', 'Стоимость за сутки пребывания в номере')
 
-	include ../pagination/pagination.pug
+	include ../components/pagination/pagination.pug
 	include ../buttons/buttons.pug
 
 

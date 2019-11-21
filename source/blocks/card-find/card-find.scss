@@ -3,22 +3,55 @@
   left: 0;
   top: 140px;
   width: 380px;
-  height: 374px;
+  min-height: 374px;
 
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 30px;
   padding-top: 40px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card-find__title {
-  font-family: Quicksand;
+  font-family: $mainFont;
   font-style: normal;
-  font-weight: bold;
+  //font-weight: bold;
   font-size: 24px;
   line-height: 30px;
   color: #1F2041;
+  margin: 0;
+  width: 320px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.card-find__row {
+  display: flex;
+  width: 320px;
+  justify-content: space-between;
+}
+
+.card-find__wrapper {
+  margin-bottom: 14px;
+}
+
+@media (max-width: $tabletWidth) {
+  //.card-find {
+  //  width: 300px;
+  //}
+  //
+  //.card-find__title {
+  //  width: 260px;
+  //}
+  //
+  //.card-find__row {
+  //  width: 260px;
+  //  flex-direction: column;
+  //}
 }

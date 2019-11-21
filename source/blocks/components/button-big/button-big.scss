@@ -24,3 +24,9 @@
     opacity: 0.5;
   }
 }
+
+@media (max-width: $tabletWidth) {
+  .button-big {
+    width: 260px;
+  }
+}
