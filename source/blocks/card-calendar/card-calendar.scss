@@ -1,0 +1,190 @@
+.card-calendar {
+  width: 320px;
+  height: 369px;
+  padding: 19px;
+
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+}
+
+.card-calendar__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.card-calendar__title {
+  font-family: $secondFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  text-align: center;
+  color: #1F2041;
+  margin: 0;
+}
+
+.card-calendar__button {
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  background-image: url("/img/arrow-forward.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &--left {
+    transform: rotate(180deg);
+  }
+}
+
+.card-calendar__wrapper {
+}
+
+.card-calendar__days {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.card-calendar__day {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: $purple;
+}
+
+.card-calendar__numbers {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 11px;
+  margin-bottom: 20px;
+}
+
+.card-calendar__number {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: $darkShade50;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  &--empty {
+    color: $darkShade25;
+  }
+
+  &--today {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+
+  &--start,
+  &--end {
+    position: relative;
+
+
+    &:before {
+      z-index: 1;
+      position: absolute;
+      content: attr(data-number);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      font-weight: bold;
+      color: #FFFFFF;
+      font-family: $mainFont;
+      font-style: normal;
+      font-size: 12px;
+      line-height: 15px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      opacity: 0.25;
+      border-top-left-radius:  50%;
+      border-bottom-left-radius:  50%;
+    }
+  }
+
+  &--end {
+    &:after {
+      border-top-left-radius:  0%;
+      border-bottom-left-radius:  0%;
+      border-top-right-radius:  50%;
+      border-bottom-right-radius:  50%;
+    }
+  }
+
+  &--middle {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      opacity: 0.25;
+    }
+  }
+
+}
+
+.card-calendar__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-calendar__button-clear {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $darkShade50;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.card-calendar__button-submit {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $purple;
+  background: transparent;
+  border: none;
+  padding: 0;
+}

@@ -1,23 +1,7 @@
 mixin rate-button(num)
 
 	.rate-button
-		if(num >= 1)
+		- var n = 1
+		while num >= n
+			- n++
 			img(src="/img/star.svg").rate-button__img
-		else
-			img(src="/img/star-border.svg").rate-button__img
-		if(num >= 2)
-			img(src="/img/star.svg").rate-button__img
-		else
-			img(src="/img/star-border.svg").rate-button__img
-		if(num >= 3)
-			img(src="/img/star.svg").rate-button__img
-		else
-			img(src="/img/star-border.svg").rate-button__img
-		if(num >= 4)
-			img(src="/img/star.svg").rate-button__img
-		else
-			img(src="/img/star-border.svg").rate-button__img
-		if(num >= 5)
-			img(src="/img/star.svg").rate-button__img
-		else
-			img(src="/img/star-border.svg").rate-button__img
