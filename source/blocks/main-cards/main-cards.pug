@@ -1,7 +1,10 @@
+include ../card-hotel/card-hotel.pug
+
 main.main__cards
-	//include ../card-find/card-find.pug
-	//include ../card-registration/card-registration.pug
-	//include ../card-enter/card-enter.pug
-	//include ../card-reserve/card-reserve.pug
-	//include ../card-hotel/card-hotel.pug
+	include ../card-find/card-find.pug
+	include ../card-registration/card-registration.pug
+	include ../card-enter/card-enter.pug
+	include ../card-reserve/card-reserve.pug
 	include ../card-calendar/card-calendar.pug
+	+card-hotel(888, true, '9 990₽', 5, 145, ['/img/hotel-1.jpg', '/img/hotel-2.jpg'])
+	+card-hotel(840, false, '9 900₽', 4, 65, ['/img/hotel-2.jpg', '/img/hotel-1.jpg'])

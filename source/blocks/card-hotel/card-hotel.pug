@@ -1,24 +1,25 @@
 include ../components/rate-button/rate-button.pug
 
-.card-hotel
-	.card-hotel__slider
-		img(src="/img/hotel-1.jpg" alt="hotel").card-hotel__slide.card-hotel__slide--active
-		img(src="/img/hotel-1.jpg" alt="hotel").card-hotel__slide
-		img(src="/img/hotel-1.jpg" alt="hotel").card-hotel__slide
-		img(src="/img/hotel-1.jpg" alt="hotel").card-hotel__slide
-		.card-hotel__buttons
-			button.card-hotel__button.card-hotel__button--activated
-			button.card-hotel__button
-			button.card-hotel__button
-			button.card-hotel__button
-	.card-hotel__row.card-hotel__row--cor-1
-		h2.card-hotel__title
-			span.card-hotel__title-num №
-			| 888
-			span.card-hotel__title-lux люкс
-		p.card-hotel__price 9 990₽
-			span в сутки
-	.card-hotel__row
-		+rate-button(5)
-		p.card-hotel__reviews 145
-			span Отзывов
+mixin card-hotel(number, lux, price, stars, reviews, images)
+	.card-hotel
+		.card-hotel__slider
+			each val, index in images
+				- var active = (index === 0) ? 'card-hotel__slide--active' : ''
+				img(src=val alt="hotel" class=active).card-hotel__slide
+			.card-hotel__buttons
+				button.card-hotel__button.card-hotel__button--activated
+				button.card-hotel__button
+				button.card-hotel__button
+				button.card-hotel__button
+		.card-hotel__row.card-hotel__row--cor-1
+			h2.card-hotel__title
+				span.card-hotel__title-num №
+				| #{number}
+				if lux
+					span.card-hotel__title-lux люкс
+			p.card-hotel__price #{price}
+				span в сутки
+		.card-hotel__row
+			+rate-button(stars)
+			p.card-hotel__reviews #{reviews}
+				span Отзывов
