@@ -1,0 +1,35 @@
+include ../components/text-field/text-field.pug
+
+mixin list(values)
+	ul.footer-ui__list
+		each val, index in values
+			if(index === 0)
+				li.footer-ui__item.footer-ui__item--title #{val}
+			else
+				li.footer-ui__item #{val}
+
+mixin footer-ui()
+	.footer-ui
+		.footer-ui__wrapper
+			.footer-ui__logo
+				include ../components/logo/logo.pug
+				p.footer-ui__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+			.footer-ui__lists
+				+list(['Navigation', 'About Us', 'News', 'Support', 'Products'])
+				+list(['ABOUT US', 'Who we are', 'Our team', 'Careers', 'Investors'])
+				+list(['Support', 'Documentation', 'Community', 'Get in Touch'])
+
+			.footer-ui__subscribe
+				h3.footer-ui__subscribe-tittle Subscribe to our newsletter
+				p.footer-ui__subscribe-description Receive our latest news and promotions in your inbox!
+				+textField('e-mail', 'Your email address', '', '', 'subscription')
+		.footer-ui__line
+		.footer-ui__bottom
+			p.footer-ui__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+			ul.footer-ui__social-list
+				li.footer-ui__social-item
+					a(href="#nowhere").footer-ui__social-link.footer-ui__social-link--twitter
+				li.footer-ui__social-item
+					a(href="#nowhere").footer-ui__social-link.footer-ui__social-link--facebook
+				li.footer-ui__social-item
+					a(href="#nowhere").footer-ui__social-link.footer-ui__social-link--insta
