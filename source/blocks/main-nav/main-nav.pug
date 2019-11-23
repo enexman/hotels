@@ -5,11 +5,20 @@ mixin menuItem(text, modifier, active)
 		a(href='#nowhwre' class='main-nav__link ' + cls + clsActive)
 			= text
 
-nav.main-nav
-	ul.main-nav__list
-		+menuItem('О нас', false, true)
-		+menuItem('Услуги', true)
-		+menuItem('Вакансии')
-		+menuItem('Новости')
-		+menuItem('Соглашения', true)
-	include ../user-nav/user-nav.pug
+
+mixin main-nav(items, user, ui)
+	- var classUi = ui ? 'main-nav__list--ui' : ' '
+	- var classLogged = (ui && user.logged) ? ' main-nav__list--logged' : ' '
+	nav.main-nav
+		ul(class=classUi + classLogged).main-nav__list
+			each val in items
+				+menuItem(val.title, val.modifier, val.active)
+		if !user.logged
+			ul.main-nav__user-list
+				li.main-nav__user-item
+					a(href='#nowhwre').main-nav__user-link #{user.enter}
+				li.main-nav__user-item
+					a(href='#nowhwre').main-nav__user-link.main-nav__user-link--dark #{user.register}
+		else
+			a.main-nav__entered #{user.entered}
+

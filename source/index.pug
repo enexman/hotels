@@ -1,3 +1,5 @@
+include ./blocks/header/header.pug
+
 block variables
   - var title = 'TOXIN';
   - var pageClass = 'index-page';
@@ -9,6 +11,16 @@ html(lang='ru')
     title #{title}
 
   body(class=pageClass)
-    include ./blocks/header/header.pug
+    +header(
+      [
+        {title: 'О нас', modifier: false, active: false},
+        {title: 'Услуги', modifier: true, active: false},
+        {title: 'Вакансии', modifier: false, active: false},
+        {title: 'Новости', modifier: false, active: false},
+        {title: 'Соглашения', modifier: true, active: false}
+      ],
+      {logged: false, enter: 'войти', register: 'зарегистрироваться', entered: ''}
+    )
     include ./blocks/main-page/main-page.pug
+
 

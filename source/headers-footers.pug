@@ -1,0 +1,34 @@
+include ./blocks/header/header.pug
+
+doctype html
+html(lang='ru')
+	head
+		meta(charset='utf-8')
+		title Headers & Footers
+
+	body
+		+header(
+			[
+				{title: 'Home', modifier: false, active: true},
+				{title: 'About Us', modifier: false, active: false},
+				{title: 'Services', modifier: true, active: false},
+				{title: 'Careers', modifier: false, active: false},
+				{title: 'News', modifier: false, active: false},
+				{title: 'Documentation', modifier: false, active: false}
+			],
+			{logged: false, enter: 'Login', register: 'REGISTER', entered: 'Cosmin Negoita'},
+			true
+		)
+		div(style='height: 41px')
+		+header(
+			[
+				{title: 'Home', modifier: false, active: true},
+				{title: 'About Us', modifier: false, active: false},
+				{title: 'Services', modifier: true, active: false},
+				{title: 'Careers', modifier: false, active: false},
+				{title: 'News', modifier: false, active: false},
+				{title: 'Documentation', modifier: false, active: false}
+			],
+			{logged: true, enter: 'Login', register: 'REGISTER', entered: 'Cosmin Negoita'},
+			true
+		)
