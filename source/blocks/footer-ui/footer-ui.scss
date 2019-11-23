@@ -1,44 +1,53 @@
-.footer-ui {}
+.footer-ui {
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
 
 .footer-ui__wrapper {
   display: flex;
+  min-height: 276px;
+  @include container();
+  margin-top: 95px;
 }
 
-.footer-ui__logo {}
+.footer-ui__logo {
+  width: 300px;
+  padding-right: 20px;
+}
 
 .footer-ui__description {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: $darkShade75;
+  @include textNormal75();
+  margin-top: 9px;
 }
 
 .footer-ui__lists {
   display: flex;
+  margin-top: 9px;
 }
+
 .footer-ui__list {
   list-style: none;
   padding: 0;
+  width: 200px;
+  margin: 0;
 }
 
 .footer-ui__item {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: $darkShade50;
+  @include textNormal50();
+  letter-spacing: -0.30px;
+  margin-bottom: 21px;
 
   &--title {
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $darkShade100;
+    @include fontH3();
 
   }
+}
+
+.footer-ui__subscribe {
+  margin-top: 9px;
+  width: 260px;
 }
 
 .footer-ui__subscribe-tittle {
@@ -49,15 +58,14 @@
   line-height: 15px;
   text-transform: uppercase;
   color: $darkShade100;
+  margin: 0;
+  letter-spacing: -0.30px;
 }
 
 .footer-ui__subscribe-description {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: $darkShade75;
+  @include textNormal75();
+  margin-top: 17px;
+  margin-bottom: 12px;
 }
 
 .footer-ui__line {
@@ -67,40 +75,14 @@
 
 .footer-ui__bottom {
   display: flex;
+  @include container();
+  min-height: 70px;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 .footer-ui__copyright {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: $darkShade75;
-}
-
-.footer-ui__social-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-}
-
-.footer-ui__social-link {
-  width: 24px;
-  height: 24px;
-  display: inline-block;
-  
-  &--twitter {
-    background-image: url('/img/twitter.svg');
-    background-repeat: no-repeat;
-  }
-
-  &--facebook {
-    background-image: url('/img/facebook.svg');
-    background-repeat: no-repeat;
-  }
-
-  &--insta {
-    background-image: url('/img/insta.svg');
-    background-repeat: no-repeat;
-  }
+  @include textNormal75();
+  margin: 0;
 }

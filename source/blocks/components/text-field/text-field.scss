@@ -55,7 +55,8 @@
     border-color: $darkShade50;
   }
   &--small {
-    width: 267px;
+    //width: 267px;
+    width: 260px;
     padding-right: 40px;
   }
 }
@@ -66,7 +67,7 @@
 
 .text-field__button {
   position: absolute;
-  left: 225px;
+  right: 0px;
   top: 10px;
   width: 44px;
   height: 44px;

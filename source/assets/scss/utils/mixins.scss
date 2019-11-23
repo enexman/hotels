@@ -21,6 +21,34 @@
   padding-right: 20px;
 }
 
+@mixin textNormal75 {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $darkShade75;
+}
+
+@mixin textNormal50 {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: $darkShade50;
+}
+
+@mixin fontH3 {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $darkShade100;
+}
+
 @mixin fontH1 {
   font-family: $secondFont;
   font-style: normal;
@@ -40,15 +68,6 @@
 }
 
 
-@mixin fontH3 {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: $darkShade100;
-}
 
 @mixin fontBody {
   font-family: $mainFont;

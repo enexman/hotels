@@ -9,7 +9,7 @@ mixin list(values)
 				li.footer-ui__item #{val}
 
 mixin footer-ui()
-	.footer-ui
+	footer.footer-ui
 		.footer-ui__wrapper
 			.footer-ui__logo
 				include ../components/logo/logo.pug
@@ -26,10 +26,4 @@ mixin footer-ui()
 		.footer-ui__line
 		.footer-ui__bottom
 			p.footer-ui__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
-			ul.footer-ui__social-list
-				li.footer-ui__social-item
-					a(href="#nowhere").footer-ui__social-link.footer-ui__social-link--twitter
-				li.footer-ui__social-item
-					a(href="#nowhere").footer-ui__social-link.footer-ui__social-link--facebook
-				li.footer-ui__social-item
-					a(href="#nowhere").footer-ui__social-link.footer-ui__social-link--insta
+			include ../socials/socials.pug

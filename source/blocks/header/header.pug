@@ -1,10 +1,9 @@
 include ../main-nav/main-nav.pug
 
-
-
 mixin header(items, user, ui)
 	header.header
-		include ../components/logo/logo.pug
-		+main-nav(items, user, ui)
+		.header__wrapper
+			include ../components/logo/logo.pug
+			+main-nav(items, user, ui)
 
 
