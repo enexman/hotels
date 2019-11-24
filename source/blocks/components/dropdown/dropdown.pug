@@ -18,11 +18,13 @@ mixin dropdown(headerText, status, innerText, medium, isList, values)
 							span.dropdown__numeric #{val.num}
 							button.dropdown__button +
 
-mixin dropdownList(headerText, status, innerText, isList, values, form)
+mixin dropdownList(headerText, status, innerText, isList, values, form, size)
 
-	- var open = + (isList) ? 'dropdown--open' : ''
+	- var open = + (isList) ? 'dropdown__open' : ''
 
-	div(class='dropdown dropdown--medium')
+	- var width = size === 'medium' ? 'dropdown--medium' : ' dropdown--wide '
+
+	div(class=width).dropdown
 		p.dropdown__top
 			span #{headerText}
 			span.dropdown__status #{status}
