@@ -6,7 +6,8 @@ mixin list(values)
 			if(index === 0)
 				li.footer-ui__item.footer-ui__item--title #{val}
 			else
-				li.footer-ui__item #{val}
+				li.footer-ui__item
+					a(href="#nowhere").footer-ui__link  #{val}
 
 mixin footer-ui()
 	footer.footer-ui

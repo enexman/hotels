@@ -1,42 +1,42 @@
-.footer-ui {
+.footer {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
 }
 
-.footer-ui__wrapper {
+.footer__wrapper {
   display: flex;
   min-height: 276px;
   @include container();
   margin-top: 95px;
 }
 
-.footer-ui__logo {
+.footer__logo {
   width: 300px;
   padding-right: 20px;
 }
 
-.footer-ui__description {
+.footer__description {
   @include textNormal75();
   margin-top: 9px;
 }
 
-.footer-ui__lists {
+.footer__lists {
   display: flex;
   margin-top: 9px;
 }
 
-.footer-ui__list {
+.footer__list {
   list-style: none;
   padding: 0;
   width: 200px;
   margin: 0;
 }
 
-.footer-ui__item {
+.footer__item {
   @include textNormal50();
-  letter-spacing: -0.30px;
+  letter-spacing: 0;
   margin-bottom: 21px;
 
   &--title {
@@ -44,38 +44,38 @@
   }
 }
 
-.footer-ui__link {
+.footer__link {
   @include textNormal50();
-  letter-spacing: -0.30px;
+  letter-spacing: 0;
 
   &:visited {
     color: $darkShade50;
   }
 }
 
-.footer-ui__subscribe {
+.footer__subscribe {
   margin-top: 9px;
   width: 260px;
 }
 
-.footer-ui__subscribe-tittle {
+.footer__subscribe-tittle {
   @include fontH3();
   margin: 0;
-  letter-spacing: -0.30px;
+  letter-spacing: 0;
 }
 
-.footer-ui__subscribe-description {
+.footer__subscribe-description {
   @include textNormal75();
   margin-top: 17px;
   margin-bottom: 12px;
 }
 
-.footer-ui__line {
+.footer__line {
   height: 1px;
   background: $darkShade50;
 }
 
-.footer-ui__bottom {
+.footer__bottom {
   display: flex;
   @include container();
   min-height: 70px;
@@ -84,7 +84,7 @@
 
 }
 
-.footer-ui__copyright {
+.footer__copyright {
   @include textNormal75();
   margin: 0;
 }

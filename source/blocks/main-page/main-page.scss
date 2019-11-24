@@ -1,9 +1,8 @@
 .main-page {
-  min-height: 900px;
   background-image: url("/img/bg-main.jpg");
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background-position: 50% -70px;
+  background-size: 100% 900px;
 }
 
 .main-page__content {
@@ -12,17 +11,19 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  min-height: 900px;
+  min-height: 830px;
+  padding-right: 15px;
 }
 
 .main-page__text {
   text-align: right;
   color: $darkShade75;
   width: 297px;
+  margin-bottom: 22px;
 }
 
 .main-page__modal {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 20px;
+  top: 70px;
 }
