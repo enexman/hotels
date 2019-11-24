@@ -1,13 +1,15 @@
+include ../components/dropdown-date/dropdown-date.pug
 include ../components/dropdown/dropdown.pug
 include ../components/button-big/button-big.pug
 
 - var values = [{ title: 'взрослые', num: 2}, { title: 'дети', num: 1}, { title: 'младенцы', num: 0}];
 
-form.card-find
+section.card-find
 	h2.card-find__title Найдём номера под ваши пожелания
 	.card-find__row
-		+dropdownDate('прибытие', '', '19.08.2019')
-		+dropdownDate('выезд', '', '23.08.2019')
+		+dropdownDate('19.08.2019', 'прибытие', '', 'small')
+		+dropdownDate('23.08.2019', 'выезд', '', 'small')
 	.card-find__wrapper
-		+dropdownList('Гости', '', '3 гостя', true, values, true)
+		+dropdown('3 гостя', 'Гости', '', true, values, true, '')
+
 	+button-big('подобрать номер')

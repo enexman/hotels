@@ -1,53 +1,28 @@
 
-mixin dropdown(headerText, status, innerText, medium, isList, values)
-	- var mediumClass = (medium) ? ' dropdown--medium ' : ' dropdown--wide '
+mixin dropdown(text, title, status, isOpen, values, form, size)
 
-	div(class='dropdown ' + mediumClass)
-		p.dropdown__top
-			span #{headerText}
-			span.dropdown__status #{status}
-		p.dropdown__title #{innerText}
-		if (isList && values)
-			ul
+	-
+		var open = + (isOpen) ? 'dropdown__list--open' : ''
+		var smallSize = size === 'small' ? ' dropdown--small ' : ''
+		var mediumSize = size === 'medium' ? ' dropdown--medium ' : ''
+
+	div(class=smallSize + mediumSize).dropdown
+		if title
+			p.dropdown__top
+				span #{title}
+				span.dropdown__status #{status}
+		button(class="dropdown__text dropdown__text--border-bottom" type="button") #{text}
+		if (isOpen)
+			ul(class=open).dropdown__list
 				each val in values
-					- var disabled = (!val.num) ? 'dropdown__button--disabled' : ''
+					- var disabled = (!val.num) ? ' dropdown__button--disabled ' : ''
 					li.dropdown__option
-						p.dropdown__text #{val.title}
+						p.dropdown__option-text #{val.title}
 						.dropdown__buttons
-							button(class='dropdown__button ' + disabled) -
+							button(class="dropdown__button" + disabled type="button") -
 							span.dropdown__numeric #{val.num}
-							button.dropdown__button +
-
-mixin dropdownList(headerText, status, innerText, isList, values, form, size)
-
-	- var open = + (isList) ? 'dropdown__open' : ''
-
-	- var width = size === 'medium' ? 'dropdown--medium' : ' dropdown--wide '
-
-	div(class=width).dropdown
-		p.dropdown__top
-			span #{headerText}
-			span.dropdown__status #{status}
-		p(class='dropdown__title dropdown__title--border-bottom') #{innerText}
-		if (isList)
-			ul(class=open)
-				each val in values
-					- var disabled = (!val.num) ? 'dropdown__button--disabled' : ''
-					li.dropdown__option
-						p.dropdown__text #{val.title}
-						.dropdown__buttons
-							button(class='dropdown__button ' + disabled) -
-							span.dropdown__numeric #{val.num}
-							button.dropdown__button +
+							button(type="button").dropdown__button +
 				if(form)
 					li.dropdown__option
-						button.dropdown__button-bottom.dropdown__button-bottom--clear очистить
-						button.dropdown__button-bottom.dropdown__button-bottom--submit применить
-
-
-mixin dropdownDate(headerText, status, innerText)
-	div(class='dropdown dropdown--small')
-		p.dropdown__top
-			span #{headerText}
-			span.dropdown__status #{status}
-		p(class='dropdown__title') #{innerText}
+						button(type="button").dropdown__button-bottom.dropdown__button-bottom--clear очистить
+						button(type="button").dropdown__button-bottom.dropdown__button-bottom--submit применить

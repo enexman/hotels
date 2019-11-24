@@ -1,0 +1,11 @@
+mixin dropdownDate(text, title, status, size)
+	-
+		var smallSize = size === 'small' ? ' dropdown-date--small ' : ''
+		var mediumSize = size === 'medium' ? ' dropdown-date--medium ' : ''
+
+	div(class=smallSize + mediumSize).dropdown-date
+		if title
+			p.dropdown__top
+				span #{title}
+				span.dropdown__status #{status}
+		button(class='dropdown-date__button' type="button") #{text}

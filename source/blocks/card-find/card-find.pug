@@ -1,11 +1,12 @@
+include ../components/dropdown-date/dropdown-date.pug
 include ../components/dropdown/dropdown.pug
 include ../components/button-big/button-big.pug
 
-form.card-find
+section.card-find
 	h2.card-find__title Найдём номера под ваши пожелания
 	.card-find__row
-		+dropdownDate('прибытие', '', 'ДД.ММ.ГГГГ')
-		+dropdownDate('выезд', '', 'ДД.ММ.ГГГГ')
+		+dropdownDate('ДД.ММ.ГГГГ', 'прибытие', '', 'small')
+		+dropdownDate('ДД.ММ.ГГГГ', 'выезд', '', 'small')
 	.card-find__wrapper
-		+dropdown('Гости', '', 'Сколько гостей')
+		+dropdown('Сколько гостей', 'Гости', '', false, [], '', '')
 	+button-big('подобрать номер')

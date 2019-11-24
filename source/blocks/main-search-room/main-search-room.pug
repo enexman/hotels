@@ -1,5 +1,6 @@
 include  ../../variables/variables.pug
 include ../card-hotel/card-hotel.pug
+include ../components/dropdown-date/dropdown-date.pug
 include ../components/dropdown/dropdown.pug
 include ../components/range/range.pug
 include ../checkbox-buttons/checkbox-buttons.pug
@@ -7,12 +8,12 @@ include ../checkbox-list/checkbox-list.pug
 
 main.main-search-room
 	section.main-search-room__filter
-		+dropdownDate('даты пребывания в отеле', '', '19 авг - 23 авг')
-		+dropdownList('гости', '', '3 гостя, 1 младенец', false, '', '', 'medium')
+		+dropdownDate('19 авг - 23 авг', 'даты пребывания в отеле', '', 'medium')
+		+dropdown('3 гостя, 1 младенец', 'гости', '', false, '', '', 'medium')
 		+range('диапазон цены', '5 000₽ - 10 000₽', 'Стоимость за сутки пребывания в номере ')
 		+checkbox-buttons('Checkbox Buttons', checkboxButtons)
 		+checkbox-buttons('доступность', richCheckboxButtons)
-		+dropdownList('удобства номера', '', '2 спальни, 2 кровати...', false, '', '', 'medium')
+		+dropdown('2 спальни, 2 кровати...', 'удобства номера', '',  false, '', '', 'medium')
 		+checkbox-list(false, checkboxList)
 
 	section.main-search-room__rooms

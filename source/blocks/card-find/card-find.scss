@@ -35,20 +35,10 @@
 }
 
 .card-find__wrapper {
+  width: 320px;
   margin-bottom: 14px;
+
 }
 
 @media (max-width: $tabletWidth) {
-  //.card-find {
-  //  width: 300px;
-  //}
-  //
-  //.card-find__title {
-  //  width: 260px;
-  //}
-  //
-  //.card-find__row {
-  //  width: 260px;
-  //  flex-direction: column;
-  //}
 }
