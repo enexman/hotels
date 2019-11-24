@@ -6,3 +6,9 @@ https://hotels700.000webhostapp.com/colors-type.html
 https://hotels700.000webhostapp.com/form-elements.html
 #
 https://hotels700.000webhostapp.com/cards.html
+#
+https://hotels700.000webhostapp.com/search-room.html
+#
+https://hotels700.000webhostapp.com/landing-calendar.html
+#
+https://hotels700.000webhostapp.com/landing-dropdown.html
