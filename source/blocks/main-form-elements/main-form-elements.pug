@@ -1,4 +1,5 @@
 include ../components/text-field/text-field.pug
+include ../form-email/form-email.pug
 include ../components/dropdown/dropdown.pug
 include ../components/checkbox/checkbox.pug
 include ../checkbox-list/checkbox-list.pug
@@ -16,7 +17,7 @@ main.main-form-elements
 	+textField('e-mail', 'Email', '', 'Text Field', 'default')
 	+textField('e-mail', 'Email', 'This is pretty awesome', 'Text Field', 'Hover / Focus')
 	+textField('text', 'ДД.ММ.ГГГГ', '', 'masked text field', 'default')
-	+textField('e-mail', 'Email', '', 'subscription text field', 'subscription')
+	+formEmail('subscription text field')
 	+dropdownDate('date Dropdown', '', 'ДД.ММ.ГГГГ')
 	+dropdown('Dropdown', 'default', 'Сколько гостей', false, values)
 	+dropdown('Dropdown', '', '19 авг - 23 авг', true, values)
@@ -42,7 +43,7 @@ main.main-form-elements
 
 	+review('/img/murad.png', 'Мурад Сарафанов', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
 
-	+range('Range Slider', '5 000' , '10 000', 'Стоимость за сутки пребывания в номере')
+	+range('Range Slider', '5 000₽ - 10 000₽', 'Стоимость за сутки пребывания в номере')
 
 	include ../components/pagination/pagination.pug
 	include ../buttons/buttons.pug

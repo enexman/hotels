@@ -1,0 +1,7 @@
+mixin formEmail(labelText)
+	form.form-email
+		label.form-email__label
+			span.form-email__top
+				span #{labelText}
+			input(type="email" placeholder="Email").form-email__input
+		button(type="submit").form-email__button

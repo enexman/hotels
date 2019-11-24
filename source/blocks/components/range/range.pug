@@ -1,7 +1,6 @@
 include ../title-3lvl/title-3lvl.pug
 
-mixin range(title, min, max, description)
-	- var text = '' + min + '₽' + ' - ' + max + '₽'
+mixin range(title, text, description)
 	.range
 		.range__wrapper
 			+title-3lvl(title)

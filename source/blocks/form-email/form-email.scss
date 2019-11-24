@@ -1,4 +1,9 @@
-.text-field {
+.form-email {
+  position: relative;
+  width: 260px;
+}
+
+.form-email__label {
   position: relative;
   @include fontH3();
   margin: 0;
@@ -6,21 +11,13 @@
   border: 1px solid transparent;
 }
 
-.text-field__top {
+.form-email__top {
   display: flex;
   justify-content: space-between;
-  width: 320px;
   margin: 5px 0;
 }
 
-.text-field__status {
-  @include fontH3();
-  font-weight: 400;
-  color: $darkShade50;
-}
-
-.text-field__input {
-  width: 320px;
+.form-email__input {
   height: 44px;
   background: #FFFFFF;
   border: 1px solid $darkShade25;
@@ -28,6 +25,8 @@
   @include textNormal75();
   line-height: 18px;
   padding: 13px 15px;
+  width: 260px;
+  padding-right: 40px;
 
   &::placeholder {
     @include textNormal75();
@@ -38,21 +37,12 @@
   &:hover, &:focus, &:active {
     border-color: $darkShade50;
   }
-  &--small {
-    //width: 267px;
-    width: 260px;
-    padding-right: 40px;
-  }
 }
 
-.text-field__active {
-  border-color: $darkShade50;
-}
-
-.text-field__button {
+.form-email__button {
   position: absolute;
   right: 0px;
-  top: 10px;
+  bottom: 0px;
   width: 44px;
   height: 44px;
   background: none;

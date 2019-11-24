@@ -1,4 +1,4 @@
-include ../components/text-field/text-field.pug
+include ../form-email/form-email.pug
 
 mixin list(values)
 	ul.footer__list
@@ -23,7 +23,7 @@ mixin footer()
 			.footer__subscribe
 				h3.footer__subscribe-tittle Подписка
 				p.footer__subscribe-description Получайте специальные предложения и новости сервиса
-				+textField('email', 'Email', '', '', 'subscription')
+				+formEmail('')
 		.footer__line
 		.footer__bottom
 			p.footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.

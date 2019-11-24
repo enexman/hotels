@@ -1,0 +1,14 @@
+.main-search-room {
+  @include container;
+  display: flex;
+}
+.main-search-room__title {
+  @include fontH1;
+}
+
+.main-search-room__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 840px;
+}

@@ -1,4 +1,4 @@
-include ../components/text-field/text-field.pug
+include ../form-email/form-email.pug
 
 mixin list(values)
 	ul.footer-ui__list
@@ -23,7 +23,7 @@ mixin footer-ui()
 			.footer-ui__subscribe
 				h3.footer-ui__subscribe-tittle Subscribe to our newsletter
 				p.footer-ui__subscribe-description Receive our latest news and promotions in your inbox!
-				+textField('email', 'Your email address', '', '', 'subscription')
+				+formEmail('')
 		.footer-ui__line
 		.footer-ui__bottom
 			p.footer-ui__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
