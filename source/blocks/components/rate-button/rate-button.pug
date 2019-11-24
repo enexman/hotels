@@ -4,30 +4,9 @@ mixin rate-button(num)
 		- var n = 1
 		while num >= n
 			- n++
-			img(src="/img/star.svg").rate-button__img
+			img(src="/img/star.svg" alt="star").rate-button__img
 
 
 		while num < n && n <= 5
 			- n++
-			img(src="/img/star-border.svg").rate-button__img
-
-		//if(num >= 1)
-		//	img(src="/img/star.svg").rate-button__img
-		//else
-		//	img(src="/img/star-border.svg").rate-button__img
-		//if(num >= 2)
-		//	img(src="/img/star.svg").rate-button__img
-		//else
-		//	img(src="/img/star-border.svg").rate-button__img
-		//if(num >= 3)
-		//	img(src="/img/star.svg").rate-button__img
-		//else
-		//	img(src="/img/star-border.svg").rate-button__img
-		//if(num >= 4)
-		//	img(src="/img/star.svg").rate-button__img
-		//else
-		//	img(src="/img/star-border.svg").rate-button__img
-		//if(num >= 5)
-		//	img(src="/img/star.svg").rate-button__img
-		//else
-		//	img(src="/img/star-border.svg").rate-button__img
+			img(src="/img/star-border.svg" alt="star").rate-button__img

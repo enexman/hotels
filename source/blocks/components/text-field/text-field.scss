@@ -1,11 +1,6 @@
 .text-field {
   position: relative;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: $darkShade100;
+  @include fontH3();
   margin: 0;
   display: block;
   border: 1px solid transparent;
@@ -19,34 +14,22 @@
 }
 
 .text-field__status {
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: right;
-  text-transform: uppercase;
+  @include fontH3();
   color: $darkShade50;
 }
 
 .text-field__input {
   width: 320px;
   height: 44px;
-
   background: #FFFFFF;
   border: 1px solid $darkShade25;
   border-radius: 4px;
-
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
+  @include textNormal75();
   line-height: 18px;
-  color: $darkShade75;
   padding: 13px 15px;
 
   &::placeholder {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
+    @include textNormal75();
     line-height: 18px;
     color: $darkShade25;
   }

@@ -1,16 +1,12 @@
 include ./blocks/header/header.pug
 
-block variables
-  - var title = 'TOXIN';
-  - var pageClass = 'index-page';
-
 doctype html
 html(lang='ru')
   head
     meta(charset='utf-8')
-    title #{title}
+    title 'TOXIN'
 
-  body(class=pageClass)
+  body
     +header(
       [
         {title: 'О нас', modifier: false, active: false},
