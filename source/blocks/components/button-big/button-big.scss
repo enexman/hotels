@@ -5,7 +5,7 @@
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
-
+  border: none;
   color: #FFFFFF;
 
   background-image: url("/img/arrow-forward-white.svg"), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -26,7 +26,5 @@
 }
 
 @media (max-width: $tabletWidth) {
-  .button-big {
-    width: 260px;
-  }
+
 }

@@ -5,7 +5,7 @@ doctype html
 html(lang='ru')
 	head
 		meta(charset='utf-8')
-		title Landing Dropdown
+		title Search room
 
 	body
 		+header(
@@ -18,7 +18,7 @@ html(lang='ru')
 		],
 		{logged: false, enter: 'войти', register: 'зарегистрироваться', entered: ''}
 		)
-		include blocks/main-page/main-landing-dropdown.pug
+		include ./blocks/main-search-room/main-search-room.pug
 		+footer()
 
 

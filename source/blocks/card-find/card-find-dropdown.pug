@@ -3,7 +3,7 @@ include ../components/button-big/button-big.pug
 
 - var values = [{ title: 'взрослые', num: 2}, { title: 'дети', num: 1}, { title: 'младенцы', num: 0}];
 
-section.card-find
+form.card-find
 	h2.card-find__title Найдём номера под ваши пожелания
 	.card-find__row
 		+dropdownDate('прибытие', '', '19.08.2019')
