@@ -1,4 +1,5 @@
 #README
+#
 https://hotels700.000webhostapp.com/
 #
 https://hotels700.000webhostapp.com/colors-type.html
@@ -12,3 +13,9 @@ https://hotels700.000webhostapp.com/search-room.html
 https://hotels700.000webhostapp.com/landing-calendar.html
 #
 https://hotels700.000webhostapp.com/landing-dropdown.html
+#
+https://hotels700.000webhostapp.com/search-room.html
+#
+https://hotels700.000webhostapp.com/search-room-dropdown.html
+#
+https://hotels700.000webhostapp.com/search-room-list.html

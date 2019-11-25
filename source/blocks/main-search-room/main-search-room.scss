@@ -29,11 +29,16 @@
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
+  margin-left: 12px;
 
 }
 
 .main-search-room__item {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+}
+
+.main-search-room__pagination {
+  margin-top: 8px;
 }
 
 .main-search-room__corrector {

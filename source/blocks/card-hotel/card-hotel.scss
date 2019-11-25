@@ -1,6 +1,6 @@
 .card-hotel {
   position: relative;
-  width: 270px;
+  width: 272px;
   min-height: 260px;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -28,8 +28,8 @@
 
 .card-hotel__buttons {
   position: absolute;
-  right: 16px;
-  bottom: 15px;
+  right: 15px;
+  bottom: 10px;
 }
 
 .card-hotel__button {
@@ -125,10 +125,14 @@
   justify-content: space-between;
 
   &--cor-1 {
-    margin-top: 18px;
+    margin-top: 22px;
     margin-bottom: 9px;
     padding-bottom: 11px;
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  }
+
+  &--cor-2 {
+  margin-top: 2px;
   }
 }
 
