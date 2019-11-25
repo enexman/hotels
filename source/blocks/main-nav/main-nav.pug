@@ -2,7 +2,7 @@ mixin menuItem(text, modifier, active)
 	- var cls = modifier ? ' main-nav__link--arrow ' : ''
 	- var clsActive = active ? ' main-nav__link--active ' : ''
 	li.main-nav__item
-		a(href='#nowhwre' class='main-nav__link ' + cls + clsActive)
+		a(href="#nowhwre" class="main-nav__link " + cls + clsActive)
 			= text
 
 
@@ -16,9 +16,9 @@ mixin main-nav(items, user, ui)
 		if !user.logged
 			ul.main-nav__user-list
 				li.main-nav__user-item
-					a(href='#nowhwre').main-nav__user-link #{user.enter}
+					a(href="#nowhwre").main-nav__user-link #{user.enter}
 				li.main-nav__user-item
-					a(href='#nowhwre').main-nav__user-link.main-nav__user-link--dark #{user.register}
+					a(href="#nowhwre").main-nav__user-link.main-nav__user-link--dark #{user.register}
 		else
 			a.main-nav__entered #{user.entered}
 

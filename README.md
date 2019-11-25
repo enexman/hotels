@@ -19,3 +19,7 @@ https://hotels700.000webhostapp.com/search-room.html
 https://hotels700.000webhostapp.com/search-room-dropdown.html
 #
 https://hotels700.000webhostapp.com/search-room-list.html
+#
+https://hotels700.000webhostapp.com/registration.html
+#
+https://hotels700.000webhostapp.com/sign-in.html
