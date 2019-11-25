@@ -12,12 +12,6 @@ include ../components/bullet-list/bullet-list.pug
 include ../components/review/review.pug
 include ../components/range/range.pug
 
-
-
-
-- var values = [{ title: 'спальни', num: 2}, { title: 'кровати', num: 2}, { title: 'ванные комнаты', num: 0}];
-- var values2 = [{ title: 'спальни', num: 0}, { title: 'кровати', num: 0}, { title: 'ванные комнаты', num: 0}];
-
 main.main-form-elements
 	.main-form-elements__wrapper
 		.main-form-elements__container
@@ -46,12 +40,12 @@ main.main-form-elements
 					include ../components/pagination/pagination.pug
 			.main-form-elements__row
 				.main-form-elements__col
-					+dropdown('2 спальни, 2 кровати...', 'Dropdown', 'default', false, values, '', 'medium')
-					+dropdown('2 спальни, 2 кровати...', 'Dropdown', 'default', true, values, '', 'medium')
+					+dropdown('2 спальни, 2 кровати...', 'Dropdown', 'default', false, dropdownFE, '', 'medium')
+					+dropdown('2 спальни, 2 кровати...', 'Dropdown', 'default', true, dropdownFE, '', 'medium')
 				.main-form-elements__col
-					+dropdown('Сколько гостей', 'Dropdown', '', true, values2, true, '')
+					+dropdown('Сколько гостей', 'Dropdown', '', true, dropdownFE, true, '')
 				.main-form-elements__col
-					+dropdown('3 гостя', 'Dropdown', '', true, values, true, '')
+					+dropdown('3 гостя', 'Dropdown', '', true, dropdownFE, true, '')
 			.main-form-elements__row
 				.main-form-elements__col
 					+checkbox-list(false, checkboxListFE, 'expandable checkbox list')
