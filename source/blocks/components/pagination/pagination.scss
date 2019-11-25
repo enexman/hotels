@@ -5,6 +5,8 @@
   list-style: none;
   align-items: center;
   padding: 0;
+  margin-top: 13px;
+  margin-bottom: 8px;
 }
 
 .pagination__link {
@@ -40,10 +42,6 @@
 }
 
 .pagination__text {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: $darkShade75;
+  @include textNormal75;
+  margin: 0;
 }

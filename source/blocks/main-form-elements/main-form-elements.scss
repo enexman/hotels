@@ -10,8 +10,6 @@
   margin: 0 auto;
   border-top: 1px solid transparent;
   margin-top: 150px;
-  margin-bottom: 130px;
-  min-height: 1069px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,4 +38,5 @@
 
 .main-form-elements__row {
   display: flex;
+  min-height: 280px;
 }

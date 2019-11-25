@@ -99,6 +99,7 @@
 
   &:last-child {
     height: 44px;
+    justify-content: flex-end;
   }
 }
 
@@ -109,7 +110,14 @@
 
 .dropdown__numeric {
   @include fontH3();
-  padding: 0 13px;
+  padding: 0;
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.dropdown__buttons {
+  margin-left: auto;
 }
 
 .dropdown__button {
@@ -137,6 +145,7 @@
 
   &--submit {
     color: $purple;
+    margin-left: auto;
   }
 }
 

@@ -9,18 +9,21 @@ include ../checkbox-list/checkbox-list.pug
 main.main-search-room
 	section.main-search-room__filter
 		+dropdownDate('19 авг - 23 авг', 'даты пребывания в отеле', '', 'medium')
-		+dropdown('3 гостя, 1 младенец', 'гости', '', false, '', '', 'medium')
+		.main-search-room__corrector
+			+dropdown('3 гостя, 1 младенец', 'гости', '', false, '', '', 'medium')
 		+range('диапазон цены', '5 000₽ - 10 000₽', 'Стоимость за сутки пребывания в номере ')
-		+checkbox-buttons('Checkbox Buttons', checkboxButtons)
+		.main-search-room__corrector.main-search-room__corrector--2
+			+checkbox-buttons('Checkbox Buttons', checkboxButtons)
 		+checkbox-buttons('доступность', richCheckboxButtons)
-		+dropdown('2 спальни, 2 кровати...', 'удобства номера', '',  false, '', '', 'medium')
-		+checkbox-list(false, checkboxList)
+		.main-search-room__corrector.main-search-room__corrector--3
+			+dropdown('2 спальни, 2 кровати...', 'удобства номера', '',  false, '', '', 'medium')
+		+checkbox-list(false, checkboxList, 'дополнительные удобства')
 
 	section.main-search-room__rooms
 		p.main-search-room__title Номера, которые мы для вас подобрали
 		.main-search-room__list
 			each val in hotels
-				+card-hotel(val)
+				.main-search-room__item
+					+card-hotel(val)
 		.main-search-room__pagination
 			include ../components/pagination/pagination.pug
-

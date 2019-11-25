@@ -1,14 +1,52 @@
 .main-search-room {
   @include container;
   display: flex;
+  padding-bottom: 71px;
 }
 .main-search-room__title {
   @include fontH1;
+  margin-left: 7px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-right: auto;
+  letter-spacing: 0.7px;
+}
+
+.main-search-room__filter {
+  width: 300px;
+  padding-top: 24px;
+}
+
+.main-search-room__rooms {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-search-room__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  width: 840px;
+  width: 100%;
+  justify-content: space-around;
+
+}
+
+.main-search-room__item {
+  margin-bottom: 20px;
+}
+
+.main-search-room__corrector {
+  margin-top: 14px;
+  margin-bottom: 17px;
+
+  &--2 {
+    margin-top: 29px;
+    margin-bottom: 28px;
+  }
+
+  &--3 {
+    margin-top: 22px;
+    margin-bottom: 14px;
+  }
 }

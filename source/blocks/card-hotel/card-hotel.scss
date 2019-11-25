@@ -49,37 +49,39 @@
 }
 
 .card-hotel__title {
+  margin: 0;
   font-family: $mainFont;
   font-style: normal;
-  //font-weight: bold;
   font-size: 18px;
   line-height: 18px;
   color: #1F2041;
-  margin: 0;
   font-weight: 700;
   letter-spacing: -0.3px;
 
   &-lux {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
+    @include fontH3;
     color: $purple;
     margin-left: 5px;
 
   }
 
   &-num {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $darkShade100;
+    @include fontH3;
     margin-right: 5px;
+  }
+}
+
+.card-hotel__link {
+  font-family: $mainFont;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 18px;
+  color: #1F2041;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+
+  &:visited {
+    color: #1F2041;
   }
 }
 

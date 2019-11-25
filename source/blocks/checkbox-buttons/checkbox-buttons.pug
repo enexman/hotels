@@ -5,5 +5,6 @@ include ../components/title-3lvl/title-3lvl.pug
 mixin checkbox-buttons(title, values)
 	.checkbox-buttons
 		+title-3lvl(title)
+		.checkbox-buttons__corrector
 		each val in values
 			+checkbox(val.title, val.text, val.checked, val.width)

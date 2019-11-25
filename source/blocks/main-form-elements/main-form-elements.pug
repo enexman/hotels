@@ -16,6 +16,7 @@ include ../components/range/range.pug
 
 
 - var values = [{ title: 'спальни', num: 2}, { title: 'кровати', num: 2}, { title: 'ванные комнаты', num: 0}];
+- var values2 = [{ title: 'спальни', num: 0}, { title: 'кровати', num: 0}, { title: 'ванные комнаты', num: 0}];
 
 main.main-form-elements
 	.main-form-elements__wrapper
@@ -48,18 +49,13 @@ main.main-form-elements
 					+dropdown('2 спальни, 2 кровати...', 'Dropdown', 'default', false, values, '', 'medium')
 					+dropdown('2 спальни, 2 кровати...', 'Dropdown', 'default', true, values, '', 'medium')
 				.main-form-elements__col
-					+dropdown('Сколько гостей', 'Dropdown', '', true, values, true, '')
+					+dropdown('Сколько гостей', 'Dropdown', '', true, values2, true, '')
 				.main-form-elements__col
 					+dropdown('3 гостя', 'Dropdown', '', true, values, true, '')
 			.main-form-elements__row
 				.main-form-elements__col
-					+checkbox-list(false, [{title: '', text: 'Завтрак', checked: false, width: null}])
-					+checkbox-list(true, [{title: '', text: 'Завтрак', checked: false, width: null}, {
-						title: '',
-						text: 'Письменный стол',
-						checked: true,
-						width: null
-					}])
+					+checkbox-list(false, checkboxListFE, 'expandable checkbox list')
+					+checkbox-list(true, checkboxListFE, 'expandable checkbox list')
 				.main-form-elements__col
 					+checkbox-buttons('Rich Checkbox Buttons', richCheckboxButtons)
 				.main-form-elements__col

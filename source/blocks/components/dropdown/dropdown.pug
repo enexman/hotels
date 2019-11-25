@@ -1,5 +1,6 @@
 
 mixin dropdown(text, title, status, isOpen, values, form, size)
+	- var clear = false
 
 	-
 		var open = + (isOpen) ? 'dropdown__list--open' : ''
@@ -15,6 +16,8 @@ mixin dropdown(text, title, status, isOpen, values, form, size)
 		if (isOpen)
 			ul(class=open).dropdown__list
 				each val in values
+					if !clear
+						- clear = !!val.num
 					- var disabled = (!val.num) ? ' dropdown__button--disabled ' : ''
 					li.dropdown__option
 						p.dropdown__option-text #{val.title}
@@ -24,5 +27,6 @@ mixin dropdown(text, title, status, isOpen, values, form, size)
 							button(type="button").dropdown__button +
 				if(form)
 					li.dropdown__option
-						button(type="button").dropdown__button-bottom.dropdown__button-bottom--clear очистить
+						if clear
+							button(type="button").dropdown__button-bottom.dropdown__button-bottom--clear очистить
 						button(type="button").dropdown__button-bottom.dropdown__button-bottom--submit применить

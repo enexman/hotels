@@ -1,12 +1,13 @@
 
 
-mixin checkbox(title, text, checked, width)
-
-	div(style='width: ' + width + 'px').checkbox
+mixin checkbox(title, text, checked, size)
+	- var sizeTextClass = title ? ' checkbox__text--rich ' : ''
+	- var sizeBlockClass = size ? ' checkbox--wide ' : ''
+	div(class=sizeBlockClass).checkbox
 		label.checkbox__label
-			input(type='checkbox' checked=checked).checkbox__input
+			input(type="checkbox" checked=checked).checkbox__input
 			span.checkbox__box
 			span.checkbox__arrow
-			p.checkbox__title #{title}
-			p.checkbox__text #{text}
+			span.checkbox__title #{title}
+			span(class=sizeTextClass).checkbox__text #{text}
 

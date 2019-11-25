@@ -1,3 +1,8 @@
 .checkbox-buttons__title {
   @include fontH3;
 }
+
+.checkbox-buttons__corrector {
+  height: 1px;
+  margin-top: -2px;
+}
