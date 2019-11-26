@@ -2,21 +2,16 @@
 @import "utils/mixins";
 @import "utils/fonts";
 
-@import "../../blocks/colors-type-page/colors-type-page";
-@import "../../blocks/main-colors-type/main-colors-type";
 @import "../../blocks/components/square/square";
-@import "../../blocks/type/type";
+@import "../../blocks/components/text-field/text-field";
+@import "../../blocks/components/dropdown/dropdown";
 @import "../../blocks/components/checkbox/checkbox";
-@import "../../blocks/checkbox-list/checkbox-list";
 @import "../../blocks/components/self-element/self-element";
-@import "../../blocks/checkbox-buttons/checkbox-buttons";
 @import "../../blocks/components/radio/radio";
 @import "../../blocks/components/toggle/toggle";
 @import "../../blocks/components/title-3lvl/title-3lvl";
 @import "../../blocks/components/like-button/like-button";
-@import "../../blocks/like-buttons/like-buttons";
 @import "../../blocks/components/rate-button/rate-button";
-@import "../../blocks/rate-buttons/rate-buttons";
 @import "../../blocks/components/bullet-list/bullet-list";
 @import "../../blocks/components/review/review";
 @import "../../blocks/components/range/range";
@@ -25,6 +20,17 @@
 @import "../../blocks/components/button-border/button-border";
 @import "../../blocks/components/button-stroke/button-stroke";
 @import "../../blocks/components/button-big/button-big";
+@import "../../blocks/components/dropdown-date/dropdown-date";
+@import "../../blocks/components/line/line";
+@import "../../blocks/components/logo/logo";
+
+@import "../../blocks/colors-type-page/colors-type-page";
+@import "../../blocks/main-colors-type/main-colors-type";
+@import "../../blocks/type/type";
+@import "../../blocks/checkbox-list/checkbox-list";
+@import "../../blocks/checkbox-buttons/checkbox-buttons";
+@import "../../blocks/like-buttons/like-buttons";
+@import "../../blocks/rate-buttons/rate-buttons";
 @import "../../blocks/buttons/buttons";
 @import "../../blocks/card-registration/card-registration";
 @import "../../blocks/card-enter/card-enter";
@@ -38,20 +44,16 @@
 @import "../../blocks/main-hf/main-hf";
 @import "../../blocks/main-search-room/main-search-room";
 @import "../../blocks/main-registration/main-registration";
-@import "../../blocks/components/dropdown-date/dropdown-date";
-@import "../../blocks/components/line/line";
-
+@import "../../blocks/main-room-details/main-room-details";
 @import "../../blocks/header/header";
-@import "../../blocks/components/logo/logo";
 @import "../../blocks/main-nav/main-nav";
 @import "../../blocks/main-page/main-page";
 @import "../../blocks/main-cards/main-cards";
 @import "../../blocks/main-form-elements/main-form-elements";
 @import "../../blocks/card-find/card-find";
 @import "../../blocks/main-sign-in/main-sign-in";
-@import "../../blocks/components/text-field/text-field";
-@import "../../blocks/components/dropdown/dropdown";
 @import "../../blocks/form-email/form-email";
+@import "../../blocks/toggles/toggles";
 
 body {
   margin: 0;

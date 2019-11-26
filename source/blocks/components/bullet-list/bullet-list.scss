@@ -1,5 +1,9 @@
 .bullet-list {
-  max-width: 275px;
+  max-width: 264px;
+
+  ul {
+    padding-left: 22px;
+  }
 }
 
 .bullet-list__item {
@@ -11,10 +15,11 @@
   color: $darkShade75;
   position: relative;
   list-style: none;
+  height: 33px;
 
   &::after {
     position: absolute;
-    left: -18px;
+    left: -21px;
     top: 7px;
     border-radius: 50%;
     content: '';

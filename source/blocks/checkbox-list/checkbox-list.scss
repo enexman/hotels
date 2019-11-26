@@ -9,17 +9,18 @@
   position: relative;
   width: 100%;
   text-align: left;
-  padding: 14px 0px;
+  padding: 0;
+  margin-bottom: 12px;
 
   &--close {
 
     &:before {
       content: '';
-      width: 42px;
-      height: 42px;
+      width: 20px;
+      height: 10px;
       position: absolute;
-      right: 0;
-      top: 0;
+      left: 235px;
+      top: 3px;
       background-image: url("/img/expand-more.svg");
       background-repeat: no-repeat;
       background-position: center center;
@@ -28,13 +29,13 @@
 
   &--open {
 
-    &:before {
+    &:after {
       content: '';
-      width: 42px;
-      height: 42px;
+      width: 20px;
+      height: 10px;
       position: absolute;
-      right: 0;
-      top: 0;
+      left: 235px;
+      top: 4px;
       background-image: url("/img/expand-more.svg");
       background-repeat: no-repeat;
       background-position: center center;

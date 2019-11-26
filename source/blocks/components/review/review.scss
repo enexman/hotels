@@ -5,11 +5,12 @@
 }
 
 .review__wrapper {
-  margin-left: 20px;
+  margin-left: 11px;
 }
 
 .review__wrap {
   display: flex;
+  padding-left: 5px;
 }
 
 .review__img-wrapper {
@@ -29,6 +30,7 @@
   line-height: 24px;
   color: $darkShade75;
   margin: 0;
+  margin-bottom: 4px;
 }
 
 .review__text {
@@ -51,4 +53,5 @@
   color: $darkShade75;
   margin-top: -3px;
   max-width: 653px;
+  margin-left: 5px;
 }

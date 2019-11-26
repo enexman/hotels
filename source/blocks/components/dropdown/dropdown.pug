@@ -6,8 +6,9 @@ mixin dropdown(text, title, status, isOpen, values, form, size)
 		var open = + (isOpen) ? 'dropdown__list--open' : ''
 		var smallSize = size === 'small' ? ' dropdown--small ' : ''
 		var mediumSize = size === 'medium' ? ' dropdown--medium ' : ''
+		var wideSize = size === 'wide' ? ' dropdown--wide ' : ''
 
-	div(class=smallSize + mediumSize).dropdown
+	div(class=smallSize + mediumSize + wideSize).dropdown
 		if title
 			p.dropdown__top
 				span #{title}

@@ -2,11 +2,12 @@
   display: flex;
   border-bottom: 1px solid  rgba(31, 32, 65, 0.1);
   width: 280px;
-  padding: 20px 0;
+  padding: 22px 0;
+  padding-left: 4px;
 }
 
 .self-element__wrapper {
-  margin-left: 20px;
+  margin-left: 14px;
 }
 
 .self-element__title {
@@ -17,6 +18,8 @@
   line-height: 24px;
   color: $darkShade75;
   margin: 0;
+  margin-top: -3px;
+  margin-bottom: 3px;
 }
 
 .self-element__text {
