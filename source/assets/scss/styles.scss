@@ -23,6 +23,7 @@
 @import "../../blocks/components/dropdown-date/dropdown-date";
 @import "../../blocks/components/line/line";
 @import "../../blocks/components/logo/logo";
+@import "../../blocks/components/circle/circle";
 
 @import "../../blocks/colors-type-page/colors-type-page";
 @import "../../blocks/main-colors-type/main-colors-type";
@@ -54,6 +55,10 @@
 @import "../../blocks/main-sign-in/main-sign-in";
 @import "../../blocks/form-email/form-email";
 @import "../../blocks/toggles/toggles";
+@import "../../blocks/room-information/room-information";
+@import "../../blocks/room-impressions/room-impressions";
+@import "../../blocks/reviews/reviews";
+@import "../../blocks/cancellation/cancellation";
 
 body {
   margin: 0;

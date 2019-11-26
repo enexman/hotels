@@ -1,0 +1,11 @@
+include ../components/self-element/self-element.pug
+
+section.room-information
+	h3.room-information__title Сведения о номере
+	ul.room-information__list
+		li.room-information__item
+			+self-element('/img/insert-emoticon.svg', 'Комфорт', 'Шумопоглощающие стены')
+		li.room-information__item
+			+self-element('/img/location-city.svg', 'Удобство', 'Окно в каждой из спален')
+		li.room-information__item
+			+self-element('/img/whatshot.svg', 'Уют', 'Номер оснащён камином')

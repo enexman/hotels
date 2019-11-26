@@ -20,6 +20,8 @@
   box-sizing: border-box;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
   border-radius: 50%;
+  margin: 0;
+  margin-bottom: 12px;
 }
 
 .review__title {
@@ -27,31 +29,22 @@
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
-  line-height: 24px;
   color: $darkShade75;
+  line-height: 11px;
   margin: 0;
   margin-bottom: 4px;
 }
 
 .review__text {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: $darkShade75;
+  @include textNormal75;
+  line-height: 27px;
   margin: 0;
 }
 
 .review__review {
   margin: 0;
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: $darkShade75;
+  @include textNormal75;
   margin-top: -3px;
   max-width: 653px;
-  margin-left: 5px;
+  margin-left: 3px;
 }

@@ -1,1 +1,16 @@
+include ../components/bullet-list/bullet-list.pug
+include ../../variables/variables.pug
+
 main.main-room-details
+	.main-room-details__bg
+	.main-room-details__container
+		.main-room-details__content
+			.main-room-details__wrapper
+				include ../room-information/room-information.pug
+				include ../room-impressions/room-impressions.pug
+			include ../reviews/reviews.pug
+			.main-room-details__wrapper
+				+bullet-list('Правила', bulletList)
+				include ../cancellation/cancellation.pug
+		.main-room-details__modal
+			include ../card-reserve/card-reserve.pug

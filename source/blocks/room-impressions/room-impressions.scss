@@ -1,0 +1,54 @@
+.room-impressions {
+  margin-left: 80px;
+}
+
+.room-impressions__title {
+  @include fontH2;
+  margin: 0;
+}
+
+.room-impressions__wrapper {
+  display: flex;
+}
+
+.room-impressions__diagram {
+  width: 143px;
+}
+
+.room-impressions__list {
+  list-style: none;
+  margin-top: 45px;
+  padding-left: 22px;
+}
+
+.room-impressions__item {
+  position: relative;
+  @include textNormal75;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 7px;
+    left: -14px;
+    border-radius: 50%;
+    background-color: black;
+  }
+  
+  &--ex::before {
+    background-image: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+  }
+
+  &--good::before {
+    background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  }
+
+  &--medium::before {
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+
+  &--bad::before {
+    background-image: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+  }
+}

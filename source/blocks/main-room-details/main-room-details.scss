@@ -1,3 +1,25 @@
 .main-room-details {
+  margin-bottom: 61px;
 }
 
+.main-room-details__bg {
+  height: 485px;
+  background-image: url("/img/bg-details-all.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.main-room-details__container {
+  @include container;
+  display: flex;
+  margin-top: 70px;
+}
+
+.main-room-details__wrapper {
+  display: flex;
+}
+
+.main-room-details__modal {
+  margin-left: 70px;
+}

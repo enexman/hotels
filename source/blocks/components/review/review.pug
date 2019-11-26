@@ -1,5 +1,5 @@
 include ../like-button/like-button.pug
-mixin review(link, title, text, review)
+mixin review(link, title, text, review, likes, liked)
 	.review
 		.review__user
 			p.review__img-wrapper
@@ -8,5 +8,5 @@ mixin review(link, title, text, review)
 				p.review__title #{title}
 				p.review__text #{text}
 		.review__wrap
-			+like-button(12, true)
+			+like-button(likes, liked)
 			p.review__review #{review}

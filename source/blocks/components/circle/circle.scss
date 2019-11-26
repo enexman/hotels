@@ -1,0 +1,70 @@
+.circle {
+  margin-top: 19px;
+  width: 121px;
+  height: 121px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  @include fontH1;
+  color: $purple;
+  margin-top: 15px;
+  margin-bottom: 19px;
+
+  & span:last-child {
+    @include fontH3;
+    color: $purple;
+  }
+}
+
+.circle__ex {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.circle__ex-main {
+  position: absolute;
+  height: 121px;
+  width: 121px;
+  border-radius: 50%;
+  border: 5px solid #FFE39C;
+  clip: rect(0px, 59px, 121px, 0px);
+}
+
+
+.circle__good {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.circle__good-main {
+  position: absolute;
+  height: 121px;
+  width: 121px;
+  border-radius: 50%;
+  border: 3px solid #6FCF97;
+  clip: rect(61px,121px,121px,61px);
+}
+
+.circle__medium {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.circle__medium-main {
+  position: absolute;
+  height: 121px;
+  width: 121px;
+  border-radius: 50%;
+  border: 10px solid #BC9CFF;
+  clip: rect(0, 121px, 59px, 61px);
+}
