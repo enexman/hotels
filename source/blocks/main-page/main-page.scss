@@ -39,8 +39,16 @@
 @media(max-width: $exSmTabletWidth) {
   .main-page__modal {
     position: absolute;
-    left: 50%;
     top: 70px;
+    left: 50%;
     transform: translateX(-50%);
+  }
+
+  .main-page__calendar {
+    position: absolute;
+    top: 190px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
   }
 }

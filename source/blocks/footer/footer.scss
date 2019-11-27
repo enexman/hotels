@@ -12,6 +12,7 @@
   min-height: 276px;
   @include container();
   margin-top: 95px;
+  justify-content: space-between;
 }
 
 .footer__logo {
@@ -93,9 +94,8 @@
   margin: 0;
 }
 
-@media(max-width: 1220px) {
+@media(max-width: $desktopWidth) {
   .footer__wrapper {
-    //width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
 
@@ -115,8 +115,6 @@
   }
 
   .footer__bottom {
-    //width: 100%;
     flex-wrap: wrap;
-    //justify-content: space-between;
   }
 }

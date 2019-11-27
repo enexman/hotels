@@ -18,7 +18,8 @@
 }
 
 .main-search-room__rooms {
-  margin-left: 50px;
+  //margin-left: 50px;
+  margin-left: 4.2%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,5 +55,17 @@
   &--3 {
     margin-top: 22px;
     margin-bottom: 23px;
+  }
+}
+@media(max-width: $desktopWidth) {
+  .main-search-room {
+    width: 90%;
+  }
+}
+
+@media(max-width: $smTabletWidth) {
+  .main-search-room {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
