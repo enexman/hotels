@@ -1,5 +1,5 @@
 .cancellation {
-  width: 50%;
+  margin-left: 55px;
 }
 
 .cancellation__title {
@@ -11,6 +11,6 @@
 
 .cancellation__text {
   @include textNormal75;
-  max-width: 340px;
+  //max-width: 340px;
   margin-left: 5px;
 }

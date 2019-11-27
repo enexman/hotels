@@ -1,8 +1,11 @@
-.room-information {}
+.room-information {
+  width: 280px;
+}
 
 .room-information__title {
   @include fontH2;
   margin: 0;
+  letter-spacing: 0.6px;
 }
 
 .room-information__list {

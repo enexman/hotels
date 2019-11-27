@@ -13,13 +13,43 @@
 .main-room-details__container {
   @include container;
   display: flex;
+  margin: 0 auto;
   margin-top: 70px;
+
 }
 
 .main-room-details__wrapper {
   display: flex;
 }
 
+.main-room-details__content {
+  margin-right: 70px;
+}
+
 .main-room-details__modal {
-  margin-left: 70px;
+  margin-left: auto;
+}
+
+@media (max-width: $desktopWidth) {
+  .main-room-details__container {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-room-details__modal {
+    margin: 0 auto;
+  }
+
+  .main-room-details__content {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: $exSmTabletWidth2) {
+  .main-room-details__wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

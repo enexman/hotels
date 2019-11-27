@@ -12,14 +12,13 @@
 }
 
 @mixin container {
-  //width: 1200px;
-  width: 83.3%;
+  width: 100%;
+  padding-left: 9.7%;
+  padding-right: 9.7%;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 @mixin textNormal75 {

@@ -7,7 +7,6 @@
 
 .header__wrapper {
   @include container;
-  width: 83.3%;
   display: flex;
   align-items: center;
   min-height: 70px;
@@ -15,7 +14,6 @@
 
 @media(max-width: $desktopWidth) {
   .header__wrapper {
-    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
   }
