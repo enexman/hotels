@@ -27,12 +27,14 @@
 .footer__lists {
   display: flex;
   margin-top: 9px;
+  width: 52%;
 }
 
 .footer__list {
   list-style: none;
   padding: 0;
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
   margin: 0;
 }
 
@@ -89,4 +91,32 @@
 .footer__copyright {
   @include textNormal75();
   margin: 0;
+}
+
+@media(max-width: 1220px) {
+  .footer__wrapper {
+    //width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
+
+  .footer__subscribe {
+    order: 1;
+  }
+
+  .footer__lists {
+    width: 100%;
+    order: 2;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer__bottom {
+    //width: 100%;
+    flex-wrap: wrap;
+    //justify-content: space-between;
+  }
 }

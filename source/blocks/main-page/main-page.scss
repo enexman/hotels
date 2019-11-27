@@ -7,6 +7,7 @@
 
 .main-page__content {
   @include container;
+  width: 83.3%;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -33,4 +34,13 @@
   left: 29px;
   top: 190px;
   z-index: 2;
+}
+
+@media(max-width: $exSmTabletWidth) {
+  .main-page__modal {
+    position: absolute;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%);
+  }
 }

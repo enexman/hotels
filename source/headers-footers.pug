@@ -1,8 +1,7 @@
+include ./blocks/head/head.pug
+
 doctype html
 html(lang='ru')
-	head
-		meta(charset='utf-8')
-		title Headers & Footers
-
+	+head('Headers & Footers')
 	body
 		include ./blocks/main-hf/main-hf.pug

@@ -7,7 +7,28 @@
 
 .header__wrapper {
   @include container;
+  width: 83.3%;
   display: flex;
   align-items: center;
   min-height: 70px;
+}
+
+@media(max-width: $desktopWidth) {
+  .header__wrapper {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media(max-width: $exSmTabletWidth) {
+  .header__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }

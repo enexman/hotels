@@ -11,7 +11,7 @@
 
 .footer-ui-simple__description {
   @include  textNormal75();
-  width: 560px;
+  max-width: 560px;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 23px;
