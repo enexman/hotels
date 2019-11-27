@@ -1,3 +1,18 @@
+include ./blocks/head/head.pug
+include ./blocks/components/text-field/text-field.pug
 include ./blocks/components/dropdown/dropdown.pug
-+dropdown('19 авг - 23 авг', 'filter date dropdown', '',  '')
+include ./variables/variables.pug
+include ./blocks/components/button-big/button-big.pug
+
+
+doctype html
+html(lang='ru')
+	+head('Test')
+	body
+		//include ./blocks/card-find/card-find.pug
+		//include ./blocks/card-registration/card-registration.pug
+		include ./blocks/card-reserve/card-reserve.pug
+
+
+
 

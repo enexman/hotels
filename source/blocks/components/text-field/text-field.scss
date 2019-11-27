@@ -3,13 +3,16 @@
   @include fontH3();
   margin: 0;
   display: block;
-  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(0,0,0,0);
+  border-top: 1px solid rgba(0,0,0,0);
+  max-width: 320px;
+  width: 100%;
 }
 
 .text-field__top {
   display: flex;
   justify-content: space-between;
-  width: 320px;
+  min-width: 260px;
   margin: 5px 0;
 }
 
@@ -20,7 +23,9 @@
 }
 
 .text-field__input {
-  width: 320px;
+  width: 100%;
+  min-width: $minWidthComponent;
+
   height: 44px;
   background: #FFFFFF;
   border: 1px solid $darkShade25;
@@ -38,11 +43,11 @@
   &:hover, &:focus, &:active {
     border-color: $darkShade50;
   }
-  &--small {
-    //width: 267px;
-    width: 260px;
-    padding-right: 40px;
-  }
+  //&--small {
+  //  width: 260px;
+  //  min-height: 260px;
+  //  padding-right: 40px;
+  //}
 }
 
 .text-field__active {

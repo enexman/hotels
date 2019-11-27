@@ -5,7 +5,8 @@
 
 .main-cards__wrapper {
   position: relative;
-  width: 1440px;
+  //width: 1440px;
+  width: 100%;
   margin: 0 auto;
   margin-top: 150px;
   margin-bottom: 130px;
@@ -28,15 +29,44 @@
 
 .main-cards__container {
   @include container();
+  width: 83.3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .main-cards__column {
-
+  padding-bottom: 20px;
 }
 
 .main-cards__corrector {
   height: 40px;
+}
+
+@media (max-width: $smDesktopWidth) {
+  .main-cards__container {
+    justify-content: space-around;
+    width: 100%
+  }
+}
+
+@media (max-width: $smTabletWidth) {
+  .main-cards__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-cards__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: $phoneWidth) {
+  .main-cards__container {
+    padding: 0;
+    width: 100%;
+  }
+
 }

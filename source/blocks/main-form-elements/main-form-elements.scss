@@ -3,10 +3,9 @@
   display: flex;
 }
 
-
 .main-form-elements__wrapper {
   position: relative;
-  width: 1440px;
+  width: 100%;
   margin: 0 auto;
   border-top: 1px solid transparent;
   margin-top: 143px;
@@ -28,29 +27,34 @@
 
 .main-form-elements__container {
   @include container;
+  width: 83.3%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 21px;
+  padding-right: 15px;
+
 }
 
 .main-form-elements__col {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 28%;
+  flex-shrink: 0;
+  min-width: $minWidthComponent;
+  min-height: 280px;
 
-  &:nth-child(2) {
-    margin-left: 126px;
+  &:nth-child(3n + 2) {
+    margin-left: 10.5%;
   }
 
-  &:nth-child(3) {
-    margin-left: 72px;
-  }
-
-  &--auto {
-    width: auto;
+  &:nth-child(3n + 3) {
+    margin-left: 5.5%
   }
 }
 
-.main-form-elements__row {
-  display: flex;
-  min-height: 280px;
+.main-form-elements__auto {
+  width: 61%;
+  margin-left: 10.5%;
 }
 
 .main-form-elements__corrector {
@@ -69,7 +73,8 @@
     margin-top: 34px;
     margin-bottom: 33px;
     display: flex;
-    width: 320px;
+    max-width: 320px;
+    width: 100%;
     justify-content: space-between;
   }
 
@@ -102,5 +107,42 @@
 
   &--9 {
     margin-top: 27px;
+  }
+}
+
+@media (max-width: $desktopWidth) {
+  .main-form-elements__row {
+    flex-wrap: wrap;
+  }
+
+  .main-form-elements__col {
+    margin: 0 auto;
+
+    &:nth-child(3n + 2) {
+      margin: 0 auto;
+
+    }
+
+    &:nth-child(3n + 3) {
+      margin: 0 auto;
+    }
+  }
+
+  .main-form-elements__auto {
+    margin: 0 auto;
+    //width: auto;
+  }
+}
+
+@media (max-width: $smDesktopWidth) {
+  .main-form-elements__auto {
+    width: auto;
+  }
+}
+
+@media (max-width: $phoneWidth) {
+
+  .main-form-elements__container {
+    padding: 0;
   }
 }

@@ -1,9 +1,7 @@
+include ./blocks/head/head.pug
 
 doctype html
 html(lang='ru')
-	head
-		meta(charset='utf-8')
-		title Form Elements
-
+	+head('Form Elements')
 	body
 		include ./blocks/main-form-elements/main-form-elements.pug

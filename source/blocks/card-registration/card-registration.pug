@@ -7,7 +7,7 @@ include ../components/button-border/button-border.pug
 form.card-registration
 	.card-registration__title Регистрация аккаунта
 	+textField('text', 'Имя', '', '', '')
-	.card-registration__corrector--1
+	.card-registration__corrector.card-registration__corrector--1
 		+textField('text', 'Фамилия', '', '', '')
 	.card-registration__corrector.card-registration__corrector--0
 		+radio('sex', '', [{text: 'Мужчина', checked: true}, {text: 'Женщина', checked: false}])

@@ -23,7 +23,8 @@
   line-height: 30px;
   color: #1F2041;
   margin: 0;
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
   font-weight: 700;
   letter-spacing: -0.3px;
   margin-bottom: 18px;
@@ -43,7 +44,8 @@
 
 .card-registration__corrector {
   display: flex;
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
   justify-content: space-between;
 
   &--0 {
@@ -71,6 +73,10 @@
   }
 }
 
-@media (max-width: $tabletWidth) {
-
+@media (max-width: $smPhoneWidth) {
+  .card-registration {
+    width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

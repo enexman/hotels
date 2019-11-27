@@ -14,7 +14,11 @@
 
   border-radius: 22px;
 
-  width: 320px;
+  //width: 320px;
+  width: 100%;
+  max-width: 320px;
+  min-width: $minWidthComponent;
+
   height: 44px;
   display: flex;
   justify-content: center;
