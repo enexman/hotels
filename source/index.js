@@ -1,5 +1,5 @@
 // JS
-// import './blocks/main/main.js'
+import './blocks/components/range/range.js'
 
 // SCSS
 import './assets/scss/styles.scss';

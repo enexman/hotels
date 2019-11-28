@@ -1,14 +1,8 @@
-include ../title-3lvl/title-3lvl.pug
 
 mixin range(title, text, description)
 	.range
-		.range__wrapper
-			+title-3lvl(title)
-			p.range__text #{text}
-
-		.range__block
-			.range__line
-			.rang__fill-line
-			.range__point.range__point--min
-			.range__point.range__point--max
+		p.range__wrapper
+			label(for="amount").range__title #{title}
+			input(type="text" id="amount" readonly).range__input
+		div(id="slider-range")
 		p.range__description #{description ? description : ''}

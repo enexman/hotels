@@ -5,10 +5,11 @@
 .range__wrapper {
   display: flex;
   justify-content: space-between;
+  margin: 0;
   margin-bottom: 10px;
 }
 
-.range__text {
+.range__input {
   font-family: $mainFont;
   font-style: normal;
   font-weight: normal;
@@ -18,49 +19,8 @@
   text-transform: uppercase;
   color: $darkShade50;
   margin-top: 0;
-}
-
-.range__block {
-  position: relative;
-}
-
-.range__line {
-  width: 266px;
-  height: 6px;
-  background: #FFFFFF;
-  border: 1px solid $darkShade25;
-  box-sizing: border-box;
-  border-radius: 3px;
-}
-
-.rang__fill-line {
-  position: absolute;
-  width: 88px;
-  height: 6px;
-  left: 85px;
-  top: 0px;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  border-radius: 3px;
-}
-
-.range__point {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  left: 0;
-  top: -4px;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  border: 2px solid #FFFFFF;
-  border-radius: 10px;
-  cursor: pointer;
-
-    &--min {
-      left: 76px;
-    }
-
-    &--max {
-      left: 162px;
-    }
+  border: none;
+  margin-bottom: 10px;
 }
 
 .range__description {
@@ -69,4 +29,41 @@
   line-height: 14px;
   color: $darkShade50;
   margin: 15px 0;
+}
+
+.range__title {
+  @include  fontH3;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.ui-slider {
+  position: relative;
+  width: 266px;
+  height: 6px;
+  background: #FFFFFF;
+  border: 1px solid $darkShade25;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.ui-slider-range {
+  position: absolute;
+  width: 88px;
+  height: 6px;
+  left: 85px;
+  top: 0px;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+.ui-slider-handle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 0;
+  top: -5px;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  cursor: pointer;
 }
