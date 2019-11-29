@@ -26,7 +26,7 @@ module.exports = {
   },
   entry: {
     main: PATHS.src,
-    // module: `${PATHS.src}/your-module.js`,
+    // module: `${PATHS.src}/blocks/filter-dropdown-date/filter-dropdown-date.js`,
   },
   output: {
     filename: `js/[name].js`,

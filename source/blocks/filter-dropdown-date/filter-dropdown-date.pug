@@ -1,0 +1,9 @@
+mixin filterDropdownDate(text, title)
+
+	div.filter-dropdown-date
+		//div(class="datepicker-here")
+		//input(type="text" data-range="true" data-multiple-dates-separator=" - " class="datepicker-here")
+		if title
+			p.filter-dropdown__top
+				span #{title}
+		button(type="button").dropdown-date__button #{text}

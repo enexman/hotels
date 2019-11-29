@@ -4,6 +4,7 @@ include ../components/title-3lvl/title-3lvl.pug
 include ../form-email/form-email.pug
 include ../components/dropdown/dropdown.pug
 include ../components/dropdown-date/dropdown-date.pug
+include ../filter-dropdown-date/filter-dropdown-date.pug
 include ../components/checkbox/checkbox.pug
 include ../checkbox-list/checkbox-list.pug
 include ../components/self-element/self-element.pug
@@ -24,9 +25,9 @@ main.main-form-elements
 					+dropdown('Сколько гостей', 'Dropdown', 'default', false, values)
 				+textField('text', 'ДД.ММ.ГГГГ', '', 'masked text field', 'default')
 				.main-form-elements__corrector.main-form-elements__corrector--3
-					+dropdownDate('ДД.ММ.ГГГГ', 'date Dropdown', '', 'small')
-					+dropdownDate('19.08.2019', 'date Dropdown', '', 'small')
-				+dropdownDate('19 авг - 23 авг', 'filter date dropdown', '', 'medium')
+					+dropdownDate('ДД.ММ.ГГГГ', 'date Dropdown')
+					+dropdownDate('19.08.2019', 'date Dropdown')
+				+filterDropdownDate('19 авг - 23 авг', 'filter date dropdown')
 				.main-form-elements__corrector.main-form-elements__corrector--4
 					+formEmail('subscription text field')
 			.main-form-elements__col

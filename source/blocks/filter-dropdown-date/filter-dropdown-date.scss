@@ -1,12 +1,13 @@
-.dropdown-date {
+.filter-dropdown-date {
   background: #FFFFFF;
   border: 1px solid transparent;
   position: relative;
   min-height: 70px;
-  width: 152px;
+  width: 268px;
+
 }
 
-.dropdown-date__button {
+.filter-dropdown-date__button {
   @include textNormal75;
   padding: 10px 15px;
   margin: 0;
@@ -33,7 +34,7 @@
   }
 }
 
-.dropdown-date__top {
+.filter-dropdown__top {
   display: flex;
   justify-content: space-between;
   width: 100%;
