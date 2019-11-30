@@ -1,0 +1,16 @@
+mixin groupDropdownDate(text, text2, title)
+
+	.group-dropdown-date
+		div.group-dropdown-date__wrapper
+			if title
+				p.group-dropdown-date__top
+					span #{title}
+			input(type="text" placeholder=text).group-dropdown-date__input.group-dropdown-date__input--left
+
+		div.group-dropdown-date__wrapper
+			if title
+				p.group-dropdown-date__top
+					span #{title}
+			input(type="text" placeholder=text2).group-dropdown-date__input.group-dropdown-date__input--right
+		.group-dropdown-date__calendar
+			include ../card-calendar/card-calendar.pug

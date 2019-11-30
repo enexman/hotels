@@ -1,13 +1,24 @@
-.filter-dropdown-date {
+
+.group-dropdown-date {
+  position: relative;
+  margin-top: 34px;
+  margin-bottom: 33px;
+  display: flex;
+  max-width: 320px;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.group-dropdown-date__wrapper {
   background: #FFFFFF;
   border: 1px solid transparent;
   position: relative;
   min-height: 70px;
-  width: 268px;
+  width: 152px;
 }
 
-.filter-dropdown-date__input {
-  display: block;
+.group-dropdown-date__input {
   @include textNormal75;
   padding: 10px 15px;
   margin: 0;
@@ -23,10 +34,11 @@
 
   background-image: url("/img/expand-more.svg");
   background-repeat: no-repeat;
-  background-position: 238px center;
+  background-position: 120px center;
+
 }
 
-.filter-dropdown__top {
+.group-dropdown-date__top {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -34,7 +46,9 @@
   @include fontH3;
 }
 
-.filter-dropdown-date__calendar {
+.group-dropdown-date__calendar {
   position: absolute;
   z-index: 3;
+  top: 75px;
+  left: 0;
 }
