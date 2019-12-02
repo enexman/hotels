@@ -1,6 +1,7 @@
 
 const dropdownButtons = (blockId) => {
   const blockNode = document.querySelector(blockId);
+  if (!blockNode) return;
   const listNode = blockNode.querySelector('.dropdown-buttons__list');
   const liNodes = blockNode.querySelectorAll('.dropdown-buttons__option');
   const submitNode = blockNode.querySelector('.dropdown-buttons__button-bottom--submit');

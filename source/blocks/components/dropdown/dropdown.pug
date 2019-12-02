@@ -1,4 +1,3 @@
-
 mixin dropdown(text, title, status, isOpen, values, form, size)
 	- var clear = false
 
@@ -31,3 +30,21 @@ mixin dropdown(text, title, status, isOpen, values, form, size)
 						if clear
 							button(type="button").dropdown__button-bottom.dropdown__button-bottom--clear очистить
 						button(type="button").dropdown__button-bottom.dropdown__button-bottom--submit применить
+
+
+mixin dropdownJS(text, title, status, values, id)
+
+	div(id=id).dropdown.dropdown--medium
+		if title
+			p.dropdown__top
+				span #{title}
+				span.dropdown__status #{status}
+		input(class="dropdown__text dropdown__text--border-bottom" type="text" placeholder=text readonly)
+		ul(class=open).dropdown__list.dropdown__list--open
+			each val in values
+				li.dropdown__option
+					p.dropdown__option-text #{val.title}
+					.dropdown__buttons
+						button(class="dropdown__button dropdown__button--disabled dropdown__button--minus" type="button") -
+						span.dropdown__numeric #{val.num}
+						button(type="button").dropdown__button.dropdown__button--plus +
