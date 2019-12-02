@@ -70,6 +70,8 @@ const drawDays = (options, container) => {
 };
 
 export const cardCalendar = (input) => {
+  if(!input) return;
+
   const containerClassName = '.' + input.parentNode.className + ' .card-calendar';
 
   const options = getDates();
@@ -159,12 +161,15 @@ export const cardCalendar = (input) => {
   })
 };
 
-export const groupCardCalendar = (input, input2, parentClassName) => {
-  const containerClassName = '.' + parentClassName + ' .card-calendar';
+export const groupCardCalendar = (block) => {
+  if(!block) return;
+  
+  const input = block.querySelector('.group-dropdown-date__input--left');
+  const input2 = block.querySelector('.group-dropdown-date__input--right');
 
   const options = getDates();
 
-  const cardCalendarNode = document.querySelector(containerClassName);
+  const cardCalendarNode = block.querySelector('.card-calendar');
   cardCalendarNode.classList.add('card-calendar--close');
   cardCalendarNode.querySelector('.card-calendar__title').textContent = options.title;
 

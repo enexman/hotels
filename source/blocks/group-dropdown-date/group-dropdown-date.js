@@ -1,6 +1,5 @@
 import {groupCardCalendar} from '../card-calendar/card-calendar';
 
-groupCardCalendar(
-  document.querySelector('.group-dropdown-date__input--left'),
-  document.querySelector('.group-dropdown-date__input--right'),
-  'group-dropdown-date');
+groupCardCalendar(document.querySelector('#form-dropdown-date'));
+groupCardCalendar(document.querySelector('.card-find'));
+groupCardCalendar(document.querySelector('.card-reserve'));
