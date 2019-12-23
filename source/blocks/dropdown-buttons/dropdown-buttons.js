@@ -1,7 +1,9 @@
 
 const dropdownButtons = (blockId) => {
   const blockNode = document.querySelector(blockId);
+
   if (!blockNode) return;
+
   const listNode = blockNode.querySelector('.dropdown-buttons__list');
   const liNodes = blockNode.querySelectorAll('.dropdown-buttons__option');
   const submitNode = blockNode.querySelector('.dropdown-buttons__button-bottom--submit');
@@ -9,7 +11,7 @@ const dropdownButtons = (blockId) => {
   
   const inputNode = blockNode.querySelector('.dropdown-buttons__input');
 
-  inputNode.addEventListener('click', () => {
+  inputNode.addEventListener('click', (ev) => {
     listNode.classList.toggle('dropdown-buttons__list--open');
   });
 
@@ -84,5 +86,5 @@ const dropdownButtons = (blockId) => {
 };
 
 dropdownButtons('#drop-1');
-// dropdownButtons('#drop-2', true);
-// dropdownButtons('#drop-3', true);
+// dropdownButtons('#drop-find');
+dropdownButtons('#drop-3');

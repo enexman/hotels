@@ -163,7 +163,6 @@ export const cardCalendar = (input) => {
 
 export const groupCardCalendar = (block) => {
   if(!block) return;
-  
   const input = block.querySelector('.group-dropdown-date__input--left');
   const input2 = block.querySelector('.group-dropdown-date__input--right');
 

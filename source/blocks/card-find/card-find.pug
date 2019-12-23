@@ -1,11 +1,14 @@
 include ../group-dropdown-date/group-dropdown-date.pug
+include ../dropdown-buttons/dropdown-buttons.pug
 include ../components/dropdown/dropdown.pug
 include ../components/button-big/button-big.pug
+
+- var values = [{ title: 'взрослые', num: 2}, { title: 'дети', num: 1}, { title: 'младенцы', num: 0}];
 
 form.card-find
 	h2.card-find__title Найдём номера под ваши пожелания
 	.card-find__row
 		+groupDropdownDate('ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ', 'прибытие', 'выезд')
 	.card-find__wrapper
-		+dropdown('Сколько гостей', 'Гости', '', false, [], '', '')
+		+dropdownButtons('Сколько гостей', 'Гости', '', values, 'drop-1')
 	+button-big('подобрать номер')

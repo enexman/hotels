@@ -1,6 +1,9 @@
 include ../components/dropdown/dropdown.pug
 include ../components/button-big/button-big.pug
 include ../group-dropdown-date/group-dropdown-date.pug
+include ../dropdown-buttons/dropdown-buttons.pug
+
+- var values = [{ title: 'взрослые', num: 2}, { title: 'дети', num: 1}, { title: 'младенцы', num: 0}];
 
 form.card-reserve
 	.card-reserve__row
@@ -12,7 +15,7 @@ form.card-reserve
 			span в сутки
 	.card-reserve__row.card-reserve__row--cor-1
 		+groupDropdownDate('19.08.2019', '23.08.2019', 'прибытие', 'выезд')
-	+dropdown('3 гостя', 'Гости', '')
+	+dropdownButtons('3 гостя', 'Гости', '', values, 'drop-3')
 	ul.card-reserve__list
 		li.card-reserve__item
 			p.card-reserve__item-res 9 990₽ х 4 суток

@@ -1,7 +1,10 @@
 
 const dropdown = (blockId) => {
   const blockNode = document.querySelector(blockId);
+  if (!blockNode) return;
+
   const listNode = blockNode.querySelector('.dropdown__list');
+  listNode.classList.remove('dropdown__list--open');
   const liNodes = blockNode.querySelectorAll('.dropdown__option');
 
   const inputNode = blockNode.querySelector('.dropdown__text');
@@ -76,3 +79,5 @@ const dropdown = (blockId) => {
 };
 
 dropdown('#dropJS');
+dropdown('#drop-search');
+dropdown('#drop-search2');
