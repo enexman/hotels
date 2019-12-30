@@ -1,22 +1,25 @@
-include ./blocks/header/header.pug
-include ./blocks/footer/footer.pug
 include ./blocks/head/head.pug
 
 doctype html
-html(lang='ru')
-  +head('Toxin')
+html(lang="ru")
+  +head('index')
   body
-    +header(
-      [
-        {title: 'О нас', modifier: false, active: false},
-        {title: 'Услуги', modifier: true, active: false},
-        {title: 'Вакансии', modifier: false, active: false},
-        {title: 'Новости', modifier: false, active: false},
-        {title: 'Соглашения', modifier: true, active: false}
-      ],
-      {logged: false, enter: 'войти', register: 'зарегистрироваться', entered: ''}
-    )
-    include ./blocks/main-page/main-page.pug
-    +footer()
-
-
+    ul
+      li
+        a(href="colors-type.html") Colors & Type
+      li
+        a(href="form-elements.html") Form Elements
+      li
+        a(href="cards.html") Cards
+      li
+        a(href="headers-footers.html") Headers & Footers
+      li
+        a(href="landing.html") Landing
+      li
+        a(href="search-room.html") Search room
+      li
+        a(href="room-details.html") Room details
+      li
+        a(href="registration.html") Registration
+      li
+        a(href="sign-in.html") Sign in
