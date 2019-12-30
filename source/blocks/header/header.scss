@@ -1,12 +1,13 @@
 .header {
   background-color: #ffffff;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   position: relative;
   z-index: 1;
 }
 
 .header__wrapper {
-  @include container;
+  @include content();
+  min-width: 320px;
   display: flex;
   align-items: center;
   min-height: 70px;

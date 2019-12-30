@@ -6,9 +6,8 @@
 
 .main-hf__wrapper {
   position: relative;
-  width: 1440px;
-  //@include container;
-  margin: 0 auto;
+  @include container;
+  width: 100%;
   border-top: 1px solid transparent;
   margin-top: 150px;
   margin-bottom: 130px;

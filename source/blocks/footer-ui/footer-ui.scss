@@ -1,5 +1,5 @@
-.footer {
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+.footer-ui {
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   z-index: 1;
 }
 
-.footer__wrapper {
+.footer-ui__wrapper {
   display: flex;
   min-height: 276px;
   @include content();
@@ -15,23 +15,23 @@
   justify-content: space-between;
 }
 
-.footer__logo {
+.footer-ui__logo {
   width: 300px;
   padding-right: 20px;
 }
 
-.footer__description {
+.footer-ui__description {
   @include textNormal75();
   margin-top: 9px;
 }
 
-.footer__lists {
+.footer-ui__lists {
   display: flex;
   margin-top: 9px;
   width: 52%;
 }
 
-.footer__list {
+.footer-ui__list {
   list-style: none;
   padding: 0;
   max-width: 200px;
@@ -39,7 +39,7 @@
   margin: 0;
 }
 
-.footer__item {
+.footer-ui__item {
   @include textNormal50();
   letter-spacing: 0;
   margin-bottom: 21px;
@@ -49,7 +49,7 @@
   }
 }
 
-.footer__link {
+.footer-ui__link {
   @include textNormal50();
   letter-spacing: 0;
 
@@ -58,53 +58,56 @@
   }
 }
 
-.footer__subscribe {
+.footer-ui__subscribe {
   margin-top: 9px;
   width: 260px;
 }
 
-.footer__subscribe-tittle {
+.footer-ui__subscribe-tittle {
   @include fontH3();
   margin: 0;
   letter-spacing: 0;
 }
 
-.footer__subscribe-description {
+.footer-ui__subscribe-description {
   @include textNormal75();
   margin-top: 17px;
   margin-bottom: 12px;
 }
 
-.footer__line {
+.footer-ui__line {
   height: 1px;
   background: $darkShade50;
 }
 
-.footer__bottom {
+.footer-ui__bottom {
   display: flex;
-  @include content();
+  @include container();
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
   min-height: 70px;
   justify-content: space-between;
   align-items: center;
 
 }
 
-.footer__copyright {
+.footer-ui__copyright {
   @include textNormal75();
   margin: 0;
 }
 
 @media(max-width: $desktopWidth) {
-  .footer__wrapper {
+  .footer-ui__wrapper {
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .footer__subscribe {
+  .footer-ui__subscribe {
     order: 1;
   }
 
-  .footer__lists {
+  .footer-ui__lists {
     width: 100%;
     order: 2;
     justify-content: space-between;
@@ -113,7 +116,7 @@
     flex-wrap: wrap;
   }
 
-  .footer__bottom {
+  .footer-ui__bottom {
     flex-wrap: wrap;
   }
 }

@@ -1,5 +1,5 @@
 .main-search-room {
-  @include container;
+  @include content();
   display: flex;
   padding-bottom: 71px;
 }
@@ -18,7 +18,6 @@
 }
 
 .main-search-room__rooms {
-  //margin-left: 50px;
   margin-left: 4.2%;
   display: flex;
   flex-direction: column;

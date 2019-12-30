@@ -5,6 +5,7 @@
 
 .main-cards__wrapper {
   position: relative;
+  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
   margin-top: 150px;
@@ -27,7 +28,10 @@
 }
 
 .main-cards__container {
-  @include container();
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 9.7%;
+  padding-right: 9.7%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

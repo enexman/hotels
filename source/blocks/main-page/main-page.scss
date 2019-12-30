@@ -6,8 +6,7 @@
 }
 
 .main-page__content {
-  @include container;
-  width: 83.3%;
+  @include content();
   position: relative;
   display: flex;
   align-items: flex-end;
