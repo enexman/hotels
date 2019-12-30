@@ -7,17 +7,17 @@ include ../components/button-border/button-border.pug
 form.card-registration
 	.card-registration__title Регистрация аккаунта
 	+textField('text', 'Имя', '', '', '')
-	.card-registration__corrector.card-registration__corrector--1
+	.card-registration__text-field
 		+textField('text', 'Фамилия', '', '', '')
-	.card-registration__corrector.card-registration__corrector--0
+	.card-registration__radio
 		+radio('sex', '', [{text: 'Мужчина', checked: true}, {text: 'Женщина', checked: false}])
 	+textField('text', 'ДД.ММ.ГГГГ', '', 'дата рождения', '')
-	.card-registration__corrector.card-registration__corrector--2
+	.card-registration__text-field-bottom
 		+textField('email', 'Email', '', 'данные для входа в сервис', '')
 	+textField('password', 'Пароль', '', '', '')
-	.card-registration__corrector.card-registration__corrector--3
+	.card-registration__toggle
 		+toggle('Получать спецпредложения')
 	+button-big('перейти к оплате')
-	.card-registration__corrector.card-registration__corrector--4
+	.card-registration__enter
 		p.card-registration__text Уже есть аккаунт на Toxin
 		+button-border('Войти')

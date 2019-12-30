@@ -5,9 +5,9 @@ include ../components/button-border/button-border.pug
 form.card-enter
 	p.card-enter__title Войти
 	+textField('email', 'Email', '', '', '')
-	.card-enter__corrector.card-enter__corrector--1
+	.card-enter__text-field
 		+textField('password', 'Пароль', '', '', '')
 	+button-big('войти')
-	.card-enter__corrector.card-enter__corrector--2
+	.card-enter__bottom
 		p.card-enter__text Нет аккаунта на Toxin?
 		+button-border('создать')

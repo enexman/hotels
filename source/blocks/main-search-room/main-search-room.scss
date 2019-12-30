@@ -42,19 +42,19 @@
   margin-right: 7px;
 }
 
-.main-search-room__corrector {
+.main-search-room__dropdown {
   margin-top: 14px;
   margin-bottom: 29px;
+}
 
-  &--2 {
-    margin-top: 29px;
-    margin-bottom: 28px;
-  }
+.main-search-room__checkbox-buttons {
+  margin-top: 29px;
+  margin-bottom: 28px;
+}
 
-  &--3 {
-    margin-top: 22px;
-    margin-bottom: 23px;
-  }
+.main-search-room__dropdown-bottom {
+  margin-top: 22px;
+  margin-bottom: 23px;
 }
 
 @media(max-width: $smTabletWidth) {

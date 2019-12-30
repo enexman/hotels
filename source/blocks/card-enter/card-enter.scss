@@ -42,20 +42,23 @@
   color: #000000;
 }
 
-.card-enter__corrector {
+.card-enter__text-field {
   display: flex;
   max-width: 320px;
   width: 100%;
   justify-content: space-between;
 
-  &--1 {
-    margin-bottom: 18px;
-    margin-top: 8px;
-  }
+  margin-bottom: 18px;
+  margin-top: 8px;
+}
 
-  &--2 {
-    margin-top: 30px;
-  }
+.card-enter__bottom {
+  display: flex;
+  max-width: 320px;
+  width: 100%;
+  justify-content: space-between;
+
+  margin-top: 30px;
 }
 
 @media (max-width: $smPhoneWidth) {

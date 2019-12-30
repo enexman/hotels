@@ -13,12 +13,14 @@
   display: flex;
   justify-content: space-between;
   min-width: 260px;
-  margin: 5px 0;
+  margin: 0;
+  margin-bottom: 5px;
 }
 
 .text-field__status {
   @include fontH3();
   font-weight: 400;
+  line-height: 10px;
   color: $darkShade50;
 }
 
@@ -43,11 +45,6 @@
   &:hover, &:focus, &:active {
     border-color: $darkShade50;
   }
-  //&--small {
-  //  width: 260px;
-  //  min-height: 260px;
-  //  padding-right: 40px;
-  //}
 }
 
 .text-field__active {

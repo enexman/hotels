@@ -42,35 +42,52 @@
   color: #000000;
 }
 
-.card-registration__corrector {
+.card-registration__text-field {
   display: flex;
   max-width: 320px;
   width: 100%;
   justify-content: space-between;
 
-  &--0 {
-    margin-bottom: 16px;
-  }
+  margin-top: 9px;
+  margin-bottom: 6px;
+}
 
-  &--1 {
-    margin-top: 9px;
-    margin-bottom: 6px;
-  }
+.card-registration__radio {
+  display: flex;
+  max-width: 320px;
+  width: 100%;
+  justify-content: space-between;
 
-  &--2 {
-    margin-top: 13px;
-    margin-bottom: 8px;
-  }
+  margin-bottom: 21px;
+}
 
-  &--3 {
-    margin-top: 7px;
-    margin-bottom: 12px;
-  }
+.card-registration__text-field-bottom {
+  display: flex;
+  max-width: 320px;
+  width: 100%;
+  justify-content: space-between;
 
-  &--4 {
-    margin-top: 29px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
 
-  }
+.card-registration__toggle {
+  display: flex;
+  max-width: 320px;
+  width: 100%;
+  justify-content: space-between;
+
+  margin-top: 7px;
+  margin-bottom: 12px;
+}
+
+.card-registration__enter {
+  display: flex;
+  max-width: 320px;
+  width: 100%;
+  justify-content: space-between;
+
+  margin-top: 29px;
 }
 
 @media (max-width: $smPhoneWidth) {

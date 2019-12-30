@@ -135,20 +135,30 @@
   }
 }
 
-.card-reserve__row {
+.card-reserve__group-dropdown-date {
   display: flex;
   max-width: 320px;
   width: 100%;
   justify-content: space-between;
 
-  &--cor-1 {
-    margin-top: 14px;
-    margin-bottom: 13px;
-  }
+  margin-top: 14px;
+  margin-bottom: 13px;
+}
 
-  &--cor-2 {
-    margin-top: 20px;
-  }
+.card-reserve__button-big {
+  display: flex;
+  max-width: 320px;
+  width: 100%;
+  justify-content: space-between;
+
+  margin-top: 20px;
+}
+
+.card-reserve__header {
+  display: flex;
+  max-width: 320px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 
