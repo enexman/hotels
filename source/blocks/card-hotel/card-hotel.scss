@@ -21,7 +21,7 @@
 .card-hotel__slide {
   display: none;
 
-  &--active {
+  &_active {
     display: block;
   }
 }
@@ -43,7 +43,7 @@
   padding: 0;
   margin-left: 3.75px;
   
-  &--activated {
+  &_activated {
     background: #ffffff;
   }
 }
@@ -119,24 +119,21 @@
   }
 }
 
-.card-hotel__row {
+.card-hotel__row-top {
   display: flex;
   width: 230px;
   justify-content: space-between;
 
-  &--cor-1 {
-    margin-top: 22px;
-    margin-bottom: 9px;
-    padding-bottom: 11px;
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-  }
-
-  &--cor-2 {
-  margin-top: 2px;
-  }
+  margin-top: 22px;
+  margin-bottom: 9px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid rgba(31, 32, 65, 0.1);
 }
 
+.card-hotel__row-bottom {
+  display: flex;
+  width: 230px;
+  justify-content: space-between;
 
-@media (max-width: $tabletWidth) {
-
+  margin-top: 2px;
 }

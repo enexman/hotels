@@ -5,12 +5,12 @@ mixin groupDropdownDate(text, text2, title, title2)
 			if title
 				p.group-dropdown-date__top
 					span #{title}
-			input(type="text" placeholder=text).group-dropdown-date__input.group-dropdown-date__input--left
+			input(type="text" placeholder=text).group-dropdown-date__input.js-group-dropdown-date__input_left
 
 		div.group-dropdown-date__wrapper
 			if title2
 				p.group-dropdown-date__top
 					span #{title2}
-			input(type="text" placeholder=text2).group-dropdown-date__input.group-dropdown-date__input--right
+			input(type="text" placeholder=text2).group-dropdown-date__input.js-group-dropdown-date__input_right
 		.group-dropdown-date__calendar
 			include ../card-calendar/card-calendar.pug

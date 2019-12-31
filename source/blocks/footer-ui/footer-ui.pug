@@ -1,14 +1,5 @@
 include ../form-email/form-email.pug
 
-mixin list(values)
-	ul.footer-ui__list
-		each val, index in values
-			if(index === 0)
-				li.footer-ui__item.footer-ui__item--title #{val}
-			else
-				li.footer-ui__item
-					a(href="#nowhere").footer-ui__link  #{val}
-
 mixin footer-ui()
 	footer.footer-ui
 		.footer-ui__wrapper
@@ -16,9 +7,27 @@ mixin footer-ui()
 				include ../components/logo/logo.pug
 				p.footer-ui__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
 			.footer-ui__lists
-				+list(['Navigation', 'About Us', 'News', 'Support', 'Products'])
-				+list(['ABOUT US', 'Who we are', 'Our team', 'Careers', 'Investors'])
-				+list(['Support', 'Documentation', 'Community', 'Get in Touch'])
+				ul.footer-ui__list
+					each val, index in ['Navigation', 'About Us', 'News', 'Support', 'Products']
+						if(index == 0)
+							li.footer-ui__item.footer-ui__item_title #{val}
+						else
+							li.footer-ui__item
+								a(href="#nowhere").footer-ui__link  #{val}
+				ul.footer-ui__list
+					each val, index in ['ABOUT US', 'Who we are', 'Our team', 'Careers', 'Investors']
+						if(index == 0)
+							li.footer-ui__item.footer-ui__item_title #{val}
+						else
+							li.footer-ui__item
+								a(href="#nowhere").footer-ui__link  #{val}
+				ul.footer-ui__list
+					each val, index in ['Support', 'Documentation', 'Community', 'Get in Touch']
+						if(index == 0)
+							li.footer-ui__item.footer-ui__item_title #{val}
+						else
+							li.footer-ui__item
+								a(href="#nowhere").footer-ui__link  #{val}
 
 			.footer-ui__subscribe
 				h3.footer-ui__subscribe-tittle Subscribe to our newsletter

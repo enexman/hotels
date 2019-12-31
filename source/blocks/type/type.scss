@@ -14,28 +14,28 @@
   margin: 0;
   margin-right: 30px;
 
-  &--one {
+  &_one {
     font-size: 24px;
     line-height: 29px;
   }
 
-  &--two {
+  &_two {
     font-size: 19px;
     line-height: 23px;
   }
 
-  &--three {
+  &_three {
     font-size: 12px;
     line-height: 15px;
   }
 
-  &--four {
+  &_four {
     font-size: 14px;
     line-height: 24px;
   }
 }
 
-.type_text {
+.type__text {
 
   font-family: $secondFont;
   font-style: normal;
@@ -44,29 +44,29 @@
   font-size: 24px;
   line-height: 30px;
   margin: 0;
-}
 
-.type__text--one {
-  font-size: 24px;
-  line-height: 30px;
-}
+  &_one {
+    font-size: 24px;
+    line-height: 30px;
+  }
 
-.type__text--two {
-  font-size: 19px;
-  line-height: 24px;
-}
+  &_two {
+    font-size: 19px;
+    line-height: 24px;
+  }
 
-.type__text--three {
-  font-family: $mainFont;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-}
+  &_three {
+    font-family: $mainFont;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
 
-.type__text--four {
-  font-family: $mainFont;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: $darkShade75;
+  &_four {
+    font-family: $mainFont;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: $darkShade75;
+  }
 }

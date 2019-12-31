@@ -2,7 +2,7 @@
   width: 234px;
   margin-top: 6px;
 
-  &--wide {
+  &_wide {
     width: 255px;
   }
 }
@@ -89,7 +89,7 @@
   margin: 0;
   display: inline-block;
 
-  &--rich {
+  &_rich {
     font-size: 12px;
     line-height: 14px;
   }

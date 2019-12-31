@@ -1,24 +1,21 @@
-mixin menuItem(text, modifier, active)
-	- var cls = modifier ? ' main-nav__link--arrow ' : ''
-	- var clsActive = active ? ' main-nav__link--active ' : ''
-	li.main-nav__item
-		a(href="#nowhwre" class="main-nav__link " + cls + clsActive)
-			= text
-
 
 mixin main-nav(items, user, ui)
-	- var classUi = ui ? 'main-nav__list--ui' : ' '
-	- var classLogged = (ui && user.logged) ? ' main-nav__list--logged' : ' '
+	- var classUi = ui ? 'main-nav__list_ui' : ' '
+	- var classLogged = (ui && user.logged) ? ' main-nav__list_logged' : ' '
 	nav.main-nav
 		ul(class=classUi + classLogged).main-nav__list
 			each val in items
-				+menuItem(val.title, val.modifier, val.active)
+				- var cls = val.modifier ? ' main-nav__link_arrow ' : ''
+				- var clsActive = val.active ? ' main-nav__link_active ' : ''
+				li.main-nav__item
+					a(href="#nowhwre" class="main-nav__link " + cls + clsActive)
+						= val.title
 		if !user.logged
 			ul.main-nav__user-list
 				li.main-nav__user-item
 					a(href="#nowhwre").main-nav__user-link #{user.enter}
 				li.main-nav__user-item
-					a(href="#nowhwre").main-nav__user-link.main-nav__user-link--dark #{user.register}
+					a(href="#nowhwre").main-nav__user-link.main-nav__user-link_dark #{user.register}
 		else
 			a.main-nav__entered #{user.entered}
 

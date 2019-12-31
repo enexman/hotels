@@ -38,19 +38,19 @@
     background-color: black;
   }
   
-  &--ex::before {
+  &_ex::before {
     background-image: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
   }
 
-  &--good::before {
+  &_good::before {
     background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   }
 
-  &--medium::before {
+  &_medium::before {
     background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   }
 
-  &--bad::before {
+  &_bad::before {
     background-image: linear-gradient(180deg, #919191 0%, #3D4975 100%);
   }
 }

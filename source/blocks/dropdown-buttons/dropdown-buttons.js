@@ -85,6 +85,6 @@ const dropdownButtons = (blockId) => {
   });
 };
 
-dropdownButtons('#drop-1');
+// dropdownButtons('#drop-1');
 // dropdownButtons('#drop-find');
-dropdownButtons('#drop-3');
+// dropdownButtons('#drop-3');

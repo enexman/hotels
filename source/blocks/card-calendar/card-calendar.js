@@ -52,11 +52,11 @@ const drawDays = (options, container) => {
   container.innerHTML = '';
   options.forEach(it => {
     const classes = ['card-calendar__number'];
-    if (it.otherMonth) classes.push('card-calendar__number--empty');
-    if (it.startDate) classes.push('card-calendar__number--start');
-    if (it.middleDate) classes.push('card-calendar__number--middle');
-    if (it.endDate) classes.push('card-calendar__number--end');
-    if (it.today) classes.push('card-calendar__number--today');
+    if (it.otherMonth) classes.push('card-calendar__number_empty');
+    if (it.startDate) classes.push('card-calendar__number_start');
+    if (it.middleDate) classes.push('card-calendar__number_middle');
+    if (it.endDate) classes.push('card-calendar__number_end');
+    if (it.today) classes.push('card-calendar__number_today');
 
     const day = document.createElement('div');
     day.classList.add(...classes);
@@ -77,14 +77,14 @@ export const cardCalendar = (input) => {
   const options = getDates();
 
   const cardCalendarNode = document.querySelector(containerClassName);
-  cardCalendarNode.classList.add('card-calendar--close');
+  cardCalendarNode.classList.add('card-calendar_close');
   cardCalendarNode.querySelector('.card-calendar__title').textContent = options.title;
 
   const numbersNode = cardCalendarNode.querySelector('.card-calendar__numbers');
   const buttonClearNode = cardCalendarNode.querySelector('.card-calendar__button-clear');
   const buttonSubmitNode = cardCalendarNode.querySelector('.card-calendar__button-submit');
-  const buttonRightNode = cardCalendarNode.querySelector('.card-calendar__button--right');
-  const buttonLeftNode = cardCalendarNode.querySelector('.card-calendar__button--left');
+  const buttonRightNode = cardCalendarNode.querySelector('.card-calendar__button_right');
+  const buttonLeftNode = cardCalendarNode.querySelector('.card-calendar__button_left');
 
   drawDays(options.dates, numbersNode);
 
@@ -148,7 +148,7 @@ export const cardCalendar = (input) => {
   });
 
   buttonSubmitNode.addEventListener('click', () => {
-    cardCalendarNode.classList.add('card-calendar--close');
+    cardCalendarNode.classList.add('card-calendar_close');
     const start = options.dates.filter(it => it.startDate)[0];
     const end = options.dates.filter(it => it.endDate)[0];
     if(start && end && input) {
@@ -157,26 +157,26 @@ export const cardCalendar = (input) => {
   });
 
   input.addEventListener('click', () => {
-    cardCalendarNode.classList.remove('card-calendar--close')
+    cardCalendarNode.classList.remove('card-calendar_close')
   })
 };
 
 export const groupCardCalendar = (block) => {
   if(!block) return;
-  const input = block.querySelector('.group-dropdown-date__input--left');
-  const input2 = block.querySelector('.group-dropdown-date__input--right');
+  const input = block.querySelector('.js-group-dropdown-date__input_left');
+  const input2 = block.querySelector('.js-group-dropdown-date__input_right');
 
   const options = getDates();
 
   const cardCalendarNode = block.querySelector('.card-calendar');
-  cardCalendarNode.classList.add('card-calendar--close');
+  cardCalendarNode.classList.add('card-calendar_close');
   cardCalendarNode.querySelector('.card-calendar__title').textContent = options.title;
 
   const numbersNode = cardCalendarNode.querySelector('.card-calendar__numbers');
   const buttonClearNode = cardCalendarNode.querySelector('.card-calendar__button-clear');
   const buttonSubmitNode = cardCalendarNode.querySelector('.card-calendar__button-submit');
-  const buttonRightNode = cardCalendarNode.querySelector('.card-calendar__button--right');
-  const buttonLeftNode = cardCalendarNode.querySelector('.card-calendar__button--left');
+  const buttonRightNode = cardCalendarNode.querySelector('.card-calendar__button_right');
+  const buttonLeftNode = cardCalendarNode.querySelector('.card-calendar__button_left');
 
   drawDays(options.dates, numbersNode);
 
@@ -243,7 +243,7 @@ export const groupCardCalendar = (block) => {
   const pad = (n) => n < 10 ? '0' + n : n;
 
   buttonSubmitNode.addEventListener('click', () => {
-    cardCalendarNode.classList.add('card-calendar--close');
+    cardCalendarNode.classList.add('card-calendar_close');
     const start = options.dates.filter(it => it.startDate)[0];
     const end = options.dates.filter(it => it.endDate)[0];
     if(start) {
@@ -255,10 +255,10 @@ export const groupCardCalendar = (block) => {
   });
 
   input.addEventListener('click', () => {
-    cardCalendarNode.classList.remove('card-calendar--close')
+    cardCalendarNode.classList.remove('card-calendar_close')
   });
 
   input2.addEventListener('click', () => {
-    cardCalendarNode.classList.remove('card-calendar--close')
+    cardCalendarNode.classList.remove('card-calendar_close')
   });
 };

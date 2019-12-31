@@ -2,23 +2,23 @@ mixin dropdown(text, title, status, isOpen, values, form, size)
 	- var clear = false
 
 	-
-		var open = + (isOpen) ? 'dropdown__list--open' : ''
-		var smallSize = size === 'small' ? ' dropdown--small ' : ''
-		var mediumSize = size === 'medium' ? ' dropdown--medium ' : ''
-		var wideSize = size === 'wide' ? ' dropdown--wide ' : ''
+		var open = + (isOpen) ? 'dropdown__list_open' : ''
+		var smallSize = size === 'small' ? ' dropdown_small ' : ''
+		var mediumSize = size === 'medium' ? ' dropdown_medium ' : ''
+		var wideSize = size === 'wide' ? ' dropdown_wide ' : ''
 
 	div(class=smallSize + mediumSize + wideSize).dropdown
 		if title
 			p.dropdown__top
 				span #{title}
 				span.dropdown__status #{status}
-		button(class="dropdown__text dropdown__text--border-bottom" type="button") #{text}
+		button(class="dropdown__text dropdown__text_border-bottom" type="button") #{text}
 		if (isOpen)
 			ul(class=open).dropdown__list
 				each val in values
 					if !clear
 						- clear = !!val.num
-					- var disabled = (!val.num) ? ' dropdown__button--disabled ' : ''
+					- var disabled = (!val.num) ? ' dropdown__button_disabled ' : ''
 					li.dropdown__option
 						p.dropdown__option-text #{val.title}
 						.dropdown__buttons
@@ -26,25 +26,25 @@ mixin dropdown(text, title, status, isOpen, values, form, size)
 							span.dropdown__numeric #{val.num}
 							button(type="button").dropdown__button +
 				if(form)
-					li.dropdown__option.dropdown__option--last
+					li.dropdown__option.dropdown__option_last
 						if clear
-							button(type="button").dropdown__button-bottom.dropdown__button-bottom--clear очистить
-						button(type="button").dropdown__button-bottom.dropdown__button-bottom--submit применить
+							button(type="button").dropdown__button-bottom.dropdown__button-bottom_clear очистить
+						button(type="button").dropdown__button-bottom.dropdown__button-bottom_submit применить
 
 
 mixin dropdownJS(text, title, status, values, id)
 
-	div(id=id).dropdown.dropdown--medium
+	div(id=id).dropdown.dropdown_medium
 		if title
 			p.dropdown__top
 				span #{title}
 				span.dropdown__status #{status}
-		input(class="dropdown__text dropdown__text--border-bottom" type="text" placeholder=text readonly)
-		ul(class=open).dropdown__list.dropdown__list--open
+		input(class="dropdown__text dropdown__text_border-bottom" type="text" placeholder=text readonly)
+		ul(class=open).dropdown__list.dropdown__list_open
 			each val in values
 				li.dropdown__option
 					p.dropdown__option-text #{val.title}
 					.dropdown__buttons
-						button(class="dropdown__button dropdown__button--disabled dropdown__button--minus" type="button") -
+						button(class="dropdown__button dropdown__button_disabled dropdown__button_minus" type="button") -
 						span.dropdown__numeric #{val.num}
-						button(type="button").dropdown__button.dropdown__button--plus +
+						button(type="button").dropdown__button.dropdown__button_plus +

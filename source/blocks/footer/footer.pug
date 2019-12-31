@@ -1,14 +1,5 @@
 include ../form-email/form-email.pug
 
-mixin list(values)
-	ul.footer__list
-		each val, index in values
-			if(index === 0)
-				li.footer__item.footer__item--title #{val}
-			else
-				li.footer__item
-					a(href="#nowhere").footer__link  #{val}
-
 mixin footer()
 	footer.footer
 		.footer__wrapper
@@ -16,9 +7,27 @@ mixin footer()
 				include ../components/logo/logo.pug
 				p.footer__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 			.footer__lists
-				+list(['навигация', 'О нас', 'Новости', 'Служба поддержки', 'Услуги'])
-				+list(['о нас', 'О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'])
-				+list(['Служба поддержки', 'Соглашения', 'Сообщества', 'Связь с нами'])
+				ul.footer__list
+					each val, index in ['навигация', 'О нас', 'Новости', 'Служба поддержки', 'Услуги']
+						if(index == 0)
+							li.footer__item.footer__item_title #{val}
+						else
+							li.footer__item
+								a(href="#nowhere").footer__link  #{val}
+				ul.footer__list
+					each val, index in ['о нас', 'О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы']
+						if(index == 0)
+							li.footer__item.footer__item_title #{val}
+						else
+							li.footer__item
+								a(href="#nowhere").footer__link  #{val}
+				ul.footer__list
+					each val, index in ['Служба поддержки', 'Соглашения', 'Сообщества', 'Связь с нами']
+						if(index == 0)
+							li.footer__item.footer__item_title #{val}
+						else
+							li.footer__item
+								a(href="#nowhere").footer__link  #{val}
 
 			.footer__subscribe
 				h3.footer__subscribe-tittle Подписка

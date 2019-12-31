@@ -44,7 +44,7 @@
   letter-spacing: 0;
   margin-bottom: 21px;
 
-  &--title {
+  &_title {
     @include fontH3();
   }
 }
@@ -86,7 +86,6 @@
   min-height: 70px;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .footer__copyright {

@@ -2,7 +2,7 @@ include ../components/checkbox/checkbox.pug
 
 mixin checkbox-list(open, values, title)
 	.checkbox-list
-		-var opened = open ? 'checkbox-list__tittle--open '  : 'checkbox-list__tittle--close '
+		-var opened = open ? 'checkbox-list__tittle_open '  : 'checkbox-list__tittle_close '
 		button(class=opened).checkbox-list__tittle #{title}
 		if(open)
 			ul.checkbox-list__list

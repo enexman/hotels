@@ -1,19 +1,17 @@
 include ../components/rate-button/rate-button.pug
 
-// { number,	lux,	price,	stars ,reviews, images	}
-
 mixin card-hotel(options)
 	.card-hotel
 		.card-hotel__slider
 			each val, index in options.images
-				- var active = (index === 0) ? 'card-hotel__slide--active' : ''
+				- var active = (index === 0) ? 'card-hotel__slide_active' : ''
 				img(src=val alt="hotel" class=active).card-hotel__slide
 			.card-hotel__buttons
-				button.card-hotel__button.card-hotel__button--activated
+				button.card-hotel__button.card-hotel__button_activated
 				button.card-hotel__button
 				button.card-hotel__button
 				button.card-hotel__button
-		.card-hotel__row.card-hotel__row--cor-1
+		.card-hotel__row-top
 			h2.card-hotel__title
 				a(href="#nowhere").card-hotel__link
 					span.card-hotel__title-num №
@@ -22,7 +20,7 @@ mixin card-hotel(options)
 						span.card-hotel__title-lux люкс
 			p.card-hotel__price #{options.price}
 				span в сутки
-		.card-hotel__row.card-hotel__row--cor-2
+		.card-hotel__row-bottom
 			+rate-button(options.stars)
 			p.card-hotel__reviews #{options.reviews}
 				span Отзывов
