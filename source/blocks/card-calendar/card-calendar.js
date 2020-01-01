@@ -1,17 +1,17 @@
 const getNameMonth = (num) => {
   switch (num) {
-    case 0 : return {name: 'янв', longName: 'Январь'};
-    case 1 : return {name: 'фев', longName: 'Февраль'};
-    case 2 : return {name: 'мар', longName: 'Март'};
-    case 3 : return {name: 'апр', longName: 'Апрель'};
-    case 4 : return {name: 'май', longName: 'Май'};
-    case 5 : return {name: 'июн', longName: 'Июнь'};
-    case 6 : return {name: 'июл', longName: 'Июль'};
-    case 7 : return {name: 'авг', longName: 'Август'};
-    case 8 : return {name: 'сен', longName: 'Сентябрь'};
-    case 9 : return {name: 'окт', longName: 'Октябрь'};
-    case 10 : return {name: 'ноя', longName: 'Ноябрь'};
-    case 11 : return {name: 'дек', longName: 'Декабрь'};
+    case 0: return { name: 'янв', longName: 'Январь' };
+    case 1: return { name: 'фев', longName: 'Февраль' };
+    case 2: return { name: 'мар', longName: 'Март' };
+    case 3: return { name: 'апр', longName: 'Апрель' };
+    case 4: return { name: 'май', longName: 'Май' };
+    case 5: return { name: 'июн', longName: 'Июнь' };
+    case 6: return { name: 'июл', longName: 'Июль' };
+    case 7: return { name: 'авг', longName: 'Август' };
+    case 8: return { name: 'сен', longName: 'Сентябрь' };
+    case 9: return { name: 'окт', longName: 'Октябрь' };
+    case 10: return { name: 'ноя', longName: 'Ноябрь' };
+    case 11: return { name: 'дек', longName: 'Декабрь' };
   }
 };
 
@@ -19,7 +19,7 @@ const getDates = () => {
   const date = new Date();
   let day;
 
-  if(date.getDay() % 7) {
+  if (date.getDay() % 7) {
     day = (date.getDate() - date.getDay()) % 7 - 6;
   } else {
     day = 1;
@@ -43,14 +43,14 @@ const getDates = () => {
   }
 
   return {
-    title: getNameMonth(date.getMonth()).longName + ' ' + date.getFullYear(),
-    dates: array
+    title: `${getNameMonth(date.getMonth()).longName} ${date.getFullYear()}`,
+    dates: array,
   };
 };
 
 const drawDays = (options, container) => {
   container.innerHTML = '';
-  options.forEach(it => {
+  options.forEach((it) => {
     const classes = ['card-calendar__number'];
     if (it.otherMonth) classes.push('card-calendar__number_empty');
     if (it.startDate) classes.push('card-calendar__number_start');
@@ -70,9 +70,9 @@ const drawDays = (options, container) => {
 };
 
 export const cardCalendar = (input) => {
-  if(!input) return;
+  if (!input) return;
 
-  const containerClassName = '.' + input.parentNode.className + ' .card-calendar';
+  const containerClassName = `.${input.parentNode.className} .card-calendar`;
 
   const options = getDates();
 
@@ -89,15 +89,14 @@ export const cardCalendar = (input) => {
   drawDays(options.dates, numbersNode);
 
   numbersNode.addEventListener('click', (ev) => {
-
-    if(options.dates.some(it => it.endDate)) return;
+    if (options.dates.some((it) => it.endDate)) return;
 
     if (options.dates.some((it) => it.startDate)) {
       const start = options.dates.reduce((prev, it, idx) => {
         if (it.startDate) {
           prev = idx;
         }
-        return prev
+        return prev;
       }, 0);
 
       options.dates.forEach((it, idx) => {
@@ -110,17 +109,16 @@ export const cardCalendar = (input) => {
         if (it.endDate) {
           prev = idx;
         }
-        return prev
+        return prev;
       }, 0);
 
-      for(let i = start + 1; i < end; i++) {
+      for (let i = start + 1; i < end; i++) {
         options.dates[i].middleDate = true;
       }
 
       drawDays(options.dates, numbersNode);
-
     } else {
-      options.dates.forEach((it => {
+      options.dates.forEach(((it) => {
         if (it.number == ev.target.textContent && it.month == ev.target.dataset.month) {
           it.startDate = true;
         }
@@ -130,7 +128,7 @@ export const cardCalendar = (input) => {
   });
 
   const clearDates = () => {
-    options.dates.forEach(it => {
+    options.dates.forEach((it) => {
       it.startDate = false;
       it.middleDate = false;
       it.endDate = false;
@@ -149,20 +147,20 @@ export const cardCalendar = (input) => {
 
   buttonSubmitNode.addEventListener('click', () => {
     cardCalendarNode.classList.add('card-calendar_close');
-    const start = options.dates.filter(it => it.startDate)[0];
-    const end = options.dates.filter(it => it.endDate)[0];
-    if(start && end && input) {
-      input.value = `${start.number} ${getNameMonth(start.month).name} - ${end.number} ${getNameMonth(end.month).name}`
+    const start = options.dates.filter((it) => it.startDate)[0];
+    const end = options.dates.filter((it) => it.endDate)[0];
+    if (start && end && input) {
+      input.value = `${start.number} ${getNameMonth(start.month).name} - ${end.number} ${getNameMonth(end.month).name}`;
     }
   });
 
   input.addEventListener('click', () => {
-    cardCalendarNode.classList.remove('card-calendar_close')
-  })
+    cardCalendarNode.classList.remove('card-calendar_close');
+  });
 };
 
 export const groupCardCalendar = (block) => {
-  if(!block) return;
+  if (!block) return;
   const input = block.querySelector('.js-group-dropdown-date__input_left');
   const input2 = block.querySelector('.js-group-dropdown-date__input_right');
 
@@ -181,15 +179,14 @@ export const groupCardCalendar = (block) => {
   drawDays(options.dates, numbersNode);
 
   numbersNode.addEventListener('click', (ev) => {
-
-    if(options.dates.some(it => it.endDate)) return;
+    if (options.dates.some((it) => it.endDate)) return;
 
     if (options.dates.some((it) => it.startDate)) {
       const start = options.dates.reduce((prev, it, idx) => {
         if (it.startDate) {
           prev = idx;
         }
-        return prev
+        return prev;
       }, 0);
 
       options.dates.forEach((it, idx) => {
@@ -202,17 +199,16 @@ export const groupCardCalendar = (block) => {
         if (it.endDate) {
           prev = idx;
         }
-        return prev
+        return prev;
       }, 0);
 
-      for(let i = start + 1; i < end; i++) {
+      for (let i = start + 1; i < end; i++) {
         options.dates[i].middleDate = true;
       }
 
       drawDays(options.dates, numbersNode);
-
     } else {
-      options.dates.forEach((it => {
+      options.dates.forEach(((it) => {
         if (it.number == ev.target.textContent && it.month == ev.target.dataset.month) {
           it.startDate = true;
         }
@@ -222,7 +218,7 @@ export const groupCardCalendar = (block) => {
   });
 
   const clearDates = () => {
-    options.dates.forEach(it => {
+    options.dates.forEach((it) => {
       it.startDate = false;
       it.middleDate = false;
       it.endDate = false;
@@ -240,25 +236,25 @@ export const groupCardCalendar = (block) => {
     clearDates();
   });
 
-  const pad = (n) => n < 10 ? '0' + n : n;
+  const pad = (n) => (n < 10 ? `0${n}` : n);
 
   buttonSubmitNode.addEventListener('click', () => {
     cardCalendarNode.classList.add('card-calendar_close');
-    const start = options.dates.filter(it => it.startDate)[0];
-    const end = options.dates.filter(it => it.endDate)[0];
-    if(start) {
+    const start = options.dates.filter((it) => it.startDate)[0];
+    const end = options.dates.filter((it) => it.endDate)[0];
+    if (start) {
       input.value = `${pad(start.number)}.${pad(start.month)}.${new Date().getFullYear()}`;
     }
-    if(end) {
+    if (end) {
       input2.value = `${pad(end.number)}.${pad(end.month)}.${new Date().getFullYear()}`;
     }
   });
 
   input.addEventListener('click', () => {
-    cardCalendarNode.classList.remove('card-calendar_close')
+    cardCalendarNode.classList.remove('card-calendar_close');
   });
 
   input2.addEventListener('click', () => {
-    cardCalendarNode.classList.remove('card-calendar_close')
+    cardCalendarNode.classList.remove('card-calendar_close');
   });
 };
