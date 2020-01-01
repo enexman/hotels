@@ -1,48 +1,23 @@
-mixin dropdownButtons(text, title, status, values, id)
+mixin dropdownButtons(parameters)
+	- var title = parameters.title
+	- var status = parameters.status
+	- var values = parameters.values
+	- var id = parameters.id
 
 	div(id=id).dropdown-buttons
 		if title
 			p.dropdown-buttons__top
 				span #{title}
 				span.dropdown-buttons__status #{status}
-		input(class="dropdown-buttons__input dropdown-buttons__input_border-bottom" type="text" placeholder=text readonly)
-		ul(class=open).dropdown-buttons__list
+		input(class="dropdown-buttons__input dropdown-buttons__input_border-bottom js-dropdown-buttons__input" type="text" placeholder="Сколько гостей" readonly)
+		ul.dropdown-buttons__list.js-dropdown-buttons__list
 			each val in values
-				li.dropdown-buttons__option
+				li.dropdown-buttons__option.js-dropdown-buttons__option
 					p.dropdown-buttons__option-text #{val.title}
 					.dropdown-buttons__buttons
-						button(class="dropdown-buttons__button dropdown-buttons__button_minus dropdown-buttons__button_disabled" type="button") -
-						span.dropdown-buttons__numeric #{val.num}
+						button(type="button").dropdown-buttons__button.dropdown-buttons__button_minus.dropdown-buttons__button_disabled.js-dropdown-buttons__button_minus -
+						span.dropdown-buttons__numeric.js-dropdown-buttons__numeric #{val.num}
 						button(type="button").dropdown-buttons__button.dropdown-buttons__button_plus +
 			li.dropdown-buttons__option.dropdown-buttons__option_last
-				button(type="button").dropdown-buttons__button-bottom.dropdown-buttons__button-bottom_clear очистить
-				button(type="button").dropdown-buttons__button-bottom.dropdown-buttons__button-bottom_submit применить
-
-
-mixin dropdownButtonsUI(text, title, status, isOpen, values, id)
-	- var clear = false
-
-	- var open = + (isOpen) ? 'dropdown-buttons__list_open' : ''
-
-	div(id=id).dropdown-buttons
-		if title
-			p.dropdown-buttons__top
-				span #{title}
-				span.dropdown-buttons__status #{status}
-		input(class="dropdown-buttons__input dropdown-buttons__input_border-bottom" type="text" placeholder=text readonly)
-		if (isOpen)
-			ul(class=open).dropdown-buttons__list
-				each val in values
-					if !clear
-						- clear = !!val.num
-					- var disabled = (!val.num) ? ' dropdown-buttons__button_disabled ' : ''
-					li.dropdown-buttons__option
-						p.dropdown-buttons__option-text #{val.title}
-						.dropdown-buttons__buttons
-							button(class="dropdown-buttons__button dropdown-buttons__button_minus" + disabled type="button") -
-							span.dropdown-buttons__numeric #{val.num}
-							button(type="button").dropdown-buttons__button.dropdown-buttons__button_plus +
-				li.dropdown-buttons__option.dropdown-buttons__option_last
-					if clear
-						button(type="button").dropdown-buttons__button-bottom.dropdown-buttons__button-bottom_clear очистить
-					button(type="button").dropdown-buttons__button-bottom.dropdown-buttons__button-bottom_submit применить
+				button(type="button").dropdown-buttons__button-bottom.dropdown-buttons__button-bottom_clear.js-dropdown-buttons__button-bottom_clear очистить
+				button(type="button").dropdown-buttons__button-bottom.dropdown-buttons__button-bottom_submit.js-dropdown-buttons__button-bottom_submit применить

@@ -23,7 +23,7 @@ main.main-form-elements
 				+textField('email', 'Email', '', 'Text Field', 'default')
 				.main-form-elements__text-field
 					+textField('email', 'Email', 'This is pretty awesome', 'Text Field', 'Hover / Focus')
-				+dropdownButtons('Сколько гостей', 'Dropdown', 'default', dropdownFE, 'drop-1')
+				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-1'})
 				.main-form-elements__masked-text-field
 					+textField('text', 'ДД.ММ.ГГГГ', '', 'masked text field', 'default')
 				div(id="form-dropdown-date")
@@ -52,9 +52,9 @@ main.main-form-elements
 					+dropdownJS('2 спальни, 2 кровати...', 'Dropdown', 'default', dropdownFE2, 'dropJS')
 					+dropdown('2 спальни, 2 кровати...', 'Dropdown', 'expanded', true, dropdownFE2, '', 'medium')
 			.main-form-elements__col
-				+dropdownButtonsUI('Сколько гостей', 'Dropdown', '', true, dropdownFE, 'drop-2')
+				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-2'})
 			.main-form-elements__col
-				+dropdownButtonsUI('3 гостя', 'Dropdown', '', true, dropdownFE3, 'drop-3')
+				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-3'})
 			.main-form-elements__col
 				+checkbox-list(false, checkboxListFE, 'expandable checkbox list')
 				.main-form-elements__checkbox

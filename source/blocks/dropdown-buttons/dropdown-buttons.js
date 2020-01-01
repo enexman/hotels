@@ -1,89 +1,87 @@
+export default class DropdownButtons {
+  constructor(id) {
+    this.blockNode = document.querySelector(id);
+    this.listNode = this.blockNode.querySelector('.js-dropdown-buttons__list');
+    this.liNodes = this.blockNode.querySelectorAll('.js-dropdown-buttons__option');
+    this.submitNode = this.blockNode.querySelector('.js-dropdown-buttons__button-bottom_submit');
+    this.clearNode = this.blockNode.querySelector('.js-dropdown-buttons__button-bottom_clear');
+    this.inputNode = this.blockNode.querySelector('.js-dropdown-buttons__input');
 
-const dropdownButtons = (blockId) => {
-  const blockNode = document.querySelector(blockId);
+    this.guest = 0;
+    this.baby = 0;
 
-  if (!blockNode) return;
+    this.inputNode.addEventListener('click', () => {
+      this.listNode.classList.toggle('dropdown-buttons__list_open');
+    });
 
-  const listNode = blockNode.querySelector('.dropdown-buttons__list');
-  const liNodes = blockNode.querySelectorAll('.dropdown-buttons__option');
-  const submitNode = blockNode.querySelector('.dropdown-buttons__button-bottom--submit');
-  const clearNode = blockNode.querySelector('.dropdown-buttons__button-bottom--clear');
+    if (this.clearNode) {
+      this.clearNode.style.display = 'none';
+    }
 
-  const inputNode = blockNode.querySelector('.dropdown-buttons__input');
+    this.submitNode.addEventListener('click', () => {
+      const babyInput = this.baby ? `, ${this.baby} младенец` : '';
+      this.inputNode.value = `${this.guest} гостя${babyInput}`;
+      this.listNode.classList.remove('dropdown-buttons__list_open');
+    });
 
-  inputNode.addEventListener('click', (ev) => {
-    listNode.classList.toggle('dropdown-buttons__list--open');
-  });
+    if (this.clearNode) {
+      this.clearNode.addEventListener('click', () => {
+        this.inputNode.value = '';
+        this.guest = 0;
+        this.baby = 0;
+        Array.from(this.liNodes).forEach((it) => {
+          const item = it.querySelector('.js-dropdown-buttons__numeric');
+          if (item) item.textContent = ' 0 ';
 
+          const minus = it.querySelector('.js-dropdown-buttons__button_minus');
+          if (minus) {
+            minus.classList.add('dropdown-buttons__button_disabled');
+          }
+        });
+        this.clearNode.style.display = 'none';
+      });
+    }
 
-  if (clearNode) {
-    clearNode.style.display = 'none';
-  }
+    Array.from(this.liNodes).forEach((it, idx) => {
+      const numeric = it.querySelector('.js-dropdown-buttons__numeric');
+      const minus = it.querySelector('.js-dropdown-buttons__button_minus');
+      it.addEventListener('click', (ev) => {
+        if (ev.target.classList.contains('dropdown-buttons__button_plus')) {
+          numeric.textContent = +numeric.textContent + 1;
+          if (idx === 2) {
+            this.baby += 1;
+          } else {
+            this.guest += 1;
+          }
+        }
+        if (ev.target.classList.contains('dropdown-buttons__button_minus')) {
+          if (!+numeric.textContent) return;
+          numeric.textContent = +numeric.textContent - 1;
+          if (idx === 2) {
+            this.baby -= 1;
+          } else {
+            this.guest -= 1;
+          }
+        }
 
-  let guest = 0;
-  let baby = 0;
+        if (!this.guest && !this.baby) {
+          this.clearNode.style.display = 'none';
+        } else {
+          this.clearNode.style.display = '';
+        }
 
-  submitNode.addEventListener('click', () => {
-    const babyInput = baby ? `, ${baby} младенец` : '';
-    inputNode.value = `${guest} гостя${babyInput}`;
-  });
-
-  if (clearNode) {
-    clearNode.addEventListener('click', () => {
-      inputNode.value = '';
-      guest = 0;
-      baby = 0;
-      Array.from(liNodes).forEach((it) => {
-        const item = it.querySelector('.dropdown-buttons__numeric');
-        if (item) item.textContent = ' 0 ';
-
-        const minus = it.querySelector('.dropdown-buttons__button--minus');
-        if (minus) {
-          minus.classList.add('dropdown-buttons__button--disabled');
+        if (numeric) {
+          if (+numeric.textContent) {
+            minus.classList.remove('dropdown-buttons__button_disabled');
+          } else {
+            minus.classList.add('dropdown-buttons__button_disabled');
+          }
         }
       });
     });
   }
+}
 
-  Array.from(liNodes).forEach((it, idx) => {
-    const numeric = it.querySelector('.dropdown-buttons__numeric');
-    const minus = it.querySelector('.dropdown-buttons__button--minus');
-    it.addEventListener('click', (ev) => {
-      if (ev.target.classList.contains('dropdown-buttons__button--plus')) {
-        numeric.textContent = +numeric.textContent + 1;
-        if (idx === 2) {
-          baby += 1;
-        } else {
-          guest += 1;
-        }
-      }
-      if (ev.target.classList.contains('dropdown-buttons__button--minus')) {
-        if (!+numeric.textContent) return;
-        numeric.textContent = +numeric.textContent - 1;
-        if (idx === 2) {
-          baby -= 1;
-        } else {
-          guest -= 1;
-        }
-      }
-
-      if (!guest && !baby) {
-        clearNode.style.display = 'none';
-      } else {
-        clearNode.style.display = '';
-      }
-
-      if (numeric) {
-        if (+numeric.textContent) {
-          minus.classList.remove('dropdown-buttons__button--disabled');
-        } else {
-          minus.classList.add('dropdown-buttons__button--disabled');
-        }
-      }
-    });
-  });
-};
-
-// dropdownButtons('#drop-1');
-// dropdownButtons('#drop-find');
-// dropdownButtons('#drop-3');
+new DropdownButtons('#drop-1');
+new DropdownButtons('#drop-2');
+new DropdownButtons('#drop-3');

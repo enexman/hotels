@@ -1,3 +1,4 @@
+include ../../variables/variables.pug
 include ../group-dropdown-date/group-dropdown-date.pug
 include ../dropdown-buttons/dropdown-buttons.pug
 include ../components/dropdown/dropdown.pug
@@ -10,5 +11,5 @@ form.card-find
 	.card-find__row
 		+groupDropdownDate('ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ', 'прибытие', 'выезд')
 	.card-find__wrapper
-		+dropdownButtons('Сколько гостей', 'Гости', '', values, 'drop-1')
+		+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-1'})
 	+button-big('подобрать номер')
