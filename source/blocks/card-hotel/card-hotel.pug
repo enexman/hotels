@@ -1,4 +1,4 @@
-include ../components/rate-button/rate-button.pug
+include ../rate-button/rate-button.pug
 
 mixin card-hotel(options)
 	.card-hotel
@@ -21,6 +21,6 @@ mixin card-hotel(options)
 			p.card-hotel__price #{options.price}
 				span в сутки
 		.card-hotel__row-bottom
-			+rate-button(options.stars)
+			+rate-button({num: options.stars})
 			p.card-hotel__reviews #{options.reviews}
 				span Отзывов

@@ -1,0 +1,12 @@
+mixin range(parameters)
+	- var title = parameters.title
+	- var text = parameters.text
+	- var description = parameters.description
+	- var id = parameters.id
+
+	.range
+		p.range__wrapper
+			label(for="amount").range__title #{title}
+			input(type="text" id="amount" readonly).range__input
+		div(id=id)
+		p.range__description #{description ? description : ''}

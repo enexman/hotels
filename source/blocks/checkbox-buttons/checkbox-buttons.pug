@@ -1,10 +1,12 @@
-include ../components/checkbox/checkbox.pug
-include ../components/title-3lvl/title-3lvl.pug
+include ../checkbox/checkbox.pug
+include ../title-third-lvl/title-third-lvl.pug
 
 
-mixin checkbox-buttons(title, values)
+mixin checkbox-buttons(parameters)
+	- var title = parameters.title
+	- var values = parameters.values
 	.checkbox-buttons
-		+title-3lvl(title)
+		+title-third-lvl({title: title})
 		.checkbox-buttons__corrector
 		each val in values
-			+checkbox(val.title, val.text, val.checked, val.width)
+			+checkbox({title: val.title, text: val.text, checked: val.checked, size: val.width})

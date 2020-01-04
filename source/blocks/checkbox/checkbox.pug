@@ -1,0 +1,17 @@
+
+mixin checkbox(parameters)
+	- var title = parameters.title
+	- var text = parameters.text
+	- var checked = parameters.checked
+	- var size = parameters.size
+
+	- var sizeTextClass = title ? ' checkbox__text_rich ' : ''
+	- var sizeBlockClass = size ? ' checkbox_wide ' : ''
+	div(class=sizeBlockClass).checkbox
+		label.checkbox__label
+			input(type="checkbox" checked=checked).checkbox__input
+			span.checkbox__box
+			span.checkbox__arrow
+			span.checkbox__title #{title}
+			span(class=sizeTextClass).checkbox__text #{text}
+

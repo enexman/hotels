@@ -1,7 +1,9 @@
-mixin formEmail(labelText)
+mixin form-email(parameters)
+	- var title = parameters.title
+
 	form.form-email
 		label.form-email__label
 			span.form-email__top
-				span #{labelText}
+				span #{title}
 			input(type="email" placeholder="Email").form-email__input
 		button(type="submit").form-email__button

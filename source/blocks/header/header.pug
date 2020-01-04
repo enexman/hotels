@@ -1,9 +1,13 @@
 include ../main-nav/main-nav.pug
 
-mixin header(items, user, ui)
+mixin header(parameters)
+	- var items = parameters.items
+	- var user = parameters.user
+	- var ui = parameters.ui
+
 	header.header
 		.header__wrapper
-			include ../components/logo/logo.pug
-			+main-nav(items, user, ui)
+			include ../logo/logo.pug
+			+main-nav({items: items, user: user, ui: ui})
 
 

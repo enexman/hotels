@@ -1,0 +1,20 @@
+include ../like-button/like-button.pug
+
+mixin review(parameters)
+	- var link = parameters.link
+	- var title = parameters.title
+	- var text = parameters.text
+	- var review = parameters.review
+	- var likes = parameters.likes
+	- var liked = parameters.liked
+
+	.review
+		.review__user
+			p.review__img-wrapper
+				img(src=link)
+			.review__wrapper
+				p.review__title #{title}
+				p.review__text #{text}
+		.review__wrap
+			+like-button({num: likes, checked: liked})
+			p.review__review #{review}

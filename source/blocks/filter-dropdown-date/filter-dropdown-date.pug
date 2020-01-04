@@ -1,10 +1,11 @@
 
-mixin filterDropdownDate(text, title)
+mixin filterDropdownDate(parameters)
+	- var title = parameters.title
 
 	div.filter-dropdown-date
 		if title
 			p.filter-dropdown__top
 				span #{title}
-		input(type="text" placeholder=text).filter-dropdown-date__input
+		input(type="text" placeholder="ДД.МММ - ДД.МММ" readonly).filter-dropdown-date__input
 		.filter-dropdown-date__calendar
 			include ../card-calendar/card-calendar.pug

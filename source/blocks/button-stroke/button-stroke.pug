@@ -1,0 +1,6 @@
+mixin button-stroke(parameters)
+	- var title = parameters.title
+	- var focus = parameters.focus
+
+	- var classFocus = focus ? ' button-stroke_focus ' : ''
+	a(href="#nowhere" class=classFocus).button-stroke #{title}

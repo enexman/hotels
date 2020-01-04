@@ -1,6 +1,6 @@
-include ../components/toggle/toggle.pug
-include ../components/title-3lvl/title-3lvl.pug
+include ../toggle/toggle.pug
+include ../title-third-lvl/title-third-lvl.pug
 .toggles
-	+title-3lvl('Toggle')
-	+toggle('Получать спецпредложения', true)
-	+toggle('Получать спецпредложения', false)
+	+title-third-lvl({title: 'Toggle'})
+	+toggle({text: 'Получать спецпредложения', checked: true})
+	+toggle({text: 'Получать спецпредложения', checked: false})

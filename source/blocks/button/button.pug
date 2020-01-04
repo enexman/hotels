@@ -1,0 +1,6 @@
+mixin button(parameters)
+	- var title = parameters.title
+	- var focus = parameters.focus
+
+	- var classFocus = focus ? ' button_focus ' : ''
+	a(href="#nowhere" class=classFocus).button #{title}

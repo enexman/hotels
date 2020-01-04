@@ -1,18 +1,18 @@
 include ../../variables/variables.pug
-include ../components/text-field/text-field.pug
-include ../components/title-3lvl/title-3lvl.pug
+include ../text-field/text-field.pug
+include ../title-third-lvl/title-third-lvl.pug
 include ../form-email/form-email.pug
 include ../components/dropdown/dropdown.pug
 include ../components/dropdown-date/dropdown-date.pug
 include ../filter-dropdown-date/filter-dropdown-date.pug
-include ../components/checkbox/checkbox.pug
+include ../checkbox/checkbox.pug
 include ../checkbox-list/checkbox-list.pug
-include ../components/self-element/self-element.pug
-include ../components/radio/radio.pug
+include ../self-element/self-element.pug
+include ../radio/radio.pug
 include ../checkbox-buttons/checkbox-buttons.pug
-include ../components/bullet-list/bullet-list.pug
-include ../components/review/review.pug
-include ../components/range/range.pug
+include ../bullet-list/bullet-list.pug
+include ../review/review.pug
+include ../range/range.pug
 include ../group-dropdown-date/group-dropdown-date.pug
 include ../dropdown-buttons/dropdown-buttons.pug
 
@@ -20,54 +20,67 @@ main.main-form-elements
 	.main-form-elements__wrapper
 		.main-form-elements__container
 			.main-form-elements__col
-				+textField('email', 'Email', '', 'Text Field', 'default')
+				+textField({type: 'email', placeholder: 'Email', title: 'Text field'})
 				.main-form-elements__text-field
-					+textField('email', 'Email', 'This is pretty awesome', 'Text Field', 'Hover / Focus')
-				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-1'})
+					+textField({type: 'email', placeholder: 'Email', title: 'Text field'})
+				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-first'})
 				.main-form-elements__masked-text-field
-					+textField('text', 'ДД.ММ.ГГГГ', '', 'masked text field', 'default')
+					+textField({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'Masked text field'})
 				div(id="form-dropdown-date")
-					+groupDropdownDate('ДД.ММ.ГГГГ', '19.08.2019', 'date Dropdown', 'date Dropdown')
+					+groupDropdownDate({titleLeft: 'Date dropdown', titleRight: 'Date dropdown', placeholder: 'ДД.ММ.ГГГГ'})
 				.main-form-elements__filter
-					+filterDropdownDate('19 авг - 23 авг', 'filter date dropdown')
-				+formEmail('subscription text field')
+					+filterDropdownDate({title: 'filter date dropdown'})
+				+form-email({title: 'subscription text field'})
 			.main-form-elements__col
-				+checkbox-buttons('Checkbox Buttons', checkboxButtons)
+				+checkbox-buttons({title: 'Checkbox Buttons', values: checkboxButtons})
 				.main-form-elements__radio
-					+radio('test', 'Radio Buttons', [{text: 'Мужчина', checked: true}, {
-						text: 'Женщина',
-						checked: false
-					}])
+					+radio({
+						name: 'test',
+						title: 'Radio Buttons',
+						values: [{text: 'Мужчина', checked: true}, {text: 'Женщина',checked: false}]
+					})
 				include ../toggles/toggles.pug
 				include ../like-buttons/like-buttons.pug
 				include ../rate-buttons/rate-buttons.pug
 			.main-form-elements__col
-				+range('Range Slider', '5 000₽ - 10 000₽', 'Стоимость за сутки пребывания в номере')
+				+range({
+					title: 'Range Slider',
+					text: '5 000₽ - 10 000₽',
+					description: 'Стоимость за сутки пребывания в номере',
+					id: 'slider-range'
+				})
 				include ../buttons/buttons.pug
 				.main-form-elements__pagination
-					+title-3lvl('Pagination')
-					include ../components/pagination/pagination.pug
+					+title-third-lvl({title: 'Pagination'})
+					include ../pagination/pagination.pug
 			.main-form-elements__col
 				.main-form-elements__dropdown
 					+dropdownJS('2 спальни, 2 кровати...', 'Dropdown', 'default', dropdownFE2, 'dropJS')
 					+dropdown('2 спальни, 2 кровати...', 'Dropdown', 'expanded', true, dropdownFE2, '', 'medium')
 			.main-form-elements__col
-				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-2'})
+				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-second'})
 			.main-form-elements__col
-				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-3'})
+				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-third'})
 			.main-form-elements__col
-				+checkbox-list(false, checkboxListFE, 'expandable checkbox list')
+				+checkbox-list({open: false, values: checkboxListFE, title: 'expandable checkbox list'})
 				.main-form-elements__checkbox
-					+checkbox-list(true, checkboxListFE, 'expandable checkbox list')
+					+checkbox-list({open: true, values: checkboxListFE, title: 'expandable checkbox list'})
 			.main-form-elements__col
 				.main-form-elements__list-buttons
-					+checkbox-buttons('Rich Checkbox Buttons', richCheckboxButtons)
+					+checkbox-buttons({title: 'Rich Checkbox Buttons', values: richCheckboxButtons})
 			.main-form-elements__col
 				.main-form-elements__list-buttons
-					+bullet-list('bullet list', bulletList)
+					+bullet-list({title: 'bullet list', values: bulletList})
 			.main-form-elements__col
-				+self-element("/img/insert-emoticon.svg", 'Комфорт', 'Шумопоглощающие стены')
-				+self-element("/img/location-city.svg", 'Удобство', 'Окно в каждой из спален')
+				+self-element({link: '/img/insert-emoticon.svg', title: 'Комфорт', text: 'Шумопоглощающие стены'})
+				+self-element({link: '/img/location-city.svg', title: 'Удобство', text: 'Окно в каждой из спален'})
 			.main-form-elements__auto
 				.main-form-elements__review
-					+review('/img/murad.png', 'Мурад Сарафанов', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', 12, true)
+					+review({
+						link: '/img/murad.png',
+						title: 'Мурад Сарафанов',
+						text: '5 дней назад',
+						review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+						likes: 12,
+						liked: true
+					})

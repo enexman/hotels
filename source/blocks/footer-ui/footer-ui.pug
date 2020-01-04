@@ -4,7 +4,7 @@ mixin footer-ui()
 	footer.footer-ui
 		.footer-ui__wrapper
 			.footer-ui__logo
-				include ../components/logo/logo.pug
+				include ../logo/logo.pug
 				p.footer-ui__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
 			.footer-ui__lists
 				ul.footer-ui__list
@@ -32,7 +32,7 @@ mixin footer-ui()
 			.footer-ui__subscribe
 				h3.footer-ui__subscribe-tittle Subscribe to our newsletter
 				p.footer-ui__subscribe-description Receive our latest news and promotions in your inbox!
-				+formEmail('')
+				+form-email({title: ''})
 		.footer-ui__line
 		.footer-ui__bottom
 			p.footer-ui__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.

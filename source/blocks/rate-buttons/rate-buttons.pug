@@ -1,8 +1,8 @@
-include ../components/title-3lvl/title-3lvl.pug
-include ../components/rate-button/rate-button.pug
+include ../title-third-lvl/title-third-lvl.pug
+include ../rate-button/rate-button.pug
 
 .rate-buttons
-	+title-3lvl('rate button')
+	+title-third-lvl({title: 'rate button'})
 	.rate-buttons__wrapper
-		+rate-button(4)
-		+rate-button(5)
+		+rate-button({num: 4})
+		+rate-button({num: 5})

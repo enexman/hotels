@@ -1,6 +1,7 @@
 export default class DropdownButtons {
   constructor(id) {
     this.blockNode = document.querySelector(id);
+    if(!this.blockNode) return
     this.listNode = this.blockNode.querySelector('.js-dropdown-buttons__list');
     this.liNodes = this.blockNode.querySelectorAll('.js-dropdown-buttons__option');
     this.submitNode = this.blockNode.querySelector('.js-dropdown-buttons__button-bottom_submit');
@@ -82,6 +83,6 @@ export default class DropdownButtons {
   }
 }
 
-new DropdownButtons('#drop-1');
-new DropdownButtons('#drop-2');
-new DropdownButtons('#drop-3');
+new DropdownButtons('#drop-first');
+new DropdownButtons('#drop-second');
+new DropdownButtons('#drop-third');

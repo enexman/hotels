@@ -1,6 +1,10 @@
-include ../components/checkbox/checkbox.pug
+include ../checkbox/checkbox.pug
 
-mixin checkbox-list(open, values, title)
+mixin checkbox-list(parameters)
+	- var open = parameters.open
+	- var values = parameters.values
+	- var title = parameters.title
+
 	.checkbox-list
 		-var opened = open ? 'checkbox-list__tittle_open '  : 'checkbox-list__tittle_close '
 		button(class=opened).checkbox-list__tittle #{title}
@@ -8,4 +12,4 @@ mixin checkbox-list(open, values, title)
 			ul.checkbox-list__list
 				each val in values
 					li.checkbox-list__item
-						+checkbox(val.title, val.text, val.checked, val.width)
+						+checkbox({title: val.title, text: val.text, checked: val.checked, size: val.width})

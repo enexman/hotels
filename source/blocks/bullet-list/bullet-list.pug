@@ -1,0 +1,14 @@
+include ../title-third-lvl/title-third-lvl.pug
+
+mixin bullet-list(parameters)
+	- var title = parameters.title
+	- var values = parameters.values
+
+	.bullet-list
+		if title === 'bullet list'
+			+title-third-lvl({title: title})
+		else
+			h3.bullet-list__title #{title}
+		ul
+			each val in values
+				li.bullet-list__item #{val}

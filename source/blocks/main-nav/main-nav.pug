@@ -1,5 +1,9 @@
 
-mixin main-nav(items, user, ui)
+mixin main-nav(parameters)
+	-var items = parameters.items
+	-var user = parameters.user
+	-var ui = parameters.ui
+
 	- var classUi = ui ? 'main-nav__list_ui' : ' '
 	- var classLogged = (ui && user.logged) ? ' main-nav__list_logged' : ' '
 	nav.main-nav

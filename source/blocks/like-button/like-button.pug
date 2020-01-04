@@ -1,0 +1,11 @@
+mixin like-button(parameters)
+	- var num = parameters.num
+	- var checked = parameters.checked
+
+	div.like-button
+		label.like-button__label
+			input(type='checkbox' checked=checked).like-button__input
+			span.like-button__box
+			span.like-button__heart
+			span.like-button__heart-small
+			span.like-button__number #{num}

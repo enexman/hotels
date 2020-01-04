@@ -1,16 +1,19 @@
-mixin groupDropdownDate(text, text2, title, title2)
+mixin groupDropdownDate(parameters)
+	-var titleLeft = parameters.titleLeft
+	-var titleRight = parameters.titleRight
+	-var placeholder = parameters.placeholder
 
 	.group-dropdown-date
 		div.group-dropdown-date__wrapper
-			if title
+			if titleLeft
 				p.group-dropdown-date__top
-					span #{title}
-			input(type="text" placeholder=text).group-dropdown-date__input.js-group-dropdown-date__input_left
+					span #{titleLeft}
+			input(type="text" placeholder=placeholder readonly).group-dropdown-date__input.js-group-dropdown-date__input_left
 
 		div.group-dropdown-date__wrapper
-			if title2
+			if titleRight
 				p.group-dropdown-date__top
-					span #{title2}
-			input(type="text" placeholder=text2).group-dropdown-date__input.js-group-dropdown-date__input_right
+					span #{titleRight}
+			input(type="text" placeholder=placeholder readonly).group-dropdown-date__input.js-group-dropdown-date__input_right
 		.group-dropdown-date__calendar
 			include ../card-calendar/card-calendar.pug

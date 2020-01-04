@@ -1,18 +1,18 @@
-include ../components/button/button.pug
-include ../components/button-border/button-border.pug
-include ../components/button-stroke/button-stroke.pug
-include ../components/button-big/button-big.pug
-include ../components/title-3lvl/title-3lvl.pug
+include ../button/button.pug
+include ../button-border/button-border.pug
+include ../button-stroke/button-stroke.pug
+include ../button-big/button-big.pug
+include ../title-third-lvl/title-third-lvl.pug
 
 .buttons
-	+title-3lvl('buttons')
+	+title-third-lvl({title: 'buttons'})
 	.buttons__row
-		+button('CLICK ME')
-		+button('CLICK ME', true)
+		+button({title: 'CLICK ME', focus: false})
+		+button({title: 'CLICK ME', focus: true})
 	.buttons__row
-		+button-border('CLICK ME')
-		+button-border('CLICK ME', true)
-	.buttons__row.buttons__row--width
-		+button-stroke('CLICK ME')
-		+button-stroke('CLICK ME', true)
-	+button-big('перейти к оплате')
+		+button-border({title: 'CLICK ME', focus: false})
+		+button-border({title: 'CLICK ME', focus: true})
+	.buttons__row.buttons__row_width
+		+button-stroke({title: 'CLICK ME', focus: false})
+		+button-stroke({title: 'CLICK ME', focus: true})
+	+button-big({title: 'перейти к оплате'})

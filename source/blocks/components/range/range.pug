@@ -1,8 +1,0 @@
-
-mixin range(title, text, description)
-	.range
-		p.range__wrapper
-			label(for="amount").range__title #{title}
-			input(type="text" id="amount" readonly).range__input
-		div(id="slider-range")
-		p.range__description #{description ? description : ''}

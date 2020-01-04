@@ -1,0 +1,10 @@
+mixin toggle(parameters)
+	- var text = parameters.text
+	- var checked = parameters.checked
+
+	div.toggle
+		label.toggle__label
+			input(type='checkbox' checked=checked).toggle__input
+			span.toggle__box
+			span.toggle__circle
+			span.toggle__text #{text}

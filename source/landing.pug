@@ -4,17 +4,18 @@ include ./blocks/head/head.pug
 
 doctype html
 html(lang='ru')
-	+head('Landing')
+	+head({title: 'Landing'})
 	body
-		+header(
-		[
-			{title: 'О нас', modifier: false, active: false},
-			{title: 'Услуги', modifier: true, active: false},
-			{title: 'Вакансии', modifier: false, active: false},
-			{title: 'Новости', modifier: false, active: false},
-			{title: 'Соглашения', modifier: true, active: false}
-		],
-		{logged: false, enter: 'войти', register: 'зарегистрироваться', entered: ''}
-		)
+		+header({
+			items: [
+				{title: 'О нас', modifier: false, active: false},
+				{title: 'Услуги', modifier: true, active: false},
+				{title: 'Вакансии', modifier: false, active: false},
+				{title: 'Новости', modifier: false, active: false},
+				{title: 'Соглашения', modifier: true, active: false}
+			],
+			user: {logged: false, enter: 'войти', register: 'зарегистрироваться', entered: ''},
+			ui: false
+		})
 		include ./blocks/main-page/main-page.pug
 		+footer()
