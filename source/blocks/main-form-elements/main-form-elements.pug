@@ -2,7 +2,7 @@ include ../../variables/variables.pug
 include ../text-field/text-field.pug
 include ../title-third-lvl/title-third-lvl.pug
 include ../form-email/form-email.pug
-include ../components/dropdown/dropdown.pug
+include ../dropdown/dropdown.pug
 include ../components/dropdown-date/dropdown-date.pug
 include ../filter-dropdown-date/filter-dropdown-date.pug
 include ../checkbox/checkbox.pug
@@ -55,8 +55,8 @@ main.main-form-elements
 					include ../pagination/pagination.pug
 			.main-form-elements__col
 				.main-form-elements__dropdown
-					+dropdownJS('2 спальни, 2 кровати...', 'Dropdown', 'default', dropdownFE2, 'dropJS')
-					+dropdown('2 спальни, 2 кровати...', 'Dropdown', 'expanded', true, dropdownFE2, '', 'medium')
+					+dropdown({text: '2 спальни, 2 кровати...', title: 'Dropdown', values: dropdownFE2, id: 'drop-fe'})
+					+dropdown({text: '2 спальни, 2 кровати...', title: 'Dropdown', values: dropdownFE2, id: 'drop-fe-second'})
 			.main-form-elements__col
 				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-second'})
 			.main-form-elements__col

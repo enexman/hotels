@@ -2,7 +2,7 @@ include  ../../variables/variables.pug
 include ../card-hotel/card-hotel.pug
 include ../components/dropdown-date/dropdown-date.pug
 include ../filter-dropdown-date/filter-dropdown-date.pug
-include ../components/dropdown/dropdown.pug
+include ../dropdown/dropdown.pug
 include ../dropdown-buttons/dropdown-buttons.pug
 include ../range/range.pug
 include ../checkbox-buttons/checkbox-buttons.pug
@@ -28,7 +28,12 @@ main.main-search-room
 			+checkbox-buttons({title: 'Checkbox Buttons', values: checkboxButtons})
 		+checkbox-buttons({title: 'Доступность', values: richCheckboxButtons})
 		.main-search-room__dropdown-bottom
-			+dropdownJS('2 спальни, 2 кровати...', 'удобства номера', '', dropdownFE2, 'drop-search2')
+			+dropdown({
+				text: '2 спальни, 2 кровати...',
+				title: 'удобства номера',
+				values: dropdownFE2,
+				id: 'drop-fe'
+			})
 		+checkbox-list({open: false, values: checkboxList, title: 'дополнительные удобства'})
 	section.main-search-room__rooms
 		p.main-search-room__title Номера, которые мы для вас подобрали

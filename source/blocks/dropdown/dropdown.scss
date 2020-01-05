@@ -11,6 +11,10 @@
     width: 268px;
   }
 
+  &_medium:first-child {
+    z-index: 5;
+  }
+
   &_small {
     width: 152px;
   }

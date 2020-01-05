@@ -1,6 +1,5 @@
 mixin dropdownButtons(parameters)
 	- var title = parameters.title
-	- var status = parameters.status
 	- var values = parameters.values
 	- var id = parameters.id
 
@@ -8,7 +7,7 @@ mixin dropdownButtons(parameters)
 		if title
 			p.dropdown-buttons__top
 				span #{title}
-				span.dropdown-buttons__status #{status}
+				span.dropdown-buttons__status
 		input(class="dropdown-buttons__input dropdown-buttons__input_border-bottom js-dropdown-buttons__input" type="text" placeholder="Сколько гостей" readonly)
 		ul.dropdown-buttons__list.js-dropdown-buttons__list
 			each val in values

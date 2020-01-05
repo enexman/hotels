@@ -1,0 +1,20 @@
+mixin dropdown(parameters)
+	- var text = parameters.text
+	- var title = parameters.title
+	- var values = parameters.values
+	- var id = parameters.id
+
+	div(id=id).dropdown.dropdown_medium
+		if title
+			p.dropdown__top
+				span #{title}
+				span.dropdown__status
+		input(class="dropdown__text js-dropdown__text dropdown__text_border-bottom" type="text" placeholder=text readonly)
+		ul(class=open).dropdown__list.js-dropdown__list.dropdown__list_open
+			each val in values
+				li.dropdown__option.js-dropdown__option
+					p.dropdown__option-text.js-dropdown__option-text #{val.title}
+					.dropdown__buttons
+						button(class="dropdown__button dropdown__button_disabled dropdown__button_minus js-dropdown__button-minus" type="button") -
+						span.dropdown__numeric.js-dropdown__numeric #{val.num}
+						button(type="button").dropdown__button.dropdown__button_plus +
