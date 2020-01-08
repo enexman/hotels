@@ -1,8 +1,8 @@
-section.card-calendar
+section.card-calendar.js-card-calendar
 	.card-calendar__header
-		button.card-calendar__button.card-calendar__button_left
-		h2.card-calendar__title Август 2019
-		button.card-calendar__button.card-calendar__button_right
+		button(type="button").card-calendar__button.card-calendar__button_left
+		h2.card-calendar__title.js-card-calendar__title Август 2019
+		button(type="button").card-calendar__button.card-calendar__button_right
 	.card-calendar__wrapper
 		.card-calendar__days
 			.card-calendar__day Пн
@@ -12,7 +12,7 @@ section.card-calendar
 			.card-calendar__day Пт
 			.card-calendar__day Сб
 			.card-calendar__day Вс
-		.card-calendar__numbers
+		.card-calendar__numbers.js-card-calendar__numbers
 			div(data-number="1").card-calendar__number.card-calendar__number_empty 29
 			div(data-number="1").card-calendar__number.card-calendar__number_empty 30
 			div(data-number="1").card-calendar__number.card-calendar__number_empty 31
@@ -49,5 +49,5 @@ section.card-calendar
 			div(data-number="1").card-calendar__number 31
 			div(data-number="1").card-calendar__number.card-calendar__number_empty 1
 	.card-calendar__buttons
-		button.card-calendar__button-clear очистить
-		button.card-calendar__button-submit применить
+		button(type="button").card-calendar__button-clear.js-card-calendar__button-clear очистить
+		button(type="button").card-calendar__button-submit.js-card-calendar__button-submit применить

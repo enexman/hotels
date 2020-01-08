@@ -1,4 +1,3 @@
+import CardCalendar from '../card-calendar/card-calendar';
 
-import { cardCalendar } from '../card-calendar/card-calendar';
-
-// cardCalendar(document.querySelector('.filter-dropdown-date__input'));
+new CardCalendar(document.querySelector('.filter-dropdown-date__input'));
