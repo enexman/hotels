@@ -13,6 +13,13 @@
   min-height: 70px;
 }
 
+.header__logo {
+  margin-top: 5px;
+}
+.header__nav {
+  margin-left: auto;
+}
+
 @media(max-width: $desktopWidth) {
   .header__wrapper {
     flex-wrap: wrap;

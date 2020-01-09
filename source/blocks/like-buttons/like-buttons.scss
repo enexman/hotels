@@ -1,8 +1,13 @@
-.like-buttons {
-  margin-bottom: 40px;
+
+.like-buttons__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 16px;
+
 }
 
-.like-buttons__wrapper {
-  display: flex;
-  margin-top: 16px;
+.like-buttons__item {
+  margin-right: 10px;
 }

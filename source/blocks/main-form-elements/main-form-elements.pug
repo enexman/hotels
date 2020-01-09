@@ -38,8 +38,10 @@ main.main-form-elements
 						title: 'Radio Buttons',
 						values: [{text: 'Мужчина', checked: true}, {text: 'Женщина',checked: false}]
 					})
-				include ../toggles/toggles.pug
-				include ../like-buttons/like-buttons.pug
+				.main-form-elements__toggles
+					include ../toggles/toggles.pug
+				.main-form-elements__like-buttons
+					include ../like-buttons/like-buttons.pug
 				include ../rate-buttons/rate-buttons.pug
 			.main-form-elements__col
 				+range({

@@ -8,9 +8,11 @@ main.main-room-details
 			.main-room-details__wrapper
 				include ../room-information/room-information.pug
 				include ../room-impressions/room-impressions.pug
-			include ../reviews/reviews.pug
+			.main-room-details__reviews
+				include ../reviews/reviews.pug
 			.main-room-details__wrapper
 				+bullet-list({title: 'Правила', values: bulletList})
-				include ../cancellation/cancellation.pug
+				.main-room-details__cancellation
+					include ../cancellation/cancellation.pug
 		.main-room-details__modal
 			include ../card-reserve/card-reserve.pug

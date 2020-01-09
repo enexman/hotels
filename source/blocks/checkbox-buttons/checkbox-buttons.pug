@@ -8,5 +8,7 @@ mixin checkbox-buttons(parameters)
 	.checkbox-buttons
 		+title-third-lvl({title: title})
 		.checkbox-buttons__corrector
-		each val in values
-			+checkbox({title: val.title, text: val.text, checked: val.checked, size: val.width})
+		ul.checkbox-buttons__list
+			each val in values
+				li.checkbox-buttons__item
+					+checkbox({title: val.title, text: val.text, checked: val.checked, size: val.width})

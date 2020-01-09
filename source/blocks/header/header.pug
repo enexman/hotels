@@ -7,7 +7,9 @@ mixin header(parameters)
 
 	header.header
 		.header__wrapper
-			include ../logo/logo.pug
-			+main-nav({items: items, user: user, ui: ui})
+			.header__logo
+				include ../logo/logo.pug
+			.header__nav
+				+main-nav({items: items, user: user, ui: ui})
 
 

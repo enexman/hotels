@@ -1,6 +1,3 @@
-.main-room-details {
-  margin-bottom: 61px;
-}
 
 .main-room-details__bg {
   height: 485px;
@@ -15,15 +12,23 @@
   display: flex;
   margin: 0 auto;
   margin-top: 70px;
-
+  margin-bottom: 61px;
 }
 
 .main-room-details__wrapper {
   display: flex;
 }
 
+.main-room-details__reviews {
+  margin-top: 15px;
+}
+
 .main-room-details__content {
   margin-right: 70px;
+}
+
+.main-room-details__cancellation {
+  margin-left: 55px;
 }
 
 .main-room-details__modal {

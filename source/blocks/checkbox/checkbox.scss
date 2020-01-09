@@ -1,6 +1,5 @@
 .checkbox {
   width: 234px;
-  margin-top: 6px;
 
   &_wide {
     width: 255px;
@@ -12,12 +11,12 @@
   padding-left: 30px;
   display: block;
 
-  & input[type="checkbox"]:checked ~ .checkbox__arrow::before,
-  & input[type="checkbox"]:checked ~ .checkbox__arrow::after {
+  & .checkbox__input[type="checkbox"]:checked ~ .checkbox__arrow::before,
+  & .checkbox__input[type="checkbox"]:checked ~ .checkbox__arrow::after {
     display: block;
   }
 
-  & input[type="checkbox"]:checked ~ .checkbox__box {
+  & .checkbox__input[type="checkbox"]:checked ~ .checkbox__box {
     border: 1px solid $purple;
   }
 

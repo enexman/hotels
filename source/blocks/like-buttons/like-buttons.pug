@@ -3,6 +3,8 @@ include ../title-third-lvl/title-third-lvl.pug
 
 .like-buttons
 	+title-third-lvl({title: 'like button'})
-	.like-buttons__wrapper
-		+like-button({num: 2, checked: false})
-		+like-button({num: 12, checked: true})
+	ul.like-buttons__list
+		li.like-buttons__item
+			+like-button({num: 2, checked: false})
+		li.like-buttons__item
+			+like-button({num: 12, checked: true})

@@ -15,14 +15,21 @@
   margin-top: 145px;
 }
 
+.main-colors-type__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 .main-colors-type__right {
   width: 445px;
   margin-left: auto;
 }
 
+.main-colors-type__item {
+  margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
-  .main-colors-type {
-  }
 
   .main-colors-type__content {
     display: flex;
