@@ -19,8 +19,8 @@ mixin card-hotel(options)
 					if options.lux
 						span.card-hotel__title-lux люкс
 			p.card-hotel__price #{options.price}
-				span в сутки
+				span.card-hotel__price-text в сутки
 		.card-hotel__row-bottom
 			+rate-button({num: options.stars})
 			p.card-hotel__reviews #{options.reviews}
-				span Отзывов
+				span.card-hotel__reviews-text Отзывов

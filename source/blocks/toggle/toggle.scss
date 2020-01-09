@@ -7,13 +7,13 @@
   padding-left: 50px;
   display: block;
 
-  & input[type="checkbox"]:checked ~ .toggle__circle {
+  & .toggle__input[type="checkbox"]:checked ~ .toggle__circle {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     left: 24px;
 
   }
 
-  & input[type="checkbox"]:checked ~ .toggle__box {
+  & .toggle__input[type="checkbox"]:checked ~ .toggle__box {
     border: 1px solid $purple;
   }
 

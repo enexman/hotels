@@ -11,20 +11,20 @@ form.card-reserve.js-card-reserve
 			|888
 			span.card-reserve__title-lux люкс
 		p.card-reserve__price 9 990₽
-			span в сутки
+			span.card-reserve__price-text в сутки
 	.card-reserve__group-dropdown-date
 		+groupDropdownDate({titleLeft: 'прибытие', titleRight: 'выезд', placeholder: 'ДД.ММ.ГГГГ'})
 	+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-second'})
 	ul.card-reserve__list
 		li.card-reserve__item
 			p.card-reserve__item-res 9 990₽ х 4 суток
-			p 39 960₽
+			p.card-reserve__item-price 39 960₽
 		li.card-reserve__item
 			p.card-reserve__item-res.card-reserve__item-res_info Сбор за услуги: скидка 2 179₽
-			p 0₽
+			p.card-reserve__item-price 0₽
 		li.card-reserve__item
 			p.card-reserve__item-res.card-reserve__item-res_info Сбор за дополнительные услуги
-			p 300₽
+			p.card-reserve__item-price 300₽
 	p.card-reserve__sum
 		span Итого
 		span.card-reserve__sum-center

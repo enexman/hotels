@@ -9,6 +9,6 @@ mixin bullet-list(parameters)
 			+title-third-lvl({title: title})
 		else
 			h3.bullet-list__title #{title}
-		ul
+		ul.bullet-list__items
 			each val in values
 				li.bullet-list__item #{val}

@@ -1,6 +1,3 @@
-.radio {
-
-}
 
 .radio__list {
   display: flex;
@@ -19,15 +16,15 @@
   padding-left: 30px;
   display: block;
 
-  & input[type="radio"]:checked ~ .radio__circle {
+  & .radio__input[type="radio"]:checked ~ .radio__circle {
     display: block;
   }
 
-  & input[type="radio"]:checked ~ .radio__box {
+  & .radio__input[type="radio"]:checked ~ .radio__box {
     border: 1px solid $purple;
   }
 
-  & input[type="radio"]:checked ~ .radio__text {
+  & .radio__input[type="radio"]:checked ~ .radio__text {
     color: $darkShade75;
   }
 

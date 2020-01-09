@@ -93,12 +93,12 @@
   line-height: 18px;
   color: $darkShade50;
   margin: 0;
+}
 
-  & span {
-    font-weight: normal;
-    margin-left: 3px;
-    font-size: 12px;
-  }
+.card-hotel__price-text {
+  font-weight: normal;
+  margin-left: 3px;
+  font-size: 12px;
 }
 
 .card-hotel__reviews {
@@ -110,13 +110,13 @@
   color: $darkShade50;
   margin: 0;
   margin-top: 2px;
+}
 
-  & span {
-    font-family: $mainFont;
-    font-weight: normal;
-    margin-left: 5px;
-    font-size: 14px;
-  }
+.card-hotel__reviews-text {
+  font-family: $mainFont;
+  font-weight: normal;
+  margin-left: 5px;
+  font-size: 14px;
 }
 
 .card-hotel__row-top {

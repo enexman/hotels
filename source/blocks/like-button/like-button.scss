@@ -9,19 +9,19 @@
   padding-left: 50px;
   display: block;
 
-  & input[type="checkbox"]:checked ~ .like-button__heart {
+  & .like-button__input[type="checkbox"]:checked ~ .like-button__heart {
     display: block;
   }
 
-  & input[type="checkbox"]:checked ~ .like-button__heart-small {
+  & .like-button__input[type="checkbox"]:checked ~ .like-button__heart-small {
     display: none;
   }
 
-  & input[type="checkbox"]:checked ~ .like-button__box {
+  & .like-button__input[type="checkbox"]:checked ~ .like-button__box {
     border: 1px solid $purple;
   }
 
-  & input[type="checkbox"]:checked ~ .like-button__number {
+  & .like-button__input[type="checkbox"]:checked ~ .like-button__number {
     color: $purple;
   }
 
@@ -53,8 +53,8 @@
   content: '';
   width: 40px;
   height: 20px;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   border: 1px solid $darkShade25;
   box-sizing: border-box;
   border-radius: 10px;

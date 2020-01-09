@@ -10,20 +10,18 @@
   padding-left: 0;
 
   &_ui {
-    & li>a {
+    & .main-nav__item>.main-nav__link {
       margin-right: 27px;
     }
 
-
-
-    & + ul>li>a:last-child {
+    & + .main-nav__user-list>.main-nav__user-item>.main-nav__user-link:last-child {
       padding-right: 19px;
     }
   }
 
   &_logged {
 
-    & li:last-child>a {
+    & .main-nav__item:last-child>.main-nav__link {
       margin-right: 32px;
     }
   }

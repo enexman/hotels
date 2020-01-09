@@ -18,11 +18,11 @@
   color: $purple;
   margin-top: 15px;
   margin-bottom: 19px;
+}
 
-  & span:last-child {
-    @include fontH3;
-    color: $purple;
-  }
+.circle__text-voice {
+  @include fontH3;
+  color: $purple;
 }
 
 .circle__ex {

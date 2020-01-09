@@ -7,14 +7,13 @@
   text-transform: uppercase;
   border: none;
   color: #FFFFFF;
-
+  cursor: pointer;
   background-image: url("/img/arrow-forward-white.svg"), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   background-repeat: no-repeat;
   background-position: 96% center;
 
   border-radius: 22px;
 
-  //width: 320px;
   width: 100%;
   max-width: 320px;
   min-width: $minWidthComponent;
@@ -27,8 +26,4 @@
   &:focus {
     opacity: 0.5;
   }
-}
-
-@media (max-width: $tabletWidth) {
-
 }

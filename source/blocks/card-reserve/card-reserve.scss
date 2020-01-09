@@ -57,12 +57,12 @@
   color: $darkShade50;
   margin: 0;
   margin-top: 10px;
+}
 
-  & span {
-    font-weight: normal;
-    margin-left: 5px;
-    font-size: 12px;
-  }
+.card-reserve__price-text {
+  font-weight: normal;
+  margin-left: 5px;
+  font-size: 12px;
 }
 
 .card-reserve__list {
@@ -88,11 +88,10 @@
   font-size: 14px;
   line-height: 18px;
   color: $darkShade75;
+}
 
-  p {
-    margin: 0;
-  }
-
+.card-reserve__item-price {
+  margin:0;
 }
 
 .card-reserve__item-res {
