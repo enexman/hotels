@@ -16,12 +16,7 @@
 }
 
 .bullet-list__item {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: $darkShade75;
+  @include textNormal75;
   position: relative;
   list-style: none;
   min-height: 33px;

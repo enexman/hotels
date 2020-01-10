@@ -1,10 +1,5 @@
 .button-big {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
+  @include fontH3;
   border: none;
   color: #FFFFFF;
   cursor: pointer;

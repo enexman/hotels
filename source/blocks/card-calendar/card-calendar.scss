@@ -56,11 +56,8 @@
 }
 
 .card-calendar__day {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
+  @include fontH3;
+  text-transform: none;
   display: flex;
   align-items: center;
   text-align: center;
@@ -75,11 +72,8 @@
 }
 
 .card-calendar__number {
-  font-family: $mainFont;
-  font-style: normal;
+  @include fontH3;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -114,12 +108,8 @@
       border-radius: 50%;
 
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      font-weight: bold;
+      @include fontH3;
       color: #FFFFFF;
-      font-family: $mainFont;
-      font-style: normal;
-      font-size: 12px;
-      line-height: 15px;
       display: flex;
       align-items: center;
       text-align: center;
@@ -168,12 +158,7 @@
 }
 
 .card-calendar__button-clear {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
+  @include fontH3;
   color: $darkShade50;
   background: transparent;
   border: none;
@@ -181,12 +166,7 @@
 }
 
 .card-calendar__button-submit {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
+  @include fontH3;
   color: $purple;
   background: transparent;
   border: none;

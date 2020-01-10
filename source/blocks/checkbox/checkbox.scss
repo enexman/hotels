@@ -59,8 +59,8 @@
   content: '';
   width: 20px;
   height: 20px;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   border: 1px solid $darkShade25;
   box-sizing: border-box;
   border-radius: 4px;
@@ -71,11 +71,7 @@
 }
 
 .checkbox__title {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 18px;
+  @include cardHotelBoldFont;
   color: $darkShade75;
   margin: 0;
   margin-bottom: 5px;

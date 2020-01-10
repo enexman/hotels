@@ -69,11 +69,7 @@
 }
 
 .main-nav__user-link {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
+  @include fontH3;
   color: $purple;
   border: 2px solid $purple;
   border-radius: 22px;
@@ -102,12 +98,7 @@
   padding-left: 30px;
   display: flex;
   align-items: center;
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: $darkShade50;
+  @include textNormal50;
   border-left: 1px solid rgba(31, 32, 65, 0.1);
 }
 

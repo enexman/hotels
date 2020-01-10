@@ -46,7 +46,7 @@
   content: '';
   width: 20px;
   height: 20px;
-  left: 0px;
+  left: 0;
   top: 2px;
   border: 1px solid $darkShade25;
   box-sizing: border-box;
@@ -58,11 +58,7 @@
 }
 
 .radio__text {
+  @include textNormal50;
   display: inline-block;
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  color: $darkShade50;
   margin: 0;
 }

@@ -15,46 +15,24 @@
 }
 
 .card-reserve__title {
-  font-family: $mainFont;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 30px;
-  color: #1F2041;
+  @include cardTitleFont;
   margin: 0;
-  font-weight: 700;
-  letter-spacing: -0.3px;
 
   &-lux {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
+    @include fontH3;
     color: $purple;
     margin-left: 5px;
 
   }
 
   &-num {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $darkShade100;
+    @include fontH3;
     margin-right: 5px;
   }
 }
 
 .card-reserve__price {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 18px;
-  color: $darkShade50;
+  @include cardHotelBoldFont;
   margin: 0;
   margin-top: 10px;
 }
@@ -82,11 +60,8 @@
   width: 100%;
   position: relative;
   margin-bottom: 17px;
-  font-family: $mainFont;
-  font-style: normal;
+  @include cardHotelBoldFont;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
   color: $darkShade75;
 }
 
@@ -120,12 +95,7 @@
   width: 100%;
   margin: 0;
 
-  font-family: Quicksand;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 19px;
-  line-height: 24px;
-  color: $darkShade100;
+  @include fontH2;
 
   &-center {
     flex-grow: 1;

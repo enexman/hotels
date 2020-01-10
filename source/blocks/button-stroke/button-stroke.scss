@@ -1,10 +1,5 @@
 .button-stroke {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
+  @include fontH3;
   color: $purple;
 
   display: inline-block;

@@ -20,23 +20,14 @@
 }
 
 .self-element__title {
-  font-family: $mainFont;
-  font-style: normal;
+  @include textNormal75;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 24px;
-  color: $darkShade75;
   margin: 0;
   margin-top: -3px;
   margin-bottom: 3px;
 }
 
 .self-element__text {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: $darkShade50;
+  @include textNormal50;
   margin: 0;
 }

@@ -10,24 +10,16 @@
 }
 
 .range__input {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+  @include rangeInputFont;
   text-align: right;
   text-transform: uppercase;
-  color: $darkShade50;
   margin-top: 0;
   border: none;
   margin-bottom: 10px;
 }
 
 .range__description {
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  color: $darkShade50;
+  @include rangeInputFont;
   margin: 15px 0;
 }
 
@@ -52,7 +44,7 @@
   width: 88px;
   height: 6px;
   left: 85px;
-  top: 0px;
+  top: 0;
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 

@@ -16,25 +16,15 @@
 }
 
 .card-enter__title {
-  font-family: $mainFont;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 30px;
-  color: #1F2041;
+  @include cardTitleFont;
   margin: 0;
   max-width: 320px;
   width: 100%;
-  font-weight: 700;
-  letter-spacing: -0.3px;
   margin-bottom: 18px;
 }
 
 .card-enter__text {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
+  @include textNormal50;
   display: flex;
   align-items: center;
   text-align: center;

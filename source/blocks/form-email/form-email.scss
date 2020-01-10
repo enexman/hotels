@@ -23,14 +23,12 @@
   border: 1px solid $darkShade25;
   border-radius: 4px;
   @include textNormal75();
-  line-height: 18px;
   padding: 13px 15px;
   width: 260px;
   padding-right: 40px;
 
   &::placeholder {
     @include textNormal75();
-    line-height: 18px;
     color: $darkShade25;
   }
 

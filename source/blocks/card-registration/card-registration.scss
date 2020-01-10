@@ -16,16 +16,10 @@
 }
 
 .card-registration__title {
-  font-family: $mainFont;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 30px;
-  color: #1F2041;
+  @include cardTitleFont;
   margin: 0;
   max-width: 320px;
   width: 100%;
-  font-weight: 700;
-  letter-spacing: -0.3px;
   margin-bottom: 18px;
 }
 

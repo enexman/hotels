@@ -37,7 +37,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 18px;
   color: $darkShade50;
 }
 
@@ -50,7 +50,6 @@
   text-transform: uppercase;
   color: $darkShade100;
 }
-
 
 @mixin fontH1 {
   font-family: $secondFont;
@@ -68,10 +67,45 @@
   font-size: 19px;
   line-height: 26px;
   color: $darkShade100;
-  //letter-spacing: 0.9px;
 }
 
+@mixin cardTitleFont {
+  font-family: $mainFont;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1F2041;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
 
+@mixin cardHotelFont {
+  font-family: $mainFont;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  color: #1F2041;
+  letter-spacing: -0.3px;
+}
+
+@mixin cardHotelBoldFont {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: $darkShade50;
+}
+
+@mixin rangeInputFont {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: $darkShade50;
+}
 
 @mixin fontBody {
   font-family: $mainFont;
