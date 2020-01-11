@@ -62,6 +62,10 @@
 @import "../../blocks/group-dropdown-date/group-dropdown-date";
 @import "../../blocks/dropdown-buttons/dropdown-buttons";
 
+:root {
+  font-size: 0.625em;
+}
+
 body {
   margin: 0 auto;
   padding: 0;

@@ -15,58 +15,43 @@
   margin-right: 30px;
 
   &_one {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 2.4rem;
+    line-height: 2.9rem;
   }
 
   &_two {
-    font-size: 19px;
-    line-height: 23px;
+    font-size: 1.9rem;
+    line-height: 2.3rem;
   }
 
   &_three {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
   }
 
   &_four {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
   }
 }
 
 .type__text {
-
-  font-family: $secondFont;
-  font-style: normal;
-  font-weight: bold;
-  color: $darkShade100;
-  font-size: 24px;
-  line-height: 30px;
+  @include fontH1;
   margin: 0;
 
   &_one {
-    font-size: 24px;
-    line-height: 30px;
+    @include fontH1;
   }
 
   &_two {
-    font-size: 19px;
-    line-height: 24px;
+    @include fontH2;
   }
 
   &_three {
-    font-family: $mainFont;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
+    @include fontH3;
   }
 
   &_four {
-    font-family: $mainFont;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: $darkShade75;
+    @include textNormal75;
   }
 }

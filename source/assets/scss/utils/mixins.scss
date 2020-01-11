@@ -27,8 +27,8 @@
   font-family: $mainFont;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
   color: $darkShade75;
 }
 
@@ -36,8 +36,8 @@
   font-family: $mainFont;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
   color: $darkShade50;
 }
 
@@ -45,8 +45,8 @@
   font-family: $mainFont;
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
   text-transform: uppercase;
   color: $darkShade100;
 }
@@ -55,8 +55,8 @@
   font-family: $secondFont;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 2.4rem;
+  line-height: 3rem;
   color: $darkShade100;
 }
 
@@ -64,37 +64,37 @@
   font-family: $secondFont;
   font-style: normal;
   font-weight: bold;
-  font-size: 19px;
-  line-height: 26px;
+  font-size: 1.9rem;
+  line-height: 2.6rem;
   color: $darkShade100;
 }
 
 @mixin cardTitleFont {
   font-family: $mainFont;
   font-style: normal;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 2.4rem;
+  line-height: 3rem;
   color: #1F2041;
   font-weight: 700;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.03rem;
 }
 
 @mixin cardHotelFont {
   font-family: $mainFont;
   font-style: normal;
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
   font-weight: 700;
   color: #1F2041;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.03rem;
 }
 
 @mixin cardHotelBoldFont {
   font-family: $mainFont;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
   color: $darkShade50;
 }
 
@@ -102,8 +102,8 @@
   font-family: $mainFont;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
   color: $darkShade50;
 }
 
@@ -111,8 +111,8 @@
   font-family: $mainFont;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 24px;
+  font-size: 1.2rem;
+  line-height: 2.4rem;
   color: $darkShade75;
 }
 
