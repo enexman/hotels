@@ -1,44 +1,24 @@
 .text-field {
-  position: relative;
-  @include fontH3();
-  margin: 0;
-  display: block;
-  border-bottom: 1px solid rgba(0,0,0,0);
-  border-top: 1px solid rgba(0,0,0,0);
-  max-width: 320px;
   width: 100%;
+  background: #FFFFFF;
 }
 
-.text-field__top {
-  display: flex;
-  justify-content: space-between;
-  min-width: 260px;
-  margin: 0;
-  margin-bottom: 5px;
-}
-
-.text-field__status {
-  @include fontH3();
-  font-weight: 400;
-  line-height: 10px;
-  color: $darkShade50;
+.text-field__title {
+  @include fontH3;
+  margin-bottom: 1.6%;
 }
 
 .text-field__input {
   width: 100%;
-  min-width: $minWidthComponent;
-
-  height: 44px;
-  background: #FFFFFF;
   border: 1px solid $darkShade25;
   border-radius: 4px;
   @include textNormal75();
-  line-height: 18px;
-  padding: 13px 15px;
+  line-height: 1.8rem;
+  padding: 3.7% 4%;
 
   &::placeholder {
     @include textNormal75();
-    line-height: 18px;
+    line-height: 1.8rem;
     color: $darkShade25;
   }
 
@@ -49,17 +29,4 @@
 
 .text-field__active {
   border-color: $darkShade50;
-}
-
-.text-field__button {
-  position: absolute;
-  right: 0px;
-  top: 10px;
-  width: 44px;
-  height: 44px;
-  background: none;
-  background-image: url("/img/arrow-forward.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  border: none;
 }

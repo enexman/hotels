@@ -13,6 +13,7 @@ export default class DropdownButtons {
 
     this.inputNode.addEventListener('click', () => {
       this.listNode.classList.toggle('dropdown-buttons__list_open');
+      this.inputNode.classList.toggle('dropdown-buttons__input_border-bottom');
     });
 
     if (this.clearNode) {

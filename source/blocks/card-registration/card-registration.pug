@@ -6,15 +6,15 @@ include ../button-border/button-border.pug
 
 form.card-registration
 	.card-registration__title Регистрация аккаунта
-	+textField({type: 'text', placeholder: 'Имя', title: ''})
+	+text-field({type: 'text', placeholder: 'Имя', title: ''})
 	.card-registration__text-field
-		+textField({type: 'text', placeholder: 'Фамилия', title: ''})
+		+text-field({type: 'text', placeholder: 'Фамилия', title: ''})
 	.card-registration__radio
 		+radio({name: 'sex', title: '', values: [{text: 'Мужчина', checked: true}, {text: 'Женщина', checked: false}]})
-	+textField({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'дата рождения'})
+	+text-field({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'дата рождения'})
 	.card-registration__text-field-bottom
-		+textField({type: 'email', placeholder: 'Email', title: 'данные для входа в сервис'})
-	+textField({type: 'password', placeholder: 'Пароль', title: ''})
+		+text-field({type: 'email', placeholder: 'Email', title: 'данные для входа в сервис'})
+	+text-field({type: 'password', placeholder: 'Пароль', title: ''})
 	.card-registration__toggle
 		+toggle({text: 'Получать спецпредложения', checked: false})
 	+button-big({title: 'перейти к оплате'})

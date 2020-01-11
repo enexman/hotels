@@ -2,51 +2,41 @@
 .group-dropdown-date {
   position: relative;
   display: flex;
-  max-width: 320px;
   width: 100%;
   justify-content: space-between;
   flex-wrap: wrap;
-  z-index: 5;
+  background: #ffffff;
 }
 
 .group-dropdown-date__wrapper {
-  background: #FFFFFF;
   border: 1px solid transparent;
   position: relative;
-  min-height: 70px;
-  width: 152px;
+  width: 47%;
 }
 
 .group-dropdown-date__input {
   @include textNormal75;
-  padding: 10px 15px;
+  padding: 6.3% 9%;
   margin: 0;
   border: 1px solid $darkShade25;
   border-radius: 4px;
   width: 100%;
-  height: 44px;
-  position: relative;
-  z-index: 2;
-  background: #ffffff;
   text-align: left;
   cursor: pointer;
 
   background-image: url("/img/expand-more.svg");
   background-repeat: no-repeat;
-  background-position: 120px center;
+  background-position: 90% center;
 }
 
-.group-dropdown-date__top {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 5px 0;
+.group-dropdown-date__title {
+  margin: 2% 0;
   @include fontH3;
 }
 
 .group-dropdown-date__calendar {
   position: absolute;
-  z-index: 4;
-  top: 75px;
+  z-index: 1;
+  top: 110%;
   left: 0;
 }

@@ -1,4 +1,4 @@
-mixin groupDropdownDate(parameters)
+mixin group-dropdown-date(parameters)
 	-var titleLeft = parameters.titleLeft
 	-var titleRight = parameters.titleRight
 	-var placeholder = parameters.placeholder
@@ -6,14 +6,12 @@ mixin groupDropdownDate(parameters)
 	.group-dropdown-date
 		div.group-dropdown-date__wrapper
 			if titleLeft
-				p.group-dropdown-date__top
-					span #{titleLeft}
+				p.group-dropdown-date__title #{titleLeft}
 			input(type="text" placeholder=placeholder readonly).group-dropdown-date__input.js-group-dropdown-date__input_left
 
 		div.group-dropdown-date__wrapper
 			if titleRight
-				p.group-dropdown-date__top
-					span #{titleRight}
+				p.group-dropdown-date__title #{titleRight}
 			input(type="text" placeholder=placeholder readonly).group-dropdown-date__input.js-group-dropdown-date__input_right
 		.group-dropdown-date__calendar
 			include ../card-calendar/card-calendar.pug

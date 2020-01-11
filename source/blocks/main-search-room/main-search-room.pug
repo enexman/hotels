@@ -9,9 +9,9 @@ include ../checkbox-list/checkbox-list.pug
 
 main.main-search-room
 	section.main-search-room__filter
-		+filterDropdownDate({title: 'даты пребывания в отеле'})
+		+filter-dropdown-date({title: 'даты пребывания в отеле'})
 		.main-search-room__dropdown
-			+dropdownButtons({
+			+dropdown-buttons({
 				title: 'Dropdown',
 				status: 'default',
 				values: dropdownFE,

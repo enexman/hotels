@@ -1,14 +1,12 @@
-mixin dropdownButtons(parameters)
+mixin dropdown-buttons(parameters)
 	- var title = parameters.title
 	- var values = parameters.values
 	- var id = parameters.id
 
 	div(id=id).dropdown-buttons
 		if title
-			p.dropdown-buttons__top
-				span #{title}
-				span.dropdown-buttons__status
-		input(class="dropdown-buttons__input dropdown-buttons__input_border-bottom js-dropdown-buttons__input" type="text" placeholder="Сколько гостей" readonly)
+			p.dropdown-buttons__title #{title}
+		input(class="dropdown-buttons__input js-dropdown-buttons__input" type="text" placeholder="Сколько гостей" readonly)
 		ul.dropdown-buttons__list.js-dropdown-buttons__list
 			each val in values
 				li.dropdown-buttons__option.js-dropdown-buttons__option

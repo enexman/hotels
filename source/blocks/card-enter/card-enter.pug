@@ -4,9 +4,9 @@ include ../button-border/button-border.pug
 
 form.card-enter
 	p.card-enter__title Войти
-	+textField({type: 'email', placeholder: 'Email', title: ''})
+	+text-field({type: 'email', placeholder: 'Email', title: ''})
 	.card-enter__text-field
-		+textField({type: 'password', placeholder: 'Пароль', title: ''})
+		+text-field({type: 'password', placeholder: 'Пароль', title: ''})
 	+button-big({title: 'войти'})
 	.card-enter__bottom
 		p.card-enter__text Нет аккаунта на Toxin?

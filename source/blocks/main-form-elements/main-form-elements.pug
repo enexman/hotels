@@ -19,16 +19,16 @@ main.main-form-elements
 	.main-form-elements__wrapper
 		.main-form-elements__container
 			.main-form-elements__col
-				+textField({type: 'email', placeholder: 'Email', title: 'Text field'})
+				+text-field({type: 'email', placeholder: 'Email', title: 'Text field'})
 				.main-form-elements__text-field
-					+textField({type: 'email', placeholder: 'Email', title: 'Text field'})
-				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-first'})
+					+text-field({type: 'email', placeholder: 'Email', title: 'Text field'})
+				+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-first'})
 				.main-form-elements__masked-text-field
-					+textField({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'Masked text field'})
+					+text-field({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'Masked text field'})
 				div(id="form-dropdown-date")
-					+groupDropdownDate({titleLeft: 'Date dropdown', titleRight: 'Date dropdown', placeholder: 'ДД.ММ.ГГГГ'})
+					+group-dropdown-date({titleLeft: 'Date dropdown', titleRight: 'Date dropdown', placeholder: 'ДД.ММ.ГГГГ'})
 				.main-form-elements__filter
-					+filterDropdownDate({title: 'filter date dropdown'})
+					+filter-dropdown-date({title: 'filter date dropdown'})
 				+form-email({title: 'subscription text field'})
 			.main-form-elements__col
 				+checkbox-buttons({title: 'Checkbox Buttons', values: checkboxButtons})
@@ -59,9 +59,9 @@ main.main-form-elements
 					+dropdown({text: '2 спальни, 2 кровати...', title: 'Dropdown', values: dropdownFE2, id: 'drop-fe'})
 					+dropdown({text: '2 спальни, 2 кровати...', title: 'Dropdown', values: dropdownFE2, id: 'drop-fe-second'})
 			.main-form-elements__col
-				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-second'})
+				+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-second'})
 			.main-form-elements__col
-				+dropdownButtons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-third'})
+				+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-third'})
 			.main-form-elements__col
 				+checkbox-list({open: false, values: checkboxListFE, title: 'expandable checkbox list'})
 				.main-form-elements__checkbox

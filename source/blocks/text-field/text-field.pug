@@ -1,10 +1,9 @@
 
-mixin textField(parameters)
+mixin text-field(parameters)
 	- var type = parameters.type
 	- var placeholder = parameters.placeholder
 	- var title = parameters.title
 	label.text-field
 		if (title)
-			span.text-field__top
-				span #{title}
+			span.text-field__title #{title}
 		input(type=type placeholder=placeholder).text-field__input

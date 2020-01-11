@@ -7,7 +7,7 @@ include ../button-big/button-big.pug
 form.card-find.js-card-find
 	h2.card-find__title Найдём номера под ваши пожелания
 	.card-find__row
-		+groupDropdownDate({titleLeft: 'прибытие', titleRight: 'выезд', placeholder: 'ДД.ММ.ГГГГ'})
+		+group-dropdown-date({titleLeft: 'прибытие', titleRight: 'выезд', placeholder: 'ДД.ММ.ГГГГ'})
 	.card-find__wrapper
-		+dropdownButtons({title: 'Гости', status: 'default', values: dropdownFE, id: 'drop-first'})
+		+dropdown-buttons({title: 'Гости', status: 'default', values: dropdownFE, id: 'drop-first'})
 	+button-big({title: 'подобрать номер'})
