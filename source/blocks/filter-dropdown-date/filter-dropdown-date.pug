@@ -4,8 +4,7 @@ mixin filter-dropdown-date(parameters)
 
 	div.filter-dropdown-date
 		if title
-			p.filter-dropdown__top
-				span #{title}
+			p.filter-dropdown__title #{title}
 		input(type="text" placeholder="ДД.МММ - ДД.МММ" readonly).filter-dropdown-date__input
 		.filter-dropdown-date__calendar
 			include ../card-calendar/card-calendar.pug

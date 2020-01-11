@@ -1,8 +1,5 @@
-.checkbox-list {
-  width: 268px;
-}
 
-.checkbox-list__tittle {
+.checkbox-list__title {
   @include fontH3;
   border: none;
   background: transparent;
@@ -10,7 +7,7 @@
   width: 100%;
   text-align: left;
   padding: 0;
-  margin-bottom: 12px;
+  margin-bottom: 4%;
 
   &_close {
 
@@ -48,8 +45,13 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: none;
+
+  &_open {
+    display: block;
+  }
 }
 
 .checkbox-list__item {
-  margin-top: 6px;
+  margin-top: 2%;
 }

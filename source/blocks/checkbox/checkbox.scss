@@ -1,14 +1,7 @@
-.checkbox {
-  width: 234px;
-
-  &_wide {
-    width: 255px;
-  }
-}
 
 .checkbox__label {
   position: relative;
-  padding-left: 30px;
+  padding-left: 10%;
   display: block;
 
   & .checkbox__input[type="checkbox"]:checked ~ .checkbox__arrow::before,
@@ -74,18 +67,17 @@
   @include cardHotelBoldFont;
   color: $darkShade75;
   margin: 0;
-  margin-bottom: 5px;
+  margin-bottom: 2%;
   display: block;
 }
 
 .checkbox__text {
   @include textNormal50;
-  line-height: 19px;
   margin: 0;
   display: inline-block;
 
   &_rich {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
   }
 }

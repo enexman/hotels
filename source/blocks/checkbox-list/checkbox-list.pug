@@ -1,15 +1,13 @@
 include ../checkbox/checkbox.pug
 
 mixin checkbox-list(parameters)
-	- var open = parameters.open
+	- var id = parameters.id
 	- var values = parameters.values
 	- var title = parameters.title
 
-	.checkbox-list
-		-var opened = open ? 'checkbox-list__tittle_open '  : 'checkbox-list__tittle_close '
-		button(class=opened).checkbox-list__tittle #{title}
-		if(open)
-			ul.checkbox-list__list
-				each val in values
-					li.checkbox-list__item
-						+checkbox({title: val.title, text: val.text, checked: val.checked, size: val.width})
+	div(id=id).checkbox-list
+		button(type="button").checkbox-list__title.js-checkbox-list__title.checkbox-list__title_close #{title}
+		ul.checkbox-list__list.js-checkbox-list__list
+			each val in values
+				li.checkbox-list__item
+					+checkbox({title: val.title, text: val.text, checked: val.checked, size: val.width})

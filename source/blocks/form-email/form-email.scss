@@ -1,31 +1,29 @@
 .form-email {
+  background: #FFFFFF;
   position: relative;
-  width: 260px;
+  width: 100%;
 }
 
 .form-email__label {
-  position: relative;
   @include fontH3();
   margin: 0;
   display: block;
-  border: 1px solid transparent;
 }
 
-.form-email__top {
-  display: flex;
-  justify-content: space-between;
-  margin: 5px 0;
+.form-email__title {
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 2%;
 }
 
 .form-email__input {
-  height: 44px;
-  background: #FFFFFF;
   border: 1px solid $darkShade25;
   border-radius: 4px;
   @include textNormal75();
-  padding: 13px 15px;
-  width: 260px;
-  padding-right: 40px;
+  padding: 3.5%;
+  padding-left: 5%;
+  padding-right: 15%;
+  width: 100%;
 
   &::placeholder {
     @include textNormal75();
