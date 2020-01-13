@@ -7,9 +7,9 @@
 .filter-dropdown-date__input {
   display: block;
   @include textNormal75;
-  padding: 3.5% 5%;
+  padding: 1rem 1.5rem;
   margin: 0;
-  border: 1px solid $darkShade25;
+  border: 0.1rem solid $darkShade25;
   border-radius: 0.4rem;
   width: 100%;
   text-align: left;
