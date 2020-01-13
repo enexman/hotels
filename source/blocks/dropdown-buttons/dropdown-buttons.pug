@@ -1,7 +1,5 @@
 mixin dropdown-buttons(parameters)
-	- var title = parameters.title
-	- var values = parameters.values
-	- var id = parameters.id
+	- const { title, values, id } = parameters
 
 	div(id=id).dropdown-buttons
 		if title

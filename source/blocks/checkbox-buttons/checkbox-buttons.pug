@@ -3,8 +3,8 @@ include ../title-third-lvl/title-third-lvl.pug
 
 
 mixin checkbox-buttons(parameters)
-	- var title = parameters.title
-	- var values = parameters.values
+	- const { title, values } = parameters
+
 	.checkbox-buttons
 		.checkbox-buttons__title #{title}
 		ul.checkbox-buttons__list

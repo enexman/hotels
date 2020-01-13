@@ -1,9 +1,7 @@
 include ../checkbox/checkbox.pug
 
 mixin checkbox-list(parameters)
-	- var id = parameters.id
-	- var values = parameters.values
-	- var title = parameters.title
+	- const { id, values, title } = parameters
 
 	div(id=id).checkbox-list
 		button(type="button").checkbox-list__title.js-checkbox-list__title.checkbox-list__title_close #{title}

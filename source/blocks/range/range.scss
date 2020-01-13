@@ -1,6 +1,3 @@
-.range {
-  max-width: 266px;
-}
 
 .range__wrapper {
   display: flex;
@@ -30,9 +27,9 @@
   width: 100%;
   height: 8%;
   background: #FFFFFF;
-  border: 1px solid $darkShade25;
+  border: 0.1rem solid $darkShade25;
   box-sizing: border-box;
-  border-radius: 3px;
+  border-radius: 0.3rem;
 }
 
 .ui-slider-range {
@@ -44,12 +41,12 @@
 
 .ui-slider-handle {
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 1.5rem;
+  height: 1.5rem;
   left: 0;
   top: -100%;
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  border: 2px solid #FFFFFF;
+  border: 0.2rem solid #FFFFFF;
   border-radius: 50%;
   cursor: pointer;
 }

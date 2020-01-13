@@ -1,11 +1,11 @@
 .like-button {
-  width: 40px;
-  height: 20px;
+  width: 4rem;
+  height: 2rem;
 }
 
 .like-button__label {
   position: relative;
-  padding-left: 50px;
+  padding-left: 5rem;
   display: block;
 
   & .like-button__input[type="checkbox"]:checked ~ .like-button__heart {
@@ -17,7 +17,7 @@
   }
 
   & .like-button__input[type="checkbox"]:checked ~ .like-button__box {
-    border: 1px solid $purple;
+    border: 0.1rem solid $purple;
   }
 
   & .like-button__input[type="checkbox"]:checked ~ .like-button__number {
@@ -28,20 +28,20 @@
 
 .like-button__heart {
   position: absolute;
-  width: 10px;
-  height: 8px;
-  left: 7px;
-  top: 6px;
+  width: 1rem;
+  height: 0.8rem;
+  left: 0.7rem;
+  top: 0.6rem;
   display: none;
   background-image: url("/img/favorite.svg");
 }
 
 .like-button__heart-small {
   position: absolute;
-  width: 10px;
-  height: 8px;
-  left: 7px;
-  top: 6px;
+  width: 1rem;
+  height: 0.8rem;
+  left: 0.7rem;
+  top: 0.6rem;
   
   background-image: url("/img/favorite-border.svg");
   
@@ -50,26 +50,26 @@
 .like-button__box {
   position: absolute;
   content: '';
-  width: 40px;
-  height: 20px;
+  width: 4rem;
+  height: 2rem;
   left: 0;
   top: 0;
-  border: 1px solid $darkShade25;
+  border: 0.1rem solid $darkShade25;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .like-button__number {
   font-family: $mainFont;
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 1rem;
+  line-height: 1.2rem;
   text-align: center;
   color: $darkShade25;
   position: absolute;
-  left: 20px;
-  top: 4px;
+  left: 2rem;
+  top: 0.4rem;
 }
 
 .like-button__input {

@@ -1,30 +1,28 @@
 .self-element {
   display: flex;
-  border-bottom: 1px solid  rgba(31, 32, 65, 0.1);
+  border-bottom: 0.1rem solid  rgba(31, 32, 65, 0.1);
   width: 100%;
-  min-width: $minWidthComponent;
-  max-width: 280px;
-  padding: 22px 0;
-  padding-left: 4px;
+  padding: 2.2rem 0;
+  padding-left: 0.4rem;
 }
 
 .self-element__img {
-  width: 40px;
+  width: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .self-element__wrapper {
-  margin-left: 14px;
+  margin-left: 1.4rem;
 }
 
 .self-element__title {
   @include textNormal75;
   font-weight: bold;
   margin: 0;
-  margin-top: -3px;
-  margin-bottom: 3px;
+  margin-top: -0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 .self-element__text {

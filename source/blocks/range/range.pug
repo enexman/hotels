@@ -1,8 +1,5 @@
 mixin range(parameters)
-	- var title = parameters.title
-	- var text = parameters.text
-	- var description = parameters.description
-	- var id = parameters.id
+	- const { title, text, description, id } = parameters
 
 	.range
 		p.range__wrapper

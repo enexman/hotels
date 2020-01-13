@@ -1,12 +1,10 @@
 .buttons__row {
   display: flex;
-  margin-top: 15px;
-  width: 219px;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-top: 4.5%;
+  margin-bottom: 9%;
 
   &_width {
-    width: 144px;
-    padding-left: 2px;
+    padding-left: 1%;
   }
 }

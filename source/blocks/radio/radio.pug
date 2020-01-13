@@ -1,7 +1,5 @@
 mixin radio(parameters)
-	- var name = parameters.name
-	- var title = parameters.title
-	- var values = parameters.values
+	- const { name, title, values } = parameters
 
 	.radio
 		if (title)

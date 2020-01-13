@@ -1,8 +1,10 @@
+.rate-buttons__title {
+  @include  fontH3;
+  margin-top: 0;
+  margin-bottom: 5.5%;
+}
 
 .rate-buttons__wrapper {
   display: flex;
   justify-content: space-between;
-  margin-top: 17px;
-  margin-left: 2px;
-  width: 262px;
 }

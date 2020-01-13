@@ -1,12 +1,7 @@
 include ../like-button/like-button.pug
 
 mixin review(parameters)
-	- var link = parameters.link
-	- var title = parameters.title
-	- var text = parameters.text
-	- var review = parameters.review
-	- var likes = parameters.likes
-	- var liked = parameters.liked
+	- const { link, title, text, review, likes, liked } = parameters
 
 	.review
 		.review__user

@@ -1,6 +1,4 @@
 mixin button-border(parameters)
-	- var title = parameters.title
-	- var focus = parameters.focus
+	- const { title } = parameters
 
-	- var classFocus = focus ? ' button-border_focus ' : ''
-	a(href="#nowhere" class=classFocus data-title=title).button-border
+	a(href="#nowhere" data-title=title).button-border

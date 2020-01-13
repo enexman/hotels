@@ -4,16 +4,12 @@
   color: #FFFFFF;
 
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 22px;
-  padding: 15px 20px;
+  border-radius: 2.2rem;
+  padding: 1.5rem 2rem;
   display: inline-block;
 
   &:active,
   &:focus {
-    opacity: 0.5;
-  }
-
-  &_focus {
     opacity: 0.5;
   }
 }

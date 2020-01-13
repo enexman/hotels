@@ -1,27 +1,27 @@
 
 .toggle__label {
   position: relative;
-  padding-left: 50px;
+  padding-left: 5rem;
   display: block;
 
   & .toggle__input[type="checkbox"]:checked ~ .toggle__circle {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    left: 24px;
+    left: 2.4rem;
 
   }
 
   & .toggle__input[type="checkbox"]:checked ~ .toggle__box {
-    border: 1px solid $purple;
+    border: 0.1rem solid $purple;
   }
 
 }
 
 .toggle__circle {
   position: absolute;
-  width: 12px;
-  height: 12px;
-  left: 4px;
-  top: 7px;
+  width: 1.2rem;
+  height: 1.2rem;
+  left: 0.4rem;
+  top: 0.7rem;
   border-radius: 50%;
   background: $darkShade25;
 }
@@ -29,13 +29,13 @@
 .toggle__box {
   position: absolute;
   content: '';
-  width: 40px;
-  height: 20px;
+  width: 4rem;
+  height: 2rem;
   left: 0;
-  top: 3px;
-  border: 1px solid $darkShade25;
+  top: 0.3rem;
+  border: 0.1rem solid $darkShade25;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .toggle__input {

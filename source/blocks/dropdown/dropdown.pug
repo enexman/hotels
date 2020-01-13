@@ -1,14 +1,10 @@
 mixin dropdown(parameters)
-	- var text = parameters.text
-	- var title = parameters.title
-	- var values = parameters.values
-	- var id = parameters.id
+	- const { text, title, values, id } = parameters
 
 	div(id=id).dropdown.dropdown_medium
 		if title
 			p.dropdown__top
 				span #{title}
-				span.dropdown__status
 		input(class="dropdown__text js-dropdown__text dropdown__text_border-bottom" type="text" placeholder=text readonly)
 		ul(class=open).dropdown__list.js-dropdown__list.dropdown__list_open
 			each val in values

@@ -4,7 +4,7 @@
 }
 
 .radio__item {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 
 .radio__title {
@@ -13,7 +13,7 @@
 
 .radio__label {
   position: relative;
-  padding-left: 30px;
+  padding-left: 3rem;
   display: block;
 
   & .radio__input[type="radio"]:checked ~ .radio__circle {
@@ -21,7 +21,7 @@
   }
 
   & .radio__input[type="radio"]:checked ~ .radio__box {
-    border: 1px solid $purple;
+    border: 0.1rem solid $purple;
   }
 
   & .radio__input[type="radio"]:checked ~ .radio__text {
@@ -33,21 +33,21 @@
 .radio__circle {
   display: none;
   position: absolute;
-  width: 12px;
-  height: 12px;
-  left: 4px;
-  top: 6px;
-  border-radius: 15px;
+  width: 1.2rem;
+  height: 1.2rem;
+  left: 0.4rem;
+  top: 0.6rem;
+  border-radius: 1.5rem;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 
 .radio__box {
   position: absolute;
   content: '';
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   left: 0;
-  top: 2px;
+  top: 0.2rem;
   border: 1px solid $darkShade25;
   box-sizing: border-box;
   border-radius: 50%;
