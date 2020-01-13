@@ -6,33 +6,29 @@
   display: flex;
   justify-content: space-between;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 8%;
 }
 
 .range__input {
   @include rangeInputFont;
   text-align: right;
   text-transform: uppercase;
-  margin-top: 0;
   border: none;
-  margin-bottom: 10px;
 }
 
 .range__description {
   @include rangeInputFont;
-  margin: 15px 0;
+  margin: 6% 0;
 }
 
 .range__title {
   @include  fontH3;
-  margin-top: 0;
-  margin-bottom: 12px;
 }
 
 .ui-slider {
   position: relative;
-  width: 266px;
-  height: 6px;
+  width: 100%;
+  height: 8%;
   background: #FFFFFF;
   border: 1px solid $darkShade25;
   box-sizing: border-box;
@@ -41,9 +37,7 @@
 
 .ui-slider-range {
   position: absolute;
-  width: 88px;
-  height: 6px;
-  left: 85px;
+  height: 100%;
   top: 0;
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
@@ -53,9 +47,9 @@
   width: 15px;
   height: 15px;
   left: 0;
-  top: -5px;
+  top: -100%;
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   border: 2px solid #FFFFFF;
-  border-radius: 10px;
+  border-radius: 50%;
   cursor: pointer;
 }
