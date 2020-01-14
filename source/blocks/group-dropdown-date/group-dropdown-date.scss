@@ -9,16 +9,15 @@
 }
 
 .group-dropdown-date__wrapper {
-  border: 1px solid transparent;
   position: relative;
   width: 47%;
 }
 
 .group-dropdown-date__input {
   @include textNormal75;
-  padding: 6.3% 9%;
+  padding: 0.9rem 1.5rem;
   margin: 0;
-  border: 1px solid $darkShade25;
+  border: 0.1rem solid $darkShade25;
   border-radius: 0.4rem;
   width: 100%;
   text-align: left;
@@ -30,7 +29,7 @@
 }
 
 .group-dropdown-date__title {
-  margin: 2% 0;
+  margin: 0.5rem 0;
   @include fontH3;
 }
 

@@ -1,14 +1,12 @@
 .card-enter {
   width: 380px;
-  min-height: 358px;
 
   background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 0.1rem solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  padding-top: 40px;
-  padding-bottom: 30px;
+  box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  padding: 10.5% 7.5% 7.5%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -18,9 +16,8 @@
 .card-enter__title {
   @include cardTitleFont;
   margin: 0;
-  max-width: 320px;
   width: 100%;
-  margin-bottom: 18px;
+  margin-bottom: 6%;
 }
 
 .card-enter__text {
@@ -33,27 +30,23 @@
 
 .card-enter__text-field {
   display: flex;
-  max-width: 320px;
   width: 100%;
   justify-content: space-between;
 
-  margin-bottom: 18px;
-  margin-top: 8px;
+  margin-bottom: 6.5%;
+  margin-top: 3.2%;
 }
 
 .card-enter__bottom {
   display: flex;
-  max-width: 320px;
   width: 100%;
   justify-content: space-between;
 
-  margin-top: 30px;
+  margin-top: 9.5%;
 }
 
 @media (max-width: $smPhoneWidth) {
   .card-enter {
     width: 300px;
-    padding-left: 10px;
-    padding-right: 10px;
   }
 }

@@ -1,9 +1,10 @@
 include ../rate-button/rate-button.pug
 
-mixin card-hotel(options)
+mixin card-hotel(parameters)
+	- const { images, number, lux, price, stars, reviews} = parameters
 	.card-hotel
 		.card-hotel__slider
-			each val, index in options.images
+			each val, index in images
 				- var active = (index === 0) ? 'card-hotel__slide_active' : ''
 				img(src=val alt="hotel" class=active).card-hotel__slide
 			.card-hotel__buttons
@@ -11,16 +12,18 @@ mixin card-hotel(options)
 				button.card-hotel__button
 				button.card-hotel__button
 				button.card-hotel__button
-		.card-hotel__row-top
-			h2.card-hotel__title
-				a(href="#nowhere").card-hotel__link
-					span.card-hotel__title-num №
-					| #{options.number}
-					if options.lux
-						span.card-hotel__title-lux люкс
-			p.card-hotel__price #{options.price}
-				span.card-hotel__price-text в сутки
-		.card-hotel__row-bottom
-			+rate-button({num: options.stars})
-			p.card-hotel__reviews #{options.reviews}
-				span.card-hotel__reviews-text Отзывов
+		.card-hotel__data
+			.card-hotel__row-top
+				h2.card-hotel__title
+					a(href="#nowhere").card-hotel__link
+						span.card-hotel__title-num №
+						| #{number}
+						if lux
+							span.card-hotel__title-lux люкс
+				p.card-hotel__price #{price}
+					span.card-hotel__price-text в сутки
+			.card-hotel__row-bottom
+				.card-hotel__rate-button
+					+rate-button({num: stars})
+				p.card-hotel__reviews #{reviews}
+					span.card-hotel__reviews-text Отзывов

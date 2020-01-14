@@ -14,7 +14,8 @@ form.card-reserve.js-card-reserve
 			span.card-reserve__price-text в сутки
 	.card-reserve__group-dropdown-date
 		+group-dropdown-date({titleLeft: 'прибытие', titleRight: 'выезд', placeholder: 'ДД.ММ.ГГГГ'})
-	+dropdown-buttons({title: 'Гости', status: 'default', values: dropdownFE, id: 'drop-second'})
+	.card-reserve__dropdown-buttons
+		+dropdown-buttons({title: 'Гости', status: 'default', values: dropdownFE, id: 'drop-second'})
 	ul.card-reserve__list
 		li.card-reserve__item
 			p.card-reserve__item-res 9 990₽ х 4 суток
