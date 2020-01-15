@@ -1,11 +1,9 @@
 
 mixin main-nav(parameters)
-	-var items = parameters.items
-	-var user = parameters.user
-	-var ui = parameters.ui
+	- const { items, user, ui } = parameters
 
-	- var classUi = ui ? 'main-nav__list_ui' : ' '
-	- var classLogged = (ui && user.logged) ? ' main-nav__list_logged' : ' '
+	- const classUi = ui ? 'main-nav__list_ui' : ' '
+	- const classLogged = (ui && user.logged) ? ' main-nav__list_logged' : ' '
 	nav.main-nav
 		ul(class=classUi + classLogged).main-nav__list
 			each val in items

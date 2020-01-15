@@ -12,14 +12,14 @@
 }
 
 @mixin container {
-  max-width: 1440px;
+  max-width: 144rem;
   margin: 0 auto;
 }
 
 @mixin content {
-  max-width: 1200px;
+  max-width: 120rem;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 2rem;
   margin: 0 auto;
 }
 
@@ -119,9 +119,9 @@
 @mixin visually-hidden {
   position: absolute;
 
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  width: 0.1rem;
+  height: 0.1rem;
+  margin: -0.1rem;
   border: 0;
   padding: 0;
 

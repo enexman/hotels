@@ -1,8 +1,8 @@
 .main-page {
   background-image: url("/img/bg-main.jpg");
   background-repeat: no-repeat;
-  background-position: 50% -70px;
-  background-size: 100% 900px;
+  background-position: 50% -7rem;
+  background-size: 100% 90rem;
 }
 
 .main-page__content {
@@ -11,41 +11,41 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  min-height: 830px;
-  padding-right: 15px;
+  min-height: 83rem;
+  padding-right: 1.5rem;
 }
 
 .main-page__text {
   text-align: right;
   color: $darkShade75;
-  width: 297px;
-  margin-bottom: 22px;
+  width: 29.7rem;
+  margin-bottom: 2.2rem;
 }
 
 .main-page__modal {
   position: absolute;
-  left: 20px;
-  top: 70px;
+  left: 2rem;
+  top: 7rem;
 }
 
 .main-page__calendar {
   position: absolute;
-  left: 29px;
-  top: 190px;
+  left: 2.9rem;
+  top: 19rem;
   z-index: 2;
 }
 
 @media(max-width: $exSmTabletWidth) {
   .main-page__modal {
     position: absolute;
-    top: 70px;
+    top: 7rem;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .main-page__calendar {
     position: absolute;
-    top: 190px;
+    top: 19rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;

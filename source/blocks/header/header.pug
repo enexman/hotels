@@ -1,9 +1,7 @@
 include ../main-nav/main-nav.pug
 
 mixin header(parameters)
-	- var items = parameters.items
-	- var user = parameters.user
-	- var ui = parameters.ui
+	- const { items, user, ui } = parameters
 
 	header.header
 		.header__wrapper

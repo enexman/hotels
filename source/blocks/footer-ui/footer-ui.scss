@@ -1,5 +1,5 @@
 .footer-ui {
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  box-shadow: 0 1rem 2rem rgba(31, 32, 65, 0.05);
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -9,33 +9,32 @@
 
 .footer-ui__wrapper {
   display: flex;
-  min-height: 276px;
+  min-height: 27.6rem;
   @include content();
-  margin-top: 95px;
+  margin-top: 9.5rem;
   justify-content: space-between;
 }
 
 .footer-ui__logo {
-  width: 300px;
-  padding-top: 5px;
-  padding-right: 20px;
+  width: 26%;
+  margin-top: 0.5rem;
+  padding-right: 2rem;
 }
 
 .footer-ui__description {
   @include textNormal75();
-  margin-top: 9px;
+  margin-top: 0.9rem;
 }
 
 .footer-ui__lists {
   display: flex;
-  margin-top: 9px;
+  margin-top: 0.9rem;
   width: 52%;
 }
 
 .footer-ui__list {
   list-style: none;
   padding: 0;
-  max-width: 200px;
   width: 100%;
   margin: 0;
 }
@@ -43,7 +42,7 @@
 .footer-ui__item {
   @include textNormal50();
   letter-spacing: 0;
-  margin-bottom: 21px;
+  margin-bottom: 2.1rem;
 
   &_title {
     @include fontH3();
@@ -60,8 +59,8 @@
 }
 
 .footer-ui__subscribe {
-  margin-top: 9px;
-  width: 260px;
+  margin-top: 0.9rem;
+  width: 22.5%;
 }
 
 .footer-ui__subscribe-tittle {
@@ -72,22 +71,21 @@
 
 .footer-ui__subscribe-description {
   @include textNormal75();
-  margin-top: 17px;
-  margin-bottom: 12px;
+  margin-top: 1.7rem;
+  margin-bottom: 2.4rem;
 }
 
 .footer-ui__line {
-  height: 1px;
+  height: 0.1rem;
   background: $darkShade50;
 }
 
 .footer-ui__bottom {
   display: flex;
-  @include container();
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
-  min-height: 70px;
+  margin: 0 auto;
+  width: 83%;
+  padding: 0 1.2%;
+  min-height: 7rem;
   justify-content: space-between;
   align-items: center;
 
@@ -99,7 +97,7 @@
 }
 
 .footer-ui__socials {
-  margin-top: 7px;
+  margin-top: 0.7rem;
 }
 
 @media(max-width: $desktopWidth) {
@@ -108,17 +106,26 @@
     justify-content: space-between;
   }
 
+  .footer-ui__logo {
+    width: 50%;
+  }
+
   .footer-ui__subscribe {
     order: 1;
+    width: 50%;
   }
 
   .footer-ui__lists {
     width: 100%;
     order: 2;
     justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
+  }
+  .footer-ui__list {
+    width: 33%;
   }
 
   .footer-ui__bottom {

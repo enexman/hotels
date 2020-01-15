@@ -8,10 +8,10 @@
   position: relative;
   @include container;
   width: 100%;
-  border-top: 1px solid transparent;
-  margin-top: 150px;
-  margin-bottom: 130px;
-  min-height: 1069px;
+  border-top: 0.1rem solid transparent;
+  margin-top: 15rem;
+  margin-bottom: 13rem;
+  min-height: 106.9rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,10 +19,10 @@
   &::before {
     position: absolute;
     content: '';
-    top: -120px;
-    left: 30px;
-    width: 48px;
-    height: 48px;
+    top: -12rem;
+    left: 3rem;
+    width: 4.8rem;
+    height: 4.8rem;
     background-image: url('/img/logo-gray.svg');
     background-repeat: no-repeat;
   }
