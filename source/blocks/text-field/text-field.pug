@@ -1,8 +1,7 @@
 
 mixin text-field(parameters)
-	- var type = parameters.type
-	- var placeholder = parameters.placeholder
-	- var title = parameters.title
+	- const { type, placeholder, title } = parameters
+
 	label.text-field
 		if (title)
 			span.text-field__title #{title}

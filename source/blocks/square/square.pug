@@ -1,8 +1,6 @@
 
 mixin square(parameters)
-	- var color = parameters.color
-	- var text = parameters.text
-	- var opacity = parameters.opacity
+	- const { color, text, opacity } = parameters
 
 	.square
 		div(style='background: ' + color + '; opacity: ' + opacity).square__color

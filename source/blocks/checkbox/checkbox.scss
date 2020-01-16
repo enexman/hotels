@@ -1,7 +1,7 @@
 
 .checkbox__label {
   position: relative;
-  padding-left: 10%;
+  padding-left: 3rem;
   display: block;
 
   & .checkbox__input[type="checkbox"]:checked ~ .checkbox__arrow::before,
