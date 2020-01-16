@@ -1,6 +1,6 @@
 .circle {
-  width: 121px;
-  height: 121px;
+  width: 12.1rem;
+  height: 12.1rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -15,8 +15,8 @@
 
   @include fontH1;
   color: $purple;
-  margin-top: 15px;
-  margin-bottom: 19px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.9rem;
 }
 
 .circle__text-voice {
@@ -32,26 +32,26 @@
 }
 .circle__ex-main {
   position: absolute;
-  height: 121px;
-  width: 121px;
+  height: 12.1rem;
+  width: 12.1rem;
   border-radius: 50%;
-  border: 5px solid #FFE39C;
-  clip: rect(0px, 59px, 121px, 0px);
+  border: 0.5rem solid #FFE39C;
+  clip: rect(0, 5.9rem, 12.1rem, 0);
 }
-
 
 .circle__good {
   position: absolute;
   left: 0;
   top: 0;
 }
+
 .circle__good-main {
   position: absolute;
-  height: 121px;
-  width: 121px;
+  height: 12.1rem;
+  width: 12.1rem;
   border-radius: 50%;
-  border: 3px solid #6FCF97;
-  clip: rect(61px,121px,121px,61px);
+  border: 0.3rem solid #6FCF97;
+  clip: rect(6.1rem,12.1rem,12.1rem,6.1rem);
 }
 
 .circle__medium {
@@ -59,11 +59,12 @@
   left: 0;
   top: 0;
 }
+
 .circle__medium-main {
   position: absolute;
-  height: 121px;
-  width: 121px;
+  height: 12.1rem;
+  width: 12.1rem;
   border-radius: 50%;
-  border: 10px solid #BC9CFF;
-  clip: rect(0, 121px, 59px, 61px);
+  border: 1rem solid #BC9CFF;
+  clip: rect(0, 12.1rem, 5.9rem, 6.1rem);
 }

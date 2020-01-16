@@ -1,6 +1,6 @@
 
 .main-room-details__bg {
-  height: 485px;
+  height: 48.5rem;
   background-image: url("/img/bg-details-all.jpg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -10,30 +10,36 @@
 .main-room-details__container {
   @include content();
   display: flex;
-  margin: 0 auto;
-  margin-top: 70px;
-  margin-bottom: 61px;
+  margin: 4.8% auto 4.2%;
 }
 
 .main-room-details__wrapper {
   display: flex;
 }
 
+.main-room-details__room-information {
+  width: 39%;
+}
+
 .main-room-details__impressions {
   margin-left: auto;
-  margin-right: 40px;
+  margin-right: 5.5%;
 }
 
 .main-room-details__reviews {
-  margin-top: 15px;
+  margin-top: 2.2%;
 }
 
 .main-room-details__content {
-  margin-right: 70px;
+  margin-right: 6%;
 }
 
+.main-room-details__bullet-list {
+  width: 37%;
+}
 .main-room-details__cancellation {
-  margin-left: 55px;
+  width: 47%;
+  margin-left: 13%;
 }
 
 .main-room-details__modal {
