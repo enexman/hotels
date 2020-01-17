@@ -37,6 +37,7 @@
 .main-room-details__bullet-list {
   width: 37%;
 }
+
 .main-room-details__cancellation {
   width: 47%;
   margin-left: 13%;
@@ -67,5 +68,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .main-room-details__room-information {
+    width: 100%;
+  }
+
+  .main-room-details__impressions {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main-room-details__bullet-list {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .main-room-details__cancellation {
+    width: 100%;
+    margin: 0 auto;
   }
 }

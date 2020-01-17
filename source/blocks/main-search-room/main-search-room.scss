@@ -2,6 +2,7 @@
   @include content();
   display: flex;
 }
+
 .main-search-room__title {
   @include fontH1;
   margin-left: 0.7rem;
@@ -44,13 +45,13 @@
 
 .main-search-room__dropdown {
   margin-top: 1.8rem;
-  margin-bottom: 2.9rem;
+  margin-bottom: 3.1rem;
 }
 
 .main-search-room__checkbox-buttons {
   width: 90%;
   margin-top: 2.9rem;
-  margin-bottom: 2.8rem;
+  margin-bottom: 3.1rem;
 }
 
 .main-search-room__dropdown-bottom {

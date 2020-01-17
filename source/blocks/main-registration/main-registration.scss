@@ -1,8 +1,8 @@
 .main-registration {
   background-image: url("/img/bg-reg.jpg");
   background-repeat: no-repeat;
-  background-position: 50% -70px;
-  background-size: 100% 770px;
+  background-position: 50% -7rem;
+  background-size: 100% 77rem;
 }
 
 .main-registration__content {
@@ -11,13 +11,13 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  min-height: 702px;
-  padding-right: 15px;
+  min-height: 70.2rem;
+  padding-right: 1.5rem;
 }
 
 .main-registration__modal {
   position: absolute;
-  top: 30px;
+  top: 3rem;
   left: 50%;
   transform: translateX(-50%);
 }

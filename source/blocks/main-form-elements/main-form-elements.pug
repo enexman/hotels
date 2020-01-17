@@ -42,14 +42,16 @@ main.main-form-elements
 					include ../toggles/toggles.pug
 				.main-form-elements__like-buttons
 					include ../like-buttons/like-buttons.pug
-				include ../rate-buttons/rate-buttons.pug
+				.main-form-elements__rate-buttons
+					include ../rate-buttons/rate-buttons.pug
 			.main-form-elements__col
-				+range({
-					title: 'Range Slider',
-					text: '5 000₽ - 10 000₽',
-					description: 'Стоимость за сутки пребывания в номере',
-					id: 'slider-range'
-				})
+				.main-form-elements__range
+					+range({
+						title: 'Range Slider',
+						text: '5 000₽ - 10 000₽',
+						description: 'Стоимость за сутки пребывания в номере',
+						id: 'slider-range'
+					})
 				include ../buttons/buttons.pug
 				.main-form-elements__pagination
 					+title-third-lvl({title: 'Pagination'})
@@ -63,9 +65,10 @@ main.main-form-elements
 			.main-form-elements__col
 				+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-third'})
 			.main-form-elements__col
-				+checkbox-list({id: 'checkbox-first', values: checkboxListFE, title: 'expandable checkbox list'})
-				.main-form-elements__checkbox
-					+checkbox-list({id: 'checkbox-second', values: checkboxListFE, title: 'expandable checkbox list'})
+				.main-form-elements__checkbox-list
+					+checkbox-list({id: 'checkbox-first', values: checkboxListFE, title: 'expandable checkbox list'})
+					.main-form-elements__checkbox
+						+checkbox-list({id: 'checkbox-second', values: checkboxListFE, title: 'expandable checkbox list'})
 			.main-form-elements__col
 				.main-form-elements__list-buttons
 					+checkbox-buttons({title: 'Rich Checkbox Buttons', values: richCheckboxButtons})

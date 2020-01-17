@@ -5,12 +5,11 @@
 
 .main-cards__wrapper {
   position: relative;
-  max-width: 1440px;
+  max-width: 144rem;
   width: 100%;
   margin: 0 auto;
-  margin-top: 150px;
-  margin-bottom: 130px;
-  min-height: 1069px;
+  margin-top: 15.1rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,31 +17,25 @@
   &::before {
     position: absolute;
     content: '';
-    top: -120px;
-    left: 30px;
-    width: 48px;
-    height: 48px;
+    top: -12rem;
+    left: 3rem;
+    width: 4.8rem;
+    height: 4.8rem;
     background-image: url('/img/logo-gray.svg');
     background-repeat: no-repeat;
   }
 }
 
 .main-cards__container {
-  width: 100%;
+  width: 80.5%;
   margin: 0 auto;
-  padding-left: 9.7%;
-  padding-right: 9.7%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.main-cards__column {
-  padding-bottom: 20px;
-}
-
-.main-cards__corrector {
-  margin-bottom: 40px;
+.main-cards__row {
+  margin-bottom: 4rem;
 }
 
 @media (max-width: $smDesktopWidth) {

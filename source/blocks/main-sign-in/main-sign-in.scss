@@ -1,8 +1,8 @@
 .main-sign-in {
   background-image: url("/img/bg-reg.jpg");
   background-repeat: no-repeat;
-  background-position: 50% -70px;
-  background-size: 100% 770px;
+  background-position: 50% -7rem;
+  background-size: 100% 77rem;
 }
 
 .main-sign-in__content {
@@ -11,13 +11,13 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  min-height: 683px;
-  padding-right: 15px;
+  min-height: 68.3rem;
+  padding-right: 1.5rem;
 }
 
 .main-sign-in__modal {
   position: absolute;
-  top: 163px;
+  top: 16.3rem;
   left: 50%;
   transform: translateX(-50%);
 }
