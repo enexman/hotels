@@ -1,5 +1,5 @@
 .pagination {
-  width: 240px;
+  width: 24rem;
 }
 
 .pagination__block {
@@ -7,20 +7,20 @@
   list-style: none;
   align-items: center;
   padding: 0;
-  margin-top: 13px;
-  margin-bottom: 8px;
+  margin-top: 1.3rem;
+  margin-bottom: 0.8rem;
 }
 
 .pagination__link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
   color: $darkShade50;
   border-radius: 50%;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
 
   &:link {
     color: $darkShade50;

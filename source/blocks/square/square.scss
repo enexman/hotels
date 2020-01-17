@@ -4,14 +4,14 @@
 }
 
 .square__color {
-  width: 70px;
-  height: 70px;
-  border-radius: 6px;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 0.6rem;
 }
 
 .square__wrapper {
-  width: 160px;
-  margin-left: 40px;
+  width: 16rem;
+  margin-left: 4rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -20,12 +20,12 @@
 .square__text {
   @include fontH2;
   margin: 0;
-  margin-bottom: 2px;
+  margin-bottom: 0.2rem;
 }
 
 .square__text-color {
   @include fontH2;
   margin: 0;
-  margin-bottom: 3px;
+  margin-bottom: 0.3rem;
   font-weight: 400;
 }

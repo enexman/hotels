@@ -2,10 +2,10 @@
 .reviews__title {
   @include fontH2;
   margin: 0;
-  margin-bottom: 17px;
+  margin-bottom: 1.7rem;
   display: flex;
   align-items: center;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.06rem;
 }
 
 .reviews__title-text {
@@ -22,5 +22,5 @@
 }
 
 .reviews__item {
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
 }

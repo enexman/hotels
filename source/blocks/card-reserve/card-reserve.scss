@@ -44,8 +44,8 @@
 
 .card-reserve__price-text {
   font-weight: normal;
-  margin-left: 5px;
-  font-size: 12px;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .card-reserve__group-dropdown-date {
@@ -111,7 +111,7 @@
 
   &-center {
     flex-grow: 1;
-    border-bottom: 1px dotted $darkShade25;
+    border-bottom: 0.1rem dotted $darkShade25;
     margin: 2%;
   }
 }
@@ -125,6 +125,6 @@
 
 @media (max-width: $smPhoneWidth) {
   .card-reserve {
-    width: 300px;
+    width: 30rem;
   }
 }
