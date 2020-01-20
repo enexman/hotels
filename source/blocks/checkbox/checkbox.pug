@@ -2,7 +2,7 @@
 mixin checkbox(parameters)
 	- const { title, text, checked } = parameters
 
-	- var sizeTextClass = title ? ' checkbox__text_rich ' : ''
+	- const sizeTextClass = title ? ' checkbox__text_rich ' : ''
 	.checkbox
 		label.checkbox__label
 			input(type="checkbox" checked=checked).checkbox__input

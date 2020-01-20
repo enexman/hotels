@@ -2,7 +2,7 @@ mixin rate-button(parameters)
 	- const { num } = parameters
 
 	.rate-button
-		- var n = 1
+		- let n = 1
 		while num >= n
 			- n++
 			img(src="/img/star.svg" alt="star").rate-button__img

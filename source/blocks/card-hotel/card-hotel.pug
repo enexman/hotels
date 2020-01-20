@@ -5,7 +5,7 @@ mixin card-hotel(parameters)
 	.card-hotel
 		.card-hotel__slider
 			each val, index in images
-				- var active = (index === 0) ? 'card-hotel__slide_active' : ''
+				- const active = (index === 0) ? 'card-hotel__slide_active' : ''
 				img(src=val alt="hotel" class=active).card-hotel__slide
 			.card-hotel__buttons
 				button.card-hotel__button.card-hotel__button_activated

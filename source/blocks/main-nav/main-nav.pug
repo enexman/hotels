@@ -7,8 +7,8 @@ mixin main-nav(parameters)
 	nav.main-nav
 		ul(class=classUi + classLogged).main-nav__list
 			each val in items
-				- var cls = val.modifier ? ' main-nav__link_arrow ' : ''
-				- var clsActive = val.active ? ' main-nav__link_active ' : ''
+				- const cls = val.modifier ? ' main-nav__link_arrow ' : ''
+				- const clsActive = val.active ? ' main-nav__link_active ' : ''
 				li.main-nav__item
 					a(href="#nowhwre" class="main-nav__link " + cls + clsActive)
 						= val.title
