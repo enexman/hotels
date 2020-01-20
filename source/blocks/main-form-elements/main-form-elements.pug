@@ -31,7 +31,8 @@ main.main-form-elements
 					+filter-dropdown-date({title: 'filter date dropdown'})
 					+form-email({title: 'subscription text field'})
 			.main-form-elements__col
-				+checkbox-buttons({title: 'Checkbox Buttons', values: checkboxButtons})
+				.main-form-elements__checkbox-buttons
+					+checkbox-buttons({title: 'Checkbox Buttons', values: checkboxButtons})
 				.main-form-elements__radio
 					+radio({
 						name: 'test',
