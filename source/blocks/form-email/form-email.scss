@@ -17,7 +17,7 @@
 }
 
 .form-email__input {
-  border: 1px solid $darkShade25;
+  border: 0.1rem solid $darkShade25;
   border-radius: 0.4rem;
   @include textNormal75();
   padding: 0.9rem 4rem 0.9rem 1rem;

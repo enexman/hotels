@@ -10,7 +10,7 @@
 
 .text-field__input {
   width: 100%;
-  border: 1px solid $darkShade25;
+  border: 0.1rem solid $darkShade25;
   border-radius: 0.4rem;
   @include textNormal75();
   line-height: 1.8rem;

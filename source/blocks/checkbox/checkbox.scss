@@ -10,7 +10,7 @@
   }
 
   & .checkbox__input[type="checkbox"]:checked ~ .checkbox__box {
-    border: 1px solid $purple;
+    border: 0.1rem solid $purple;
   }
 
 }
