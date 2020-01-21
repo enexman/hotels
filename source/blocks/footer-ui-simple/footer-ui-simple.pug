@@ -1,7 +1,9 @@
+include ../logo/logo.pug
+include ../socials/socials.pug
 
-footer.footer-ui-simple
-	include ../logo/logo.pug
-	p.footer-ui-simple__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-	.footer-ui-simple__socials
-		include ../socials/socials.pug
-
+mixin footer-ui-simple()
+	footer.footer-ui-simple
+		+logo()
+		p.footer-ui-simple__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+		.footer-ui-simple__socials
+			+socials()

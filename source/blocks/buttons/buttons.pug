@@ -4,12 +4,13 @@ include ../button-stroke/button-stroke.pug
 include ../button-big/button-big.pug
 include ../title-third-lvl/title-third-lvl.pug
 
-.buttons
-	+title-third-lvl({title: 'buttons'})
-	.buttons__row
-		+button({title: 'CLICK ME', focus: false})
-	.buttons__row
-		+button-border({title: 'CLICK ME', focus: false})
-	.buttons__row.buttons__row_width
-		+button-stroke({title: 'CLICK ME', focus: false})
-	+button-big({title: 'перейти к оплате'})
+mixin buttons()
+	.buttons
+		+title-third-lvl({title: 'buttons'})
+		.buttons__row
+			+button({title: 'CLICK ME', focus: false})
+		.buttons__row
+			+button-border({title: 'CLICK ME', focus: false})
+		.buttons__row.buttons__row_width
+			+button-stroke({title: 'CLICK ME', focus: false})
+		+button-big({title: 'перейти к оплате'})

@@ -1,6 +1,7 @@
 include ./blocks/header/header.pug
 include ./blocks/footer/footer.pug
 include ./blocks/head/head.pug
+include ./blocks/main-page/main-page.pug
 
 doctype html
 html(lang='ru')
@@ -17,5 +18,5 @@ html(lang='ru')
 			user: {logged: false, enter: 'войти', register: 'зарегистрироваться', entered: ''},
 			ui: false
 		})
-		include ./blocks/main-page/main-page.pug
+		+main-page()
 		+footer()

@@ -1,4 +1,7 @@
-main.main-sign-in
-	section.main-sign-in__content
-		.main-sign-in__modal
-			include ../card-enter/card-enter.pug
+include ../card-enter/card-enter.pug
+
+mixin main-sign-in()
+	main.main-sign-in
+		section.main-sign-in__content
+			.main-sign-in__modal
+				+card-enter()

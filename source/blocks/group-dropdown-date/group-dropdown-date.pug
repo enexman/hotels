@@ -1,3 +1,5 @@
+include ../card-calendar/card-calendar.pug
+
 mixin group-dropdown-date(parameters)
 	- const { titleLeft, titleRight, placeholder } = parameters
 
@@ -12,4 +14,4 @@ mixin group-dropdown-date(parameters)
 				p.group-dropdown-date__title #{titleRight}
 			input(type="text" placeholder=placeholder readonly).group-dropdown-date__input.js-group-dropdown-date__input_right
 		.group-dropdown-date__calendar
-			include ../card-calendar/card-calendar.pug
+			+card-calendar()

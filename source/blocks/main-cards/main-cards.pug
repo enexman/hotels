@@ -1,22 +1,28 @@
 include ../card-hotel/card-hotel.pug
+include ../card-find/card-find.pug
+include ../card-registration/card-registration.pug
+include ../card-reserve/card-reserve.pug
+include ../card-enter/card-enter.pug
+include ../card-calendar/card-calendar.pug
 
-main.main-cards
-	.main-cards__wrapper
-		.main-cards__container
-			.main-cards__column
-				.main-cards__row
-					include ../card-find/card-find.pug
-				.main-cards__row
-					include ../card-registration/card-registration.pug
-			.main-cards__column
-				.main-cards__row
-					include ../card-reserve/card-reserve.pug
-				.main-cards__row
-					include ../card-enter/card-enter.pug
-			.main-cards__column
-				.main-cards__row
-					include ../card-calendar/card-calendar.pug
-				.main-cards__row
-					+card-hotel({number: 888, lux: true, price: '9 990₽', stars: 5, reviews: 145, images: ['/img/hotel-1.jpg', '/img/hotel-2.jpg']})
-				.main-cards__row
-					+card-hotel({number: 840, lux: false, price: '9 900₽', stars: 4, reviews: 65, images: ['/img/hotel-2.jpg', '/img/hotel-1.jpg']})
+mixin main-cards()
+	main.main-cards
+		.main-cards__wrapper
+			.main-cards__container
+				.main-cards__column
+					.main-cards__row
+						+card-find()
+					.main-cards__row
+						+card-registration()
+				.main-cards__column
+					.main-cards__row
+						+card-reserve()
+					.main-cards__row
+						+card-enter()
+				.main-cards__column
+					.main-cards__row
+						+card-calendar()
+					.main-cards__row
+						+card-hotel({number: 888, lux: true, price: '9 990₽', stars: 5, reviews: 145, images: ['/img/hotel-1.jpg', '/img/hotel-2.jpg']})
+					.main-cards__row
+						+card-hotel({number: 840, lux: false, price: '9 900₽', stars: 4, reviews: 65, images: ['/img/hotel-2.jpg', '/img/hotel-1.jpg']})

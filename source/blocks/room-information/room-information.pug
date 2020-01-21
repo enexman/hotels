@@ -1,24 +1,25 @@
 include ../self-element/self-element.pug
 
-section.room-information
-	h3.room-information__title Сведения о номере
-	ul.room-information__list
-		li.room-information__item
-			+self-element({
-				link: '/img/insert-emoticon.svg',
-				title: 'Комфорт',
-				text: 'Шумопоглощающие стены'
-			})
-		li.room-information__item
-			+self-element({
-				link: '/img/location-city.svg',
-				title: 'Удобство',
-				text: 'Окно в каждой из спален'
-			})
-		li.room-information__item
+mixin room-information()
+	section.room-information
+		h3.room-information__title Сведения о номере
+		ul.room-information__list
 			li.room-information__item
 				+self-element({
-					link: '/img/whatshot.svg',
-					title: 'Уют',
-					text: 'Номер оснащён камином'
+					link: '/img/insert-emoticon.svg',
+					title: 'Комфорт',
+					text: 'Шумопоглощающие стены'
 				})
+			li.room-information__item
+				+self-element({
+					link: '/img/location-city.svg',
+					title: 'Удобство',
+					text: 'Окно в каждой из спален'
+				})
+			li.room-information__item
+				li.room-information__item
+					+self-element({
+						link: '/img/whatshot.svg',
+						title: 'Уют',
+						text: 'Номер оснащён камином'
+					})

@@ -1,10 +1,12 @@
 include ../form-email/form-email.pug
+include ../socials/socials.pug
+include ../logo/logo.pug
 
 mixin footer()
 	footer.footer
 		.footer__wrapper
 			.footer__logo
-				include ../logo/logo.pug
+				+logo()
 				p.footer__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 			.footer__lists
 				ul.footer__list
@@ -37,4 +39,4 @@ mixin footer()
 		.footer__bottom
 			p.footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
 			.footer__socials
-				include ../socials/socials.pug
+				+socials()

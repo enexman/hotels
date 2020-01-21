@@ -1,4 +1,7 @@
-main.main-registration
-	section.main-registration__content
-		.main-registration__modal
-			include ../card-registration/card-registration.pug
+include ../card-registration/card-registration.pug
+
+mixin main-registration()
+	main.main-registration
+		section.main-registration__content
+			.main-registration__modal
+				+card-registration()

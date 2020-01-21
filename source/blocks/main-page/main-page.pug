@@ -1,5 +1,8 @@
-main.main-page
-	section.main-page__content
-		p.main-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-		.main-page__modal
-			include ../card-find/card-find.pug
+include ../card-find/card-find.pug
+
+mixin main-page()
+	main.main-page
+		section.main-page__content
+			p.main-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+			.main-page__modal
+				+card-find()

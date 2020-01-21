@@ -1,3 +1,4 @@
+include ../card-calendar/card-calendar.pug
 
 mixin filter-dropdown-date(parameters)
 	- const { title } = parameters
@@ -7,4 +8,4 @@ mixin filter-dropdown-date(parameters)
 			p.filter-dropdown__title #{title}
 		input(type="text" placeholder="ДД.МММ - ДД.МММ" readonly).filter-dropdown-date__input
 		.filter-dropdown-date__calendar
-			include ../card-calendar/card-calendar.pug
+			+card-calendar()

@@ -1,10 +1,13 @@
-section.room-impressions
-	h3.room-impressions__title Впечатления от номера
-	.room-impressions__wrapper
-		.room-impressions__diagram
-			include ../circle/circle.pug
-		ul.room-impressions__list
-			li.room-impressions__item.room-impressions__item_ex Великолепно
-			li.room-impressions__item.room-impressions__item_good Хорошо
-			li.room-impressions__item.room-impressions__item_medium Удовлетворительно
-			li.room-impressions__item.room-impressions__item_bad Разочарован
+include ../circle/circle.pug
+
+mixin room-impressions()
+	section.room-impressions
+		h3.room-impressions__title Впечатления от номера
+		.room-impressions__wrapper
+			.room-impressions__diagram
+				+circle()
+			ul.room-impressions__list
+				li.room-impressions__item.room-impressions__item_ex Великолепно
+				li.room-impressions__item.room-impressions__item_good Хорошо
+				li.room-impressions__item.room-impressions__item_medium Удовлетворительно
+				li.room-impressions__item.room-impressions__item_bad Разочарован

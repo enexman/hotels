@@ -4,31 +4,32 @@ include ../button-big/button-big.pug
 include ../group-dropdown-date/group-dropdown-date.pug
 include ../dropdown-buttons/dropdown-buttons.pug
 
-form.card-reserve
-	.card-reserve__header
-		h2.card-reserve__title
-			span.card-reserve__title-num №
-			|888
-			span.card-reserve__title-lux люкс
-		p.card-reserve__price 9 990₽
-			span.card-reserve__price-text в сутки
-	.card-reserve__group-dropdown-date
-		+group-dropdown-date({titleLeft: 'прибытие', titleRight: 'выезд', placeholder: 'ДД.ММ.ГГГГ'})
-	.card-reserve__dropdown-buttons
-		+dropdown-buttons({title: 'Гости', status: 'default', values: dropdownFE, id: 'drop-second'})
-	ul.card-reserve__list
-		li.card-reserve__item
-			p.card-reserve__item-res 9 990₽ х 4 суток
-			p.card-reserve__item-price 39 960₽
-		li.card-reserve__item
-			p.card-reserve__item-res.card-reserve__item-res_info Сбор за услуги: скидка 2 179₽
-			p.card-reserve__item-price 0₽
-		li.card-reserve__item
-			p.card-reserve__item-res.card-reserve__item-res_info Сбор за дополнительные услуги
-			p.card-reserve__item-price 300₽
-	p.card-reserve__sum
-		span Итого
-		span.card-reserve__sum-center
-		span 38 081₽
-	.card-reserve__button-big
-		+button-big({title: 'забронировать'})
+mixin card-reserve()
+	form.card-reserve.js-card-reserve
+		.card-reserve__header
+			h2.card-reserve__title
+				span.card-reserve__title-num №
+				|888
+				span.card-reserve__title-lux люкс
+			p.card-reserve__price 9 990₽
+				span.card-reserve__price-text в сутки
+		.card-reserve__group-dropdown-date
+			+group-dropdown-date({titleLeft: 'прибытие', titleRight: 'выезд', placeholder: 'ДД.ММ.ГГГГ'})
+		.card-reserve__dropdown-buttons
+			+dropdown-buttons({title: 'Гости', status: 'default', values: dropdownFE, id: 'drop-second'})
+		ul.card-reserve__list
+			li.card-reserve__item
+				p.card-reserve__item-res 9 990₽ х 4 суток
+				p.card-reserve__item-price 39 960₽
+			li.card-reserve__item
+				p.card-reserve__item-res.card-reserve__item-res_info Сбор за услуги: скидка 2 179₽
+				p.card-reserve__item-price 0₽
+			li.card-reserve__item
+				p.card-reserve__item-res.card-reserve__item-res_info Сбор за дополнительные услуги
+				p.card-reserve__item-price 300₽
+		p.card-reserve__sum
+			span Итого
+			span.card-reserve__sum-center
+			span 38 081₽
+		.card-reserve__button-big
+			+button-big({title: 'забронировать'})

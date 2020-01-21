@@ -14,78 +14,84 @@ include ../review/review.pug
 include ../range/range.pug
 include ../group-dropdown-date/group-dropdown-date.pug
 include ../dropdown-buttons/dropdown-buttons.pug
+include ../toggles/toggles.pug
+include ../like-buttons/like-buttons.pug
+include ../rate-buttons/rate-buttons.pug
+include ../buttons/buttons.pug
+include ../pagination/pagination.pug
 
-main.main-form-elements
-	.main-form-elements__wrapper
-		.main-form-elements__container
-			.main-form-elements__col
-				+text-field({type: 'email', placeholder: 'Email', title: 'Text field'})
-				.main-form-elements__text-field
+mixin main-form-elements()
+	main.main-form-elements
+		.main-form-elements__wrapper
+			.main-form-elements__container
+				.main-form-elements__col
 					+text-field({type: 'email', placeholder: 'Email', title: 'Text field'})
-				+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-first'})
-				.main-form-elements__masked-text-field
-					+text-field({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'Masked text field'})
-				div(id="form-dropdown-date")
-					+group-dropdown-date({titleLeft: 'Date dropdown', titleRight: 'Date dropdown', placeholder: 'ДД.ММ.ГГГГ'})
-				.main-form-elements__filter
-					+filter-dropdown-date({title: 'filter date dropdown'})
-					+form-email({title: 'subscription text field'})
-			.main-form-elements__col
-				.main-form-elements__checkbox-buttons
-					+checkbox-buttons({title: 'Checkbox Buttons', values: checkboxButtons})
-				.main-form-elements__radio
-					+radio({
-						name: 'test',
-						title: 'Radio Buttons',
-						values: [{text: 'Мужчина', checked: true}, {text: 'Женщина',checked: false}]
-					})
-				.main-form-elements__toggles
-					include ../toggles/toggles.pug
-				.main-form-elements__like-buttons
-					include ../like-buttons/like-buttons.pug
-				.main-form-elements__rate-buttons
-					include ../rate-buttons/rate-buttons.pug
-			.main-form-elements__col
-				.main-form-elements__range
-					+range({
-						title: 'Range Slider',
-						text: '5 000₽ - 10 000₽',
-						description: 'Стоимость за сутки пребывания в номере',
-						id: 'slider-range'
-					})
-				include ../buttons/buttons.pug
-				.main-form-elements__pagination
-					+title-third-lvl({title: 'Pagination'})
-					include ../pagination/pagination.pug
-			.main-form-elements__col
-				.main-form-elements__dropdown
-					+dropdown({text: 'комнаты', title: 'Dropdown', values: dropdownFE2, id: 'drop-fe'})
-					+dropdown({text: 'комнаты', title: 'Dropdown', values: dropdownFE2, id: 'drop-fe-second'})
-			.main-form-elements__col
-				+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-second'})
-			.main-form-elements__col
-				+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-third'})
-			.main-form-elements__col
-				.main-form-elements__checkbox-list
-					+checkbox-list({id: 'checkbox-first', values: checkboxListFE, title: 'expandable checkbox list'})
-					.main-form-elements__checkbox
-						+checkbox-list({id: 'checkbox-second', values: checkboxListFE, title: 'expandable checkbox list'})
-			.main-form-elements__col
-				.main-form-elements__list-buttons
-					+checkbox-buttons({title: 'Rich Checkbox Buttons', values: richCheckboxButtons})
-			.main-form-elements__col
-				.main-form-elements__list-buttons
-					+bullet-list({title: 'bullet list', values: bulletList})
-			.main-form-elements__col
-				+self-element({link: '/img/insert-emoticon.svg', title: 'Комфорт', text: 'Шумопоглощающие стены'})
-				+self-element({link: '/img/location-city.svg', title: 'Удобство', text: 'Окно в каждой из спален'})
-			.main-form-elements__auto
-				.main-form-elements__review
-					+review({
-						link: '/img/murad.png',
-						title: 'Мурад Сарафанов',
-						text: '5 дней назад',
-						review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-						likes: 12,
-						liked: true
-					})
+					.main-form-elements__text-field
+						+text-field({type: 'email', placeholder: 'Email', title: 'Text field'})
+					+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-first'})
+					.main-form-elements__masked-text-field
+						+text-field({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'Masked text field'})
+					div(id="form-dropdown-date")
+						+group-dropdown-date({titleLeft: 'Date dropdown', titleRight: 'Date dropdown', placeholder: 'ДД.ММ.ГГГГ'})
+					.main-form-elements__filter
+						+filter-dropdown-date({title: 'filter date dropdown'})
+						+form-email({title: 'subscription text field'})
+				.main-form-elements__col
+					.main-form-elements__checkbox-buttons
+						+checkbox-buttons({title: 'Checkbox Buttons', values: checkboxButtons})
+					.main-form-elements__radio
+						+radio({
+							name: 'test',
+							title: 'Radio Buttons',
+							values: [{text: 'Мужчина', checked: true}, {text: 'Женщина',checked: false}]
+						})
+					.main-form-elements__toggles
+						+toggles()
+					.main-form-elements__like-buttons
+						+like-buttons()
+					.main-form-elements__rate-buttons
+						+rate-buttons()
+				.main-form-elements__col
+					.main-form-elements__range
+						+range({
+							title: 'Range Slider',
+							text: '5 000₽ - 10 000₽',
+							description: 'Стоимость за сутки пребывания в номере',
+							id: 'slider-range'
+						})
+					+buttons()
+					.main-form-elements__pagination
+						+title-third-lvl({title: 'Pagination'})
+						+pagination()
+				.main-form-elements__col
+					.main-form-elements__dropdown
+						+dropdown({text: 'комнаты', title: 'Dropdown', values: dropdownFE2, id: 'drop-fe'})
+						+dropdown({text: 'комнаты', title: 'Dropdown', values: dropdownFE2, id: 'drop-fe-second'})
+				.main-form-elements__col
+					+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-second'})
+				.main-form-elements__col
+					+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-third'})
+				.main-form-elements__col
+					.main-form-elements__checkbox-list
+						+checkbox-list({id: 'checkbox-first', values: checkboxListFE, title: 'expandable checkbox list'})
+						.main-form-elements__checkbox
+							+checkbox-list({id: 'checkbox-second', values: checkboxListFE, title: 'expandable checkbox list'})
+				.main-form-elements__col
+					.main-form-elements__list-buttons
+						+checkbox-buttons({title: 'Rich Checkbox Buttons', values: richCheckboxButtons})
+				.main-form-elements__col
+					.main-form-elements__list-buttons
+						+bullet-list({title: 'bullet list', values: bulletList})
+				.main-form-elements__col
+					+self-element({link: '/img/insert-emoticon.svg', title: 'Комфорт', text: 'Шумопоглощающие стены'})
+					+self-element({link: '/img/location-city.svg', title: 'Удобство', text: 'Окно в каждой из спален'})
+				.main-form-elements__auto
+					.main-form-elements__review
+						+review({
+							link: '/img/murad.png',
+							title: 'Мурад Сарафанов',
+							text: '5 дней назад',
+							review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+							likes: 12,
+							liked: true
+						})

@@ -1,31 +1,33 @@
 include ../header/header.pug
 include ../footer-ui/footer-ui.pug
+include ../footer-ui-simple/footer-ui-simple.pug
 
-.main-hf
-	.main-hf__wrapper
-		+header({
-			items: [
-				{title: 'Home', modifier: false, active: true},
-				{title: 'About Us', modifier: false, active: false},
-				{title: 'Services', modifier: true, active: false},
-				{title: 'Careers', modifier: false, active: false},
-				{title: 'News', modifier: false, active: false},
-				{title: 'Documentation', modifier: false, active: false}
-			],
-			user: {logged: false, enter: 'Login', register: 'REGISTER', entered: 'Cosmin Negoita'},
-			ui: true
-		})
-		+header({
-			items: [
-				{title: 'Home', modifier: false, active: true},
-				{title: 'About Us', modifier: false, active: false},
-				{title: 'Services', modifier: true, active: false},
-				{title: 'Careers', modifier: false, active: false},
-				{title: 'News', modifier: false, active: false},
-				{title: 'Documentation', modifier: false, active: false}
-			],
-			user: {logged: true, enter: 'Login', register: 'REGISTER', entered: 'Cosmin Negoita'},
-			ui: true
-		})
-		+footer-ui()
-		include ../footer-ui-simple/footer-ui-simple.pug
+mixin main-hf()
+	.main-hf
+		.main-hf__wrapper
+			+header({
+				items: [
+					{title: 'Home', modifier: false, active: true},
+					{title: 'About Us', modifier: false, active: false},
+					{title: 'Services', modifier: true, active: false},
+					{title: 'Careers', modifier: false, active: false},
+					{title: 'News', modifier: false, active: false},
+					{title: 'Documentation', modifier: false, active: false}
+				],
+				user: {logged: false, enter: 'Login', register: 'REGISTER', entered: 'Cosmin Negoita'},
+				ui: true
+			})
+			+header({
+				items: [
+					{title: 'Home', modifier: false, active: true},
+					{title: 'About Us', modifier: false, active: false},
+					{title: 'Services', modifier: true, active: false},
+					{title: 'Careers', modifier: false, active: false},
+					{title: 'News', modifier: false, active: false},
+					{title: 'Documentation', modifier: false, active: false}
+				],
+				user: {logged: true, enter: 'Login', register: 'REGISTER', entered: 'Cosmin Negoita'},
+				ui: true
+			})
+			+footer-ui()
+			+footer-ui-simple()

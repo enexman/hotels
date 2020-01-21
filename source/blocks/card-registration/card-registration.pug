@@ -4,20 +4,21 @@ include ../toggle/toggle.pug
 include ../button-big/button-big.pug
 include ../button-border/button-border.pug
 
-form.card-registration
-	h2.card-registration__title Регистрация аккаунта
-	+text-field({type: 'text', placeholder: 'Имя', title: ''})
-	.card-registration__text-field
-		+text-field({type: 'text', placeholder: 'Фамилия', title: ''})
-	.card-registration__radio
-		+radio({name: 'sex', title: '', values: [{text: 'Мужчина', checked: true}, {text: 'Женщина', checked: false}]})
-	+text-field({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'дата рождения'})
-	.card-registration__text-field-bottom
-		+text-field({type: 'email', placeholder: 'Email', title: 'данные для входа в сервис'})
-	+text-field({type: 'password', placeholder: 'Пароль', title: ''})
-	.card-registration__toggle
-		+toggle({text: 'Получать спецпредложения', checked: false})
-	+button-big({title: 'перейти к оплате'})
-	.card-registration__enter
-		p.card-registration__text Уже есть аккаунт на Toxin
-		+button-border({title: 'Войти', focus: false})
+mixin card-registration()
+	form.card-registration
+		h2.card-registration__title Регистрация аккаунта
+		+text-field({type: 'text', placeholder: 'Имя', title: ''})
+		.card-registration__text-field
+			+text-field({type: 'text', placeholder: 'Фамилия', title: ''})
+		.card-registration__radio
+			+radio({name: 'sex', title: '', values: [{text: 'Мужчина', checked: true}, {text: 'Женщина', checked: false}]})
+		+text-field({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'дата рождения'})
+		.card-registration__text-field-bottom
+			+text-field({type: 'email', placeholder: 'Email', title: 'данные для входа в сервис'})
+		+text-field({type: 'password', placeholder: 'Пароль', title: ''})
+		.card-registration__toggle
+			+toggle({text: 'Получать спецпредложения', checked: false})
+		+button-big({title: 'перейти к оплате'})
+		.card-registration__enter
+			p.card-registration__text Уже есть аккаунт на Toxin
+			+button-border({title: 'Войти', focus: false})

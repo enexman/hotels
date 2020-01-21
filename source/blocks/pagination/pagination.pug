@@ -1,15 +1,16 @@
-.pagination
-	ul.pagination__block
-		li.pagination__item
-			a(href="#nowhere").pagination__link.pagination__link_start 1
-		li.pagination__item
-			a(href="#nowhere").pagination__link 2
-		li.pagination__item
-			a(href="#nowhere").pagination__link 3
-		li.pagination__item
-			a(href="#nowhere").pagination__link ...
-		li.pagination__item
-			a(href="#nowhere").pagination__link 15
-		li.pagination__item
-			a(href="#nowhere").pagination__link.pagination__link_end
-	p.pagination__text 1 – 12 из 100+ вариантов аренды
+mixin pagination()
+	.pagination
+		ul.pagination__block
+			li.pagination__item
+				a(href="#nowhere").pagination__link.pagination__link_start 1
+			li.pagination__item
+				a(href="#nowhere").pagination__link 2
+			li.pagination__item
+				a(href="#nowhere").pagination__link 3
+			li.pagination__item
+				a(href="#nowhere").pagination__link ...
+			li.pagination__item
+				a(href="#nowhere").pagination__link 15
+			li.pagination__item
+				a(href="#nowhere").pagination__link.pagination__link_end
+		p.pagination__text 1 – 12 из 100+ вариантов аренды

@@ -1,4 +1,5 @@
 include ../main-nav/main-nav.pug
+include ../logo/logo.pug
 
 mixin header(parameters)
 	- const { items, user, ui } = parameters
@@ -6,7 +7,7 @@ mixin header(parameters)
 	header.header
 		.header__wrapper
 			.header__logo
-				include ../logo/logo.pug
+				+logo()
 			.header__nav
 				+main-nav({items: items, user: user, ui: ui})
 

@@ -1,7 +1,8 @@
 include ./blocks/head/head.pug
+include ./blocks/main-hf/main-hf.pug
 
 doctype html
 html(lang='ru')
 	+head({title: 'Headers & Footers'})
 	body
-		include ./blocks/main-hf/main-hf.pug
+		+main-hf()

@@ -1,6 +1,7 @@
 include ./blocks/header/header.pug
 include ./blocks/footer/footer.pug
 include ./blocks/head/head.pug
+include ./blocks/main-sign-in/main-sign-in.pug
 
 doctype html
 html(lang='ru')
@@ -18,7 +19,7 @@ html(lang='ru')
 			user: {logged: false, enter: 'войти', register: 'зарегистрироваться', entered: ''},
 			ui: false
 		})
-		include ./blocks/main-sign-in/main-sign-in.pug
+		+main-sign-in()
 		+footer()
 
 

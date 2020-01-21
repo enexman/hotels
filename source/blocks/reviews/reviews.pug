@@ -1,24 +1,25 @@
 include ../review/review.pug
 
-section.reviews
-	h3.reviews__title Отзывы посетителей номера
-		span.reviews__title-text 2 отзыва
-	ul.reviews__list
-		li.reviews__item
-			+review({
-				link: '/img/murad.png',
-				title: 'Мурад Сарафанов',
-				text: '5 дней назад',
-				review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-				likes: 12,
-				liked: true
-			})
-		li.reviews__item
-			+review({
-				link: '/img/pat.png',
-				title: 'Патрисия Стёклышкова',
-				text: 'Неделю назад',
-				review: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.',
-				likes: 2,
-				liked: false
-			})
+mixin reviews()
+	section.reviews
+		h3.reviews__title Отзывы посетителей номера
+			span.reviews__title-text 2 отзыва
+		ul.reviews__list
+			li.reviews__item
+				+review({
+					link: '/img/murad.png',
+					title: 'Мурад Сарафанов',
+					text: '5 дней назад',
+					review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+					likes: 12,
+					liked: true
+				})
+			li.reviews__item
+				+review({
+					link: '/img/pat.png',
+					title: 'Патрисия Стёклышкова',
+					text: 'Неделю назад',
+					review: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.',
+					likes: 2,
+					liked: false
+				})

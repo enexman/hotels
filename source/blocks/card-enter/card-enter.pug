@@ -2,12 +2,13 @@ include ../text-field/text-field.pug
 include ../button-big/button-big.pug
 include ../button-border/button-border.pug
 
-form.card-enter
-	h2.card-enter__title Войти
-	+text-field({type: 'email', placeholder: 'Email', title: ''})
-	.card-enter__text-field
-		+text-field({type: 'password', placeholder: 'Пароль', title: ''})
-	+button-big({title: 'войти'})
-	.card-enter__bottom
-		p.card-enter__text Нет аккаунта на Toxin?
-		+button-border({title: 'создать', focus: false})
+mixin card-enter()
+	form.card-enter
+		h2.card-enter__title Войти
+		+text-field({type: 'email', placeholder: 'Email', title: ''})
+		.card-enter__text-field
+			+text-field({type: 'password', placeholder: 'Пароль', title: ''})
+		+button-big({title: 'войти'})
+		.card-enter__bottom
+			p.card-enter__text Нет аккаунта на Toxin?
+			+button-border({title: 'создать', focus: false})

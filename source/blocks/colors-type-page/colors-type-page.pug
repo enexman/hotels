@@ -1,2 +1,5 @@
-body.colors-type-page
-	include ../main-colors-type/main-colors-type.pug
+include ../main-colors-type/main-colors-type.pug
+
+mixin colors-type-page()
+	body.colors-type-page
+		+main-colors-type()

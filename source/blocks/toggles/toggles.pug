@@ -1,9 +1,11 @@
 include ../toggle/toggle.pug
 include ../title-third-lvl/title-third-lvl.pug
-.toggles
-	+title-third-lvl({title: 'Toggle'})
-	ul.toggles__list
-		li.toggles__item
-			+toggle({text: 'Получать спецпредложения', checked: true})
-		li.toggles__item
-			+toggle({text: 'Получать спецпредложения', checked: false})
+
+mixin toggles()
+	.toggles
+		+title-third-lvl({title: 'Toggle'})
+		ul.toggles__list
+			li.toggles__item
+				+toggle({text: 'Получать спецпредложения', checked: true})
+			li.toggles__item
+				+toggle({text: 'Получать спецпредложения', checked: false})

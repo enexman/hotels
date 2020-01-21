@@ -1,22 +1,23 @@
 include ../square/square.pug
+include ../type/type.pug
 
-main.main-colors-type
-
-	.main-colors-type__content
-		ul.main-colors-type__list
-			li.main-colors-type__item
-				+square({color: '#1F2041', text: 'Dark Shade 100%', opacity: 1})
-			li.main-colors-type__item
-				+square({color: '#1F2041', text: 'Dark Shade 75%', opacity: 0.75})
-			li.main-colors-type__item
-				+square({color: '#1F2041', text: 'Dark Shade 50%', opacity: 0.5})
-			li.main-colors-type__item
-				+square({color: '#1F2041', text: 'Dark Shade 25%', opacity: 0.25})
-			li.main-colors-type__item
-				+square({color: '#1F2041', text: 'Dark Shade 5%', opacity: 0.05})
-			li.main-colors-type__item
-				+square({color: '#BC9CFF', text: 'Purple', opacity: 1})
-			li.main-colors-type__item
-				+square({color: '#6FCF97', text: 'Green', opacity: 1})
-		section.main-colors-type__right
-			include ../type/type.pug
+mixin main-colors-type()
+	main.main-colors-type
+		.main-colors-type__content
+			ul.main-colors-type__list
+				li.main-colors-type__item
+					+square({color: '#1F2041', text: 'Dark Shade 100%', opacity: 1})
+				li.main-colors-type__item
+					+square({color: '#1F2041', text: 'Dark Shade 75%', opacity: 0.75})
+				li.main-colors-type__item
+					+square({color: '#1F2041', text: 'Dark Shade 50%', opacity: 0.5})
+				li.main-colors-type__item
+					+square({color: '#1F2041', text: 'Dark Shade 25%', opacity: 0.25})
+				li.main-colors-type__item
+					+square({color: '#1F2041', text: 'Dark Shade 5%', opacity: 0.05})
+				li.main-colors-type__item
+					+square({color: '#BC9CFF', text: 'Purple', opacity: 1})
+				li.main-colors-type__item
+					+square({color: '#6FCF97', text: 'Green', opacity: 1})
+			section.main-colors-type__right
+				+type()

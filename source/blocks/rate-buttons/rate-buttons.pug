@@ -1,8 +1,9 @@
 include ../title-third-lvl/title-third-lvl.pug
 include ../rate-button/rate-button.pug
 
-.rate-buttons
-	p.rate-buttons__title rate button
-	.rate-buttons__wrapper
-		+rate-button({num: 4})
-		+rate-button({num: 5})
+mixin rate-buttons()
+	.rate-buttons
+		p.rate-buttons__title rate button
+		.rate-buttons__wrapper
+			+rate-button({num: 4})
+			+rate-button({num: 5})
