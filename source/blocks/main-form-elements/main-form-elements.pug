@@ -1,4 +1,3 @@
-include ../../variables/variables.pug
 include ../text-field/text-field.pug
 include ../title-third-lvl/title-third-lvl.pug
 include ../form-email/form-email.pug
@@ -28,7 +27,16 @@ mixin main-form-elements()
 					+text-field({type: 'email', placeholder: 'Email', title: 'Text field'})
 					.main-form-elements__text-field
 						+text-field({type: 'email', placeholder: 'Email', title: 'Text field'})
-					+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-first'})
+					+dropdown-buttons({
+						title: 'Dropdown',
+						status: 'default',
+						values: [
+							{ title: 'взрослые', num: 0},
+							{ title: 'дети', num: 0},
+							{ title: 'младенцы', num: 0}
+						],
+						id: 'drop-first'
+					})
 					.main-form-elements__masked-text-field
 						+text-field({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'Masked text field'})
 					div(id="form-dropdown-date")
@@ -38,7 +46,14 @@ mixin main-form-elements()
 						+form-email({title: 'subscription text field'})
 				.main-form-elements__col
 					.main-form-elements__checkbox-buttons
-						+checkbox-buttons({title: 'Checkbox Buttons', values: checkboxButtons})
+						+checkbox-buttons({
+							title: 'Checkbox Buttons',
+							values: [
+								{title: '', text: 'Можно курить', checked: false},
+								{title: '', text: 'Можно с питомцами', checked: true},
+								{title: '', text: 'Можно пригласить гостей (до 10 человек)', checked: true}
+							]
+						})
 					.main-form-elements__radio
 						+radio({
 							name: 'test',
@@ -65,23 +80,107 @@ mixin main-form-elements()
 						+pagination()
 				.main-form-elements__col
 					.main-form-elements__dropdown
-						+dropdown({text: 'комнаты', title: 'Dropdown', values: dropdownFE2, id: 'drop-fe'})
-						+dropdown({text: 'комнаты', title: 'Dropdown', values: dropdownFE2, id: 'drop-fe-second'})
+						+dropdown({
+							text: 'комнаты',
+							title: 'Dropdown',
+							values: [
+								{ title: 'спальни', num: 0},
+								{ title: 'кровати', num: 0},
+								{ title: 'ванные комнаты', num: 0}
+							],
+							id: 'drop-fe'
+						})
+						+dropdown({
+							text: 'комнаты',
+							title: 'Dropdown',
+							values: [
+								{ title: 'спальни', num: 0},
+								{ title: 'кровати', num: 0},
+								{ title: 'ванные комнаты', num: 0}
+							],
+							id: 'drop-fe-second'
+						})
 				.main-form-elements__col
-					+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-second'})
+					+dropdown-buttons({
+						title: 'Dropdown',
+						status: 'default',
+						values: [
+							{ title: 'взрослые', num: 0},
+							{ title: 'дети', num: 0},
+							{ title: 'младенцы', num: 0}
+						],
+						id: 'drop-second'
+					})
 				.main-form-elements__col
-					+dropdown-buttons({title: 'Dropdown', status: 'default', values: dropdownFE, id: 'drop-third'})
+					+dropdown-buttons({
+						title: 'Dropdown',
+						status: 'default',
+						values: [
+							{ title: 'взрослые', num: 0},
+							{ title: 'дети', num: 0},
+							{ title: 'младенцы', num: 0}
+						],
+						id: 'drop-third'
+					})
 				.main-form-elements__col
 					.main-form-elements__checkbox-list
-						+checkbox-list({id: 'checkbox-first', values: checkboxListFE, title: 'expandable checkbox list'})
+						+checkbox-list({
+							id: 'checkbox-first',
+							values: [
+								{title: '', text: 'Завтрак', checked: false},
+								{title: '', text: 'Письменный стол', checked: true},
+								{title: '', text: 'Стул для кормления', checked: true},
+								{title: '', text: 'Кроватка', checked: true},
+								{title: '', text: 'Телевизор', checked: false},
+								{title: '', text: 'Шампунь', checked: false},
+								{title: '', text: 'Телевизор', checked: false},
+								{title: '', text: 'Шампунь', checked: false}
+							],
+							title: 'expandable checkbox list'
+						})
 						.main-form-elements__checkbox
-							+checkbox-list({id: 'checkbox-second', values: checkboxListFE, title: 'expandable checkbox list'})
+							+checkbox-list({
+								id: 'checkbox-second',
+								values: [
+									{title: '', text: 'Завтрак', checked: false},
+									{title: '', text: 'Письменный стол', checked: true},
+									{title: '', text: 'Стул для кормления', checked: true},
+									{title: '', text: 'Кроватка', checked: true},
+									{title: '', text: 'Телевизор', checked: false},
+									{title: '', text: 'Шампунь', checked: false},
+									{title: '', text: 'Телевизор', checked: false},
+									{title: '', text: 'Шампунь', checked: false}
+								],
+								title: 'expandable checkbox list'
+							})
 				.main-form-elements__col
 					.main-form-elements__list-buttons
-						+checkbox-buttons({title: 'Rich Checkbox Buttons', values: richCheckboxButtons})
+						+checkbox-buttons({
+							title: 'Rich Checkbox Buttons',
+							values: [
+								{
+									title: 'Широкий коридор',
+									text: 'Ширина коридоров в номере не менее 91 см.',
+									checked: false
+								},
+								{
+									title: 'Помощник для инвалидов',
+									text: 'На 1 этаже вас встретит специалист и проводит до номера.',
+									checked: false,
+									width: true
+								}
+							]
+						})
 				.main-form-elements__col
 					.main-form-elements__list-buttons
-						+bullet-list({title: 'bullet list', values: bulletList})
+						+bullet-list({
+							title: 'bullet list',
+							values: [
+								'Нельзя с питомцами',
+								'Без вечеринок и мероприятий',
+								'Время прибытия — после 13:00, а выезд до 12:00'
+							]
+						})
 				.main-form-elements__col
 					+self-element({link: '/img/insert-emoticon.svg', title: 'Комфорт', text: 'Шумопоглощающие стены'})
 					+self-element({link: '/img/location-city.svg', title: 'Удобство', text: 'Окно в каждой из спален'})

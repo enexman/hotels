@@ -1,4 +1,3 @@
-include ../../variables/variables.pug
 include ../group-dropdown-date/group-dropdown-date.pug
 include ../dropdown-buttons/dropdown-buttons.pug
 include ../dropdown/dropdown.pug
@@ -10,5 +9,13 @@ mixin card-find()
 		.card-find__date-picker
 			+group-dropdown-date({titleLeft: 'прибытие', titleRight: 'выезд', placeholder: 'ДД.ММ.ГГГГ'})
 		.card-find__guests
-			+dropdown-buttons({title: 'Гости', status: 'default', values: dropdownFE, id: 'drop-first'})
+			+dropdown-buttons({
+				title: 'Гости',
+				status: 'default',
+				values: [
+					{ title: 'взрослые', num: 0},
+					{ title: 'дети', num: 0},
+					{ title: 'младенцы', num: 0}
+				],
+				id: 'drop-first'})
 		+button-big({title: 'подобрать номер'})

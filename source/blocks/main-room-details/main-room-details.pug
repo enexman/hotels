@@ -1,5 +1,4 @@
 include ../bullet-list/bullet-list.pug
-include ../../variables/variables.pug
 include ../room-information/room-information.pug
 include ../room-impressions/room-impressions.pug
 include ../reviews/reviews.pug
@@ -20,7 +19,14 @@ mixin main-room-details()
 					+reviews()
 				.main-room-details__wrapper
 					.main-room-details__bullet-list
-						+bullet-list({title: 'Правила', values: bulletList})
+						+bullet-list({
+							title: 'Правила',
+							values: [
+								'Нельзя с питомцами',
+								'Без вечеринок и мероприятий',
+								'Время прибытия — после 13:00, а выезд до 12:00'
+							]
+						})
 					.main-room-details__cancellation
 						+cancellation()
 			.main-room-details__modal

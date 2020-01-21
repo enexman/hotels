@@ -1,4 +1,3 @@
-include  ../../variables/variables.pug
 include ../card-hotel/card-hotel.pug
 include ../filter-dropdown-date/filter-dropdown-date.pug
 include ../dropdown/dropdown.pug
@@ -8,7 +7,25 @@ include ../checkbox-buttons/checkbox-buttons.pug
 include ../checkbox-list/checkbox-list.pug
 include ../pagination/pagination.pug
 
+
+
 mixin main-search-room()
+	-
+		const hotels = [
+			{number: 888, lux: true, price: '9 990₽', stars: 5, reviews: 145, images: ['/img/hotel-1.jpg', '/img/hotel-2.jpg']},
+			{number: 840, lux: false, price: '9 900₽', stars: 4, reviews: 65, images: ['/img/hotel-2.jpg', '/img/hotel-1.jpg']},
+			{number: 980, lux: true, price: '8 500₽', stars: 3, reviews: 35, images: ['/img/hotel-3.jpg', '/img/hotel-2.jpg']},
+			{number: 856, lux: false, price: '7 300₽', stars: 5, reviews: 19, images: ['/img/hotel-4.jpg', '/img/hotel-2.jpg']},
+			{number: 740, lux: false, price: '6 000₽', stars: 4, reviews: 44, images: ['/img/hotel-5.jpg', '/img/hotel-2.jpg']},
+			{number: 982, lux: false, price: '5 800₽', stars: 3, reviews: 56, images: ['/img/hotel-6.jpg', '/img/hotel-2.jpg']},
+			{number: 678, lux: false, price: '5 500₽', stars: 5, reviews: 45, images: ['/img/hotel-7.jpg', '/img/hotel-2.jpg']},
+			{number: 450, lux: false, price: '5 300₽', stars: 4, reviews: 39, images: ['/img/hotel-8.jpg', '/img/hotel-2.jpg']},
+			{number: 350, lux: false, price: '5 000₽', stars: 3, reviews: 77, images: ['/img/hotel-9.jpg', '/img/hotel-2.jpg']},
+			{number: 666, lux: false, price: '5 000₽', stars: 5, reviews: 25, images: ['/img/hotel-10.jpg', '/img/hotel-2.jpg']},
+			{number: 444, lux: false, price: '5 000₽', stars: 3, reviews: 15, images: ['/img/hotel-11.jpg', '/img/hotel-2.jpg']},
+			{number: 352, lux: false, price: '5 000₽', stars: 3, reviews: 55, images: ['/img/hotel-12.jpg', '/img/hotel-2.jpg']}
+		]
+
 	main.main-search-room
 		section.main-search-room__filter
 			+filter-dropdown-date({title: 'даты пребывания в отеле'})
@@ -16,7 +33,11 @@ mixin main-search-room()
 				+dropdown-buttons({
 					title: 'Гости',
 					status: 'default',
-					values: dropdownFE,
+					values: [
+						{ title: 'взрослые', num: 0},
+						{ title: 'дети', num: 0},
+						{ title: 'младенцы', num: 0}
+					],
 					id: 'drop-first'
 				})
 			+range({
@@ -26,16 +47,46 @@ mixin main-search-room()
 				id: 'slider-range'
 			})
 			.main-search-room__checkbox-buttons
-				+checkbox-buttons({title: 'Checkbox Buttons', values: checkboxButtons})
-			+checkbox-buttons({title: 'Доступность', values: richCheckboxButtons})
+				+checkbox-buttons({
+					title: 'Checkbox Buttons',
+					values: [
+						{title: '', text: 'Можно курить', checked: false},
+						{title: '', text: 'Можно с питомцами', checked: true},
+						{title: '', text: 'Можно пригласить гостей (до 10 человек)', checked: true}
+					]
+				})
+			+checkbox-buttons({
+				title: 'Доступность',
+				values: [
+					{title: 'Широкий коридор',	text: 'Ширина коридоров в номере не менее 91 см.', checked: false},
+					{title: 'Помощник для инвалидов',	text: 'На 1 этаже вас встретит специалист и проводит до номера.',	checked: false,	width: true}
+				]
+			})
 			.main-search-room__dropdown-bottom
 				+dropdown({
 					text: 'комнаты',
 					title: 'удобства номера',
-					values: dropdownFE2,
+					values: [
+						{ title: 'спальни', num: 0},
+						{ title: 'кровати', num: 0},
+						{ title: 'ванные комнаты', num: 0}
+					],
 					id: 'drop-fe'
 				})
-			+checkbox-list({id: 'checkbox-first', values: checkboxList, title: 'дополнительные удобства'})
+			+checkbox-list({
+				id: 'checkbox-first',
+				values: [
+					{title: '', text: 'Завтрак', checked: false},
+					{title: '', text: 'Письменный стол', checked: true},
+					{title: '', text: 'Стул для кормления', checked: true},
+					{title: '', text: 'Кроватка', checked: true},
+					{title: '', text: 'Телевизор', checked: false},
+					{title: '', text: 'Шампунь', checked: false},
+					{title: '', text: 'Телевизор', checked: false},
+					{title: '', text: 'Шампунь', checked: false}
+				],
+				title: 'дополнительные удобства'
+			})
 		section.main-search-room__rooms
 			p.main-search-room__title Номера, которые мы для вас подобрали
 			.main-search-room__list

@@ -1,4 +1,3 @@
-include ../../variables/variables.pug
 include ../dropdown/dropdown.pug
 include ../button-big/button-big.pug
 include ../group-dropdown-date/group-dropdown-date.pug
@@ -16,7 +15,16 @@ mixin card-reserve()
 		.card-reserve__group-dropdown-date
 			+group-dropdown-date({titleLeft: 'прибытие', titleRight: 'выезд', placeholder: 'ДД.ММ.ГГГГ'})
 		.card-reserve__dropdown-buttons
-			+dropdown-buttons({title: 'Гости', status: 'default', values: dropdownFE, id: 'drop-second'})
+			+dropdown-buttons({
+				title: 'Гости',
+				status: 'default',
+				values: [
+					{ title: 'взрослые', num: 0},
+					{ title: 'дети', num: 0},
+					{ title: 'младенцы', num: 0}
+				],
+				id: 'drop-second'
+			})
 		ul.card-reserve__list
 			li.card-reserve__item
 				p.card-reserve__item-res 9 990₽ х 4 суток
