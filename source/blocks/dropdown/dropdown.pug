@@ -9,7 +9,7 @@ mixin dropdown(parameters)
 		ul(class=open).dropdown__list.js-dropdown__list.dropdown__list_open
 			each val in values
 				li.dropdown__option.js-dropdown__option
-					p.dropdown__option-text.js-dropdown__option-text #{val.title}
+					p.dropdown__option-text #{val.title}
 					.dropdown__buttons
 						button(class="dropdown__button dropdown__button_disabled dropdown__button_minus js-dropdown__button-minus" type="button") -
 						span.dropdown__numeric.js-dropdown__numeric #{val.num}
