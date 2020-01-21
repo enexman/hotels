@@ -8,42 +8,47 @@ export default class DropdownButtons {
     this.clearNode = this.blockNode.querySelector('.js-dropdown-buttons__button-bottom_clear');
     this.inputNode = this.blockNode.querySelector('.js-dropdown-buttons__input');
 
-    this.guest = 0;
-    this.baby = 0;
+    this._defaultData();
 
-    this.inputNode.addEventListener('click', () => {
-      this.listNode.classList.toggle('dropdown-buttons__list_open');
-      this.inputNode.classList.toggle('dropdown-buttons__input_border-bottom');
-    });
+    this._toggleList();
 
     if (this.clearNode) {
       this.clearNode.style.display = 'none';
     }
 
+    this._addEventListenerToSubmit();
+
+    this._addEventListenerToClear();
+
+    this._addEventListenerToList();
+  }
+
+  _addEventListenerToClear() {
+    this.clearNode.addEventListener('click', () => {
+      this.inputNode.value = '';
+      this._defaultData();
+      Array.from(this.liNodes).forEach((it) => {
+        const item = it.querySelector('.js-dropdown-buttons__numeric');
+        if (item) item.textContent = ' 0 ';
+
+        const minus = it.querySelector('.js-dropdown-buttons__button_minus');
+        if (minus) {
+          minus.classList.add('dropdown-buttons__button_disabled');
+        }
+      });
+      this.clearNode.style.display = 'none';
+    });
+  }
+
+  _addEventListenerToSubmit() {
     this.submitNode.addEventListener('click', () => {
       const babyInput = this.baby ? `, ${this.baby} младенец` : '';
       this.inputNode.value = `${this.guest} гостя${babyInput}`;
       this.listNode.classList.remove('dropdown-buttons__list_open');
     });
+  }
 
-    if (this.clearNode) {
-      this.clearNode.addEventListener('click', () => {
-        this.inputNode.value = '';
-        this.guest = 0;
-        this.baby = 0;
-        Array.from(this.liNodes).forEach((it) => {
-          const item = it.querySelector('.js-dropdown-buttons__numeric');
-          if (item) item.textContent = ' 0 ';
-
-          const minus = it.querySelector('.js-dropdown-buttons__button_minus');
-          if (minus) {
-            minus.classList.add('dropdown-buttons__button_disabled');
-          }
-        });
-        this.clearNode.style.display = 'none';
-      });
-    }
-
+  _addEventListenerToList() {
     Array.from(this.liNodes).forEach((it, idx) => {
       const numeric = it.querySelector('.js-dropdown-buttons__numeric');
       const minus = it.querySelector('.js-dropdown-buttons__button_minus');
@@ -72,15 +77,31 @@ export default class DropdownButtons {
           this.clearNode.style.display = '';
         }
 
-        if (numeric) {
-          if (+numeric.textContent) {
-            minus.classList.remove('dropdown-buttons__button_disabled');
-          } else {
-            minus.classList.add('dropdown-buttons__button_disabled');
-          }
-        }
+        this._disableMinusButton(numeric, minus);
       });
     });
+  }
+
+  _toggleList() {
+    this.inputNode.addEventListener('click', () => {
+      this.listNode.classList.toggle('dropdown-buttons__list_open');
+      this.inputNode.classList.toggle('dropdown-buttons__input_border-bottom');
+    });
+  }
+
+  _defaultData() {
+    this.guest = 0;
+    this.baby = 0;
+  }
+
+  _disableMinusButton(numeric, minus) {
+    if (numeric) {
+      if (+numeric.textContent) {
+        minus.classList.remove('dropdown-buttons__button_disabled');
+      } else {
+        minus.classList.add('dropdown-buttons__button_disabled');
+      }
+    }
   }
 }
 
