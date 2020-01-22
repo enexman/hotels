@@ -1,3 +1,5 @@
+import 'jquery-ui-dist/jquery-ui.min';
+
 $(() => {
   $('#slider-range').slider({
     range: true,
