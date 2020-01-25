@@ -15,38 +15,38 @@ export default class FilterDropdownDate {
     this.cardCalendarNode.classList.add('card-calendar_close');
     this.startDate = null;
     this.endDate = null;
-    this.data = this.getDates(0);
+    this.data = this._getDates(0);
     this.monthNumber = 0;
-    this.drawTitle(this.data.title);
-    this.drawDays(this.data.dates, this.numbersNode);
+    this._drawTitle(this.data.title);
+    this._drawDays(this.data.dates, this.numbersNode);
 
     this.buttonRightNode.addEventListener('click', () => {
       this.monthNumber += 1;
-      this.updateCalendar();
+      this._updateCalendar();
     });
 
     this.buttonLeftNode.addEventListener('click', () => {
       this.monthNumber -= 1;
-      this.updateCalendar();
+      this._updateCalendar();
     });
 
-    this.numbersNode.addEventListener('click', this.onNumbersNodeClick.bind(this));
+    this.numbersNode.addEventListener('click', this._onNumbersNodeClick.bind(this));
 
     this.buttonClearNode.addEventListener('click', () => {
-      this.clearDates();
+      this._clearDates();
     });
 
     this.buttonSubmitNode.addEventListener('click', () => {
       this.cardCalendarNode.classList.add('card-calendar_close');
       if (this.startDate && this.endDate) {
-        this.inputNode.value = `${this.startDate.date} ${this.getNameMonth(this.startDate.month).name} - ${this.endDate.date} ${this.getNameMonth(this.endDate.month).name}`;
+        this.inputNode.value = `${this.startDate.date} ${this._getNameMonth(this.startDate.month).name} - ${this.endDate.date} ${this._getNameMonth(this.endDate.month).name}`;
       }
     });
 
-    this.inputNode.addEventListener('click', this.onInputNodeClick.bind(this));
+    this.inputNode.addEventListener('click', this._onInputNodeClick.bind(this));
   }
 
-  clearDates() {
+  _clearDates() {
     this.data.dates.forEach((item) => {
       const it = item;
       it.startDate = false;
@@ -56,16 +56,16 @@ export default class FilterDropdownDate {
     this.startDate = null;
     this.endDate = null;
     this.monthNumber = 0;
-    this.drawDays(this.data.dates, this.numbersNode);
+    this._drawDays(this.data.dates, this.numbersNode);
     this.inputNode.value = '';
   }
 
-  onInputNodeClick() {
+  _onInputNodeClick() {
     this.cardCalendarNode.classList.toggle('card-calendar_close');
   }
 
-  onNumbersNodeClick(ev) {
-    const { year, month } = this.getDates(this.monthNumber);
+  _onNumbersNodeClick(ev) {
+    const { year, month } = this._getDates(this.monthNumber);
 
     // если клик другой месяц
     if (ev.target.classList.contains('card-calendar__number_empty')) {
@@ -77,24 +77,24 @@ export default class FilterDropdownDate {
           // если клик другой месяц вперед
           if (this.data.dates[i].month - 1 === month) {
             this.monthNumber += 1;
-            this.updateCalendar();
+            this._updateCalendar();
             return;
           }
           if (this.data.dates[i].month === 0 && month === 11) {
             this.monthNumber += 1;
-            this.updateCalendar();
+            this._updateCalendar();
             return;
           }
 
           // если клик другой месяц назад
           if (this.data.dates[i].month + 1 === month) {
             this.monthNumber -= 1;
-            this.updateCalendar();
+            this._updateCalendar();
             return;
           }
           if (this.data.dates[i].month === 11 && month === 0) {
             this.monthNumber -= 1;
-            this.updateCalendar();
+            this._updateCalendar();
             return;
           }
         }
@@ -109,8 +109,8 @@ export default class FilterDropdownDate {
           parse: Date.parse(new Date(year, month, +ev.target.textContent)),
         };
 
-        this.writeStartDateData();
-        this.drawDays(this.data.dates, this.numbersNode);
+        this._writeStartDateData();
+        this._drawDays(this.data.dates, this.numbersNode);
         return;
       }
     }
@@ -126,15 +126,15 @@ export default class FilterDropdownDate {
             month,
             parse: Date.parse(new Date(year, month, +ev.target.textContent)),
           };
-          this.writeEndDateData();
-          this.writeMiddleDates();
-          this.drawDays(this.data.dates, this.numbersNode);
+          this._writeEndDateData();
+          this._writeMiddleDates();
+          this._drawDays(this.data.dates, this.numbersNode);
         }
       }
     }
   }
 
-  writeStartDateData() {
+  _writeStartDateData() {
     if (!this.startDate) return;
 
     for (let i = 0; i < this.data.dates.length; i += 1) {
@@ -144,7 +144,7 @@ export default class FilterDropdownDate {
     }
   }
 
-  writeEndDateData() {
+  _writeEndDateData() {
     if (!this.endDate) return;
 
     for (let i = 0; i < this.data.dates.length; i += 1) {
@@ -154,7 +154,7 @@ export default class FilterDropdownDate {
     }
   }
 
-  writeMiddleDates() {
+  _writeMiddleDates() {
     if (!this.endDate) return;
     for (let i = 0; i < this.data.dates.length; i += 1) {
       if (
@@ -166,16 +166,16 @@ export default class FilterDropdownDate {
     }
   }
 
-  updateCalendar() {
-    this.data = this.getDates(this.monthNumber);
-    this.writeStartDateData();
-    this.writeEndDateData();
-    this.writeMiddleDates();
-    this.drawTitle(this.data.title);
-    this.drawDays(this.data.dates, this.numbersNode);
+  _updateCalendar() {
+    this.data = this._getDates(this.monthNumber);
+    this._writeStartDateData();
+    this._writeEndDateData();
+    this._writeMiddleDates();
+    this._drawTitle(this.data.title);
+    this._drawDays(this.data.dates, this.numbersNode);
   }
 
-  getNameMonth(num) {
+  _getNameMonth(num) {
     switch (num) {
       case 0: return { name: 'янв', longName: 'Январь' };
       case 1: return { name: 'фев', longName: 'Февраль' };
@@ -193,7 +193,7 @@ export default class FilterDropdownDate {
     }
   }
 
-  getDates(parameter = 0) {
+  _getDates(parameter = 0) {
     const monthPr = parameter;
     const dateNow = new Date();
     const firstDay = (new Date(dateNow.getFullYear(), monthPr, 1).getDay())
@@ -206,7 +206,7 @@ export default class FilterDropdownDate {
 
     const dates = [];
 
-    const daysLength = (firstDay + this.calculateMonthLength(currentMonth) >= 35) ? 42 : 35;
+    const daysLength = (firstDay + this._calculateMonthLength(currentMonth) >= 35) ? 42 : 35;
 
     for (let i = 0; i < daysLength; i += 1) {
       const objDate = new Date(
@@ -234,14 +234,14 @@ export default class FilterDropdownDate {
 
 
     return {
-      title: `${this.getNameMonth(currentMonth).longName} ${currentYear}`,
+      title: `${this._getNameMonth(currentMonth).longName} ${currentYear}`,
       dates,
       month: currentMonth,
       year: currentYear,
     };
   }
 
-  calculateMonthLength(num) {
+  _calculateMonthLength(num) {
     switch (num) {
       case 0: return 31;
       case 1: return 29;
@@ -259,7 +259,7 @@ export default class FilterDropdownDate {
     }
   }
 
-  drawDays(dates, containerNode) {
+  _drawDays(dates, containerNode) {
     const container = containerNode;
     container.innerHTML = '';
     dates.forEach((it) => {
@@ -281,7 +281,7 @@ export default class FilterDropdownDate {
     return container;
   }
 
-  drawTitle(title) {
+  _drawTitle(title) {
     this.titleNode.textContent = title;
   }
 }
