@@ -1,94 +1,178 @@
 export default class FilterDropdownDate {
   constructor(input) {
     if (!input) return;
-    this.input = input;
-    const containerClassName = `.${input.parentNode.className} .card-calendar`;
+    this.inputNode = input;
+    this.containerClassName = `.${input.parentNode.className} .card-calendar`;
 
-    const options = this.getDates();
+    this.cardCalendarNode = document.querySelector(this.containerClassName);
+    this.titleNode = this.cardCalendarNode.querySelector('.js-card-calendar__title');
+    this.numbersNode = this.cardCalendarNode.querySelector('.js-card-calendar__numbers');
+    this.buttonClearNode = this.cardCalendarNode.querySelector('.js-card-calendar__button-clear');
+    this.buttonSubmitNode = this.cardCalendarNode.querySelector('.js-card-calendar__button-submit');
+    this.buttonRightNode = this.cardCalendarNode.querySelector('.js-card-calendar__button_right');
+    this.buttonLeftNode = this.cardCalendarNode.querySelector('.js-card-calendar__button_left');
 
-    const cardCalendarNode = document.querySelector(containerClassName);
-    cardCalendarNode.classList.add('card-calendar_close');
-    cardCalendarNode.querySelector('.js-card-calendar__title').textContent = options.title;
+    this.cardCalendarNode.classList.add('card-calendar_close');
+    this.startDate = null;
+    this.endDate = null;
+    this.data = this.getDates(0);
+    this.monthNumber = 0;
+    this.drawTitle(this.data.title);
+    this.drawDays(this.data.dates, this.numbersNode);
 
-    const numbersNode = cardCalendarNode.querySelector('.js-card-calendar__numbers');
-    const buttonClearNode = cardCalendarNode.querySelector('.js-card-calendar__button-clear');
-    const buttonSubmitNode = cardCalendarNode.querySelector('.js-card-calendar__button-submit');
+    this.buttonRightNode.addEventListener('click', () => {
+      this.monthNumber += 1;
+      this.updateCalendar();
+    });
 
-    this.drawDays(options.dates, numbersNode);
+    this.buttonLeftNode.addEventListener('click', () => {
+      this.monthNumber -= 1;
+      this.updateCalendar();
+    });
 
-    numbersNode.addEventListener('click', (ev) => {
-      if (options.dates.some((it) => it.endDate)) return;
+    this.numbersNode.addEventListener('click', this.onNumbersNodeClick.bind(this));
 
-      if (options.dates.some((it) => it.startDate)) {
-        const start = options.dates.reduce((prev, it, idx) => {
-          let previous = prev;
-          if (it.startDate) {
-            previous = idx;
+    this.buttonClearNode.addEventListener('click', () => {
+      this.clearDates();
+    });
+
+    this.buttonSubmitNode.addEventListener('click', () => {
+      this.cardCalendarNode.classList.add('card-calendar_close');
+      if (this.startDate && this.endDate) {
+        this.inputNode.value = `${this.startDate.date} ${this.getNameMonth(this.startDate.month).name} - ${this.endDate.date} ${this.getNameMonth(this.endDate.month).name}`;
+      }
+    });
+
+    this.inputNode.addEventListener('click', this.onInputNodeClick.bind(this));
+  }
+
+  clearDates() {
+    this.data.dates.forEach((item) => {
+      const it = item;
+      it.startDate = false;
+      it.middleDate = false;
+      it.endDate = false;
+    });
+    this.startDate = null;
+    this.endDate = null;
+    this.monthNumber = 0;
+    this.drawDays(this.data.dates, this.numbersNode);
+    this.inputNode.value = '';
+  }
+
+  onInputNodeClick() {
+    this.cardCalendarNode.classList.toggle('card-calendar_close');
+  }
+
+  onNumbersNodeClick(ev) {
+    const { year, month } = this.getDates(this.monthNumber);
+
+    // если клик другой месяц
+    if (ev.target.classList.contains('card-calendar__number_empty')) {
+      for (let i = 0; i < this.data.dates.length; i += 1) {
+        if (
+          this.data.dates[i].number === +ev.target.textContent
+          && this.data.dates[i].otherMonth
+        ) {
+          // если клик другой месяц вперед
+          if (this.data.dates[i].month - 1 === month) {
+            this.monthNumber += 1;
+            this.updateCalendar();
+            return;
           }
-          return previous;
-        }, 0);
-
-        options.dates.forEach((item, idx) => {
-          const it = item;
-          if (
-            it.number === +ev.target.textContent
-            && it.month === +ev.target.dataset.month
-            && start < idx) {
-            it.endDate = true;
+          if (this.data.dates[i].month === 0 && month === 11) {
+            this.monthNumber += 1;
+            this.updateCalendar();
+            return;
           }
-        });
 
-        const end = options.dates.reduce((previous, it, idx) => {
-          let prev = previous;
-          if (it.endDate) {
-            prev = idx;
+          // если клик другой месяц назад
+          if (this.data.dates[i].month + 1 === month) {
+            this.monthNumber -= 1;
+            this.updateCalendar();
+            return;
           }
-          return prev;
-        }, 0);
-
-        for (let i = start + 1; i < end; i += 1) {
-          options.dates[i].middleDate = true;
+          if (this.data.dates[i].month === 11 && month === 0) {
+            this.monthNumber -= 1;
+            this.updateCalendar();
+            return;
+          }
         }
-
-        this.drawDays(options.dates, numbersNode);
-      } else {
-        options.dates.forEach(((item) => {
-          const it = item;
-          if (it.number === +ev.target.textContent && it.month === +ev.target.dataset.month) {
-            it.startDate = true;
-          }
-        }));
-        this.drawDays(options.dates, numbersNode);
       }
-    });
+    }
 
-    const clearDates = () => {
-      options.dates.forEach((item) => {
-        const it = item;
-        it.startDate = false;
-        it.middleDate = false;
-        it.endDate = false;
-      });
-      this.drawDays(options.dates, numbersNode);
-      this.input.value = '';
-    };
+    if (!this.startDate) {
+      if (ev.target.classList.contains('card-calendar__number')) {
+        this.startDate = {
+          date: +ev.target.textContent,
+          month,
+          parse: Date.parse(new Date(year, month, +ev.target.textContent)),
+        };
 
-    buttonClearNode.addEventListener('click', () => {
-      clearDates();
-    });
-
-    buttonSubmitNode.addEventListener('click', () => {
-      cardCalendarNode.classList.add('card-calendar_close');
-      const start = options.dates.filter((it) => it.startDate)[0];
-      const end = options.dates.filter((it) => it.endDate)[0];
-      if (start && end && input) {
-        this.input.value = `${start.number} ${this.getNameMonth(start.month).name} - ${end.number} ${this.getNameMonth(end.month).name}`;
+        this.writeStartDateData();
+        this.drawDays(this.data.dates, this.numbersNode);
+        return;
       }
-    });
+    }
 
-    this.input.addEventListener('click', () => {
-      cardCalendarNode.classList.remove('card-calendar_close');
-    });
+    // если есть старт дата и нет енд даты
+    if (this.startDate && !this.endDate) {
+      // если клик на нужный класс с цифрой
+      if (ev.target.classList.contains('card-calendar__number')) {
+        // если енд дата больше старт даты
+        if (this.startDate.parse < Date.parse(new Date(year, month, +ev.target.textContent))) {
+          this.endDate = {
+            date: +ev.target.textContent,
+            month,
+            parse: Date.parse(new Date(year, month, +ev.target.textContent)),
+          };
+          this.writeEndDateData();
+          this.writeMiddleDates();
+          this.drawDays(this.data.dates, this.numbersNode);
+        }
+      }
+    }
+  }
+
+  writeStartDateData() {
+    if (!this.startDate) return;
+
+    for (let i = 0; i < this.data.dates.length; i += 1) {
+      if (this.startDate.parse === this.data.dates[i].parse) {
+        this.data.dates[i].startDate = true;
+      }
+    }
+  }
+
+  writeEndDateData() {
+    if (!this.endDate) return;
+
+    for (let i = 0; i < this.data.dates.length; i += 1) {
+      if (this.endDate.parse === this.data.dates[i].parse) {
+        this.data.dates[i].endDate = true;
+      }
+    }
+  }
+
+  writeMiddleDates() {
+    if (!this.endDate) return;
+    for (let i = 0; i < this.data.dates.length; i += 1) {
+      if (
+        this.startDate.parse < this.data.dates[i].parse
+        && this.data.dates[i].parse < this.endDate.parse
+      ) {
+        this.data.dates[i].middleDate = true;
+      }
+    }
+  }
+
+  updateCalendar() {
+    this.data = this.getDates(this.monthNumber);
+    this.writeStartDateData();
+    this.writeEndDateData();
+    this.writeMiddleDates();
+    this.drawTitle(this.data.title);
+    this.drawDays(this.data.dates, this.numbersNode);
   }
 
   getNameMonth(num) {
@@ -109,48 +193,76 @@ export default class FilterDropdownDate {
     }
   }
 
-  getDates() {
-    const date = new Date();
-    let day;
+  getDates(parameter = 0) {
+    const monthPr = parameter;
+    const dateNow = new Date();
+    const firstDay = (new Date(dateNow.getFullYear(), monthPr, 1).getDay())
+      ? new Date(dateNow.getFullYear(), monthPr, 1).getDay() - 2
+      : new Date(dateNow.getFullYear(), monthPr, 1).getDay() + 5;
+    const startDate = new Date(dateNow.getFullYear(), monthPr, -firstDay);
 
-    if (date.getDay() % 7) {
-      day = ((date.getDate() - date.getDay()) % 7) - 6;
-    } else {
-      day = 1;
-    }
+    const currentMonth = new Date(dateNow.getFullYear(), dateNow.getMonth() + monthPr).getMonth();
+    const currentYear = new Date(dateNow.getFullYear(), dateNow.getMonth() + monthPr).getFullYear();
 
-    const array = [];
-    let k = 1;
+    const dates = [];
 
-    for (let i = day; k <= 35; i += 1) {
-      k += 1;
-      const objDate = new Date(date.getFullYear(), date.getMonth(), i);
+    const daysLength = (firstDay + this.calculateMonthLength(currentMonth) >= 35) ? 42 : 35;
+
+    for (let i = 0; i < daysLength; i += 1) {
+      const objDate = new Date(
+        startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + i,
+      );
       const number = objDate.getDate();
       const month = objDate.getMonth();
-      const otherMonth = (i < 0);
-      const today = number === new Date().getDate() && objDate.getMonth() === new Date().getMonth();
+      const otherMonth = (currentMonth !== objDate.getMonth());
+      const today = (
+        number === new Date().getDate() && objDate.getMonth() === new Date().getMonth()
+      );
       const obj = {
-        number, otherMonth, startDate: false, middleDate: false, endDate: false, month, today,
+        number,
+        otherMonth,
+        startDate: false,
+        middleDate: false,
+        endDate: false,
+        month,
+        today,
+        parse: Date.parse(new Date(currentYear, month, number)),
       };
 
-      array.push(obj);
+      dates.push(obj);
     }
-    
-    console.log('---', {
-      title: `${this.getNameMonth(date.getMonth()).longName} ${date.getFullYear()}`,
-      dates: array,
-    })
+
 
     return {
-      title: `${this.getNameMonth(date.getMonth()).longName} ${date.getFullYear()}`,
-      dates: array,
+      title: `${this.getNameMonth(currentMonth).longName} ${currentYear}`,
+      dates,
+      month: currentMonth,
+      year: currentYear,
     };
   }
 
-  drawDays(options, containerNode) {
+  calculateMonthLength(num) {
+    switch (num) {
+      case 0: return 31;
+      case 1: return 29;
+      case 2: return 31;
+      case 3: return 30;
+      case 4: return 31;
+      case 5: return 30;
+      case 6: return 31;
+      case 7: return 31;
+      case 8: return 30;
+      case 9: return 31;
+      case 10: return 30;
+      case 11: return 31;
+      default: break;
+    }
+  }
+
+  drawDays(dates, containerNode) {
     const container = containerNode;
     container.innerHTML = '';
-    options.forEach((it) => {
+    dates.forEach((it) => {
       const classes = ['card-calendar__number'];
       if (it.otherMonth) classes.push('card-calendar__number_empty');
       if (it.startDate) classes.push('card-calendar__number_start');
@@ -167,6 +279,10 @@ export default class FilterDropdownDate {
     });
 
     return container;
+  }
+
+  drawTitle(title) {
+    this.titleNode.textContent = title;
   }
 }
 

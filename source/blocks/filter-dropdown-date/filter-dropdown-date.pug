@@ -6,6 +6,6 @@ mixin filter-dropdown-date(parameters)
 	.filter-dropdown-date
 		if title
 			p.filter-dropdown__title #{title}
-		input(type="text" placeholder="ДД.МММ - ДД.МММ" readonly class="datepicker-here").filter-dropdown-date__input.js-filter-dropdown-date__input
+		input(type="text" placeholder="ДД.МММ - ДД.МММ" readonly).filter-dropdown-date__input.js-filter-dropdown-date__input
 		.filter-dropdown-date__calendar
 			+card-calendar()
