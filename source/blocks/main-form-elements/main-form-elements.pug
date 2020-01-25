@@ -39,7 +39,7 @@ mixin main-form-elements()
 					})
 					.main-form-elements__masked-text-field
 						+text-field({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'Masked text field'})
-					div(id="form-dropdown-date")
+					.main-form-elements__group-dropdown-date.js-main-form-elements__group-dropdown-date
 						+group-dropdown-date({titleLeft: 'Date dropdown', titleRight: 'Date dropdown', placeholder: 'ДД.ММ.ГГГГ'})
 					.main-form-elements__filter
 						+filter-dropdown-date({title: 'filter date dropdown'})
