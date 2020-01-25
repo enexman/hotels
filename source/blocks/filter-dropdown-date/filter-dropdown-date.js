@@ -217,7 +217,9 @@ export default class FilterDropdownDate {
       const month = objDate.getMonth();
       const otherMonth = (currentMonth !== objDate.getMonth());
       const today = (
-        number === new Date().getDate() && objDate.getMonth() === new Date().getMonth()
+        number === new Date().getDate()
+        && objDate.getMonth() === new Date().getMonth()
+        && objDate.getFullYear() === new Date().getFullYear()
       );
       const obj = {
         number,
@@ -232,7 +234,6 @@ export default class FilterDropdownDate {
 
       dates.push(obj);
     }
-
 
     return {
       title: `${this._getNameMonth(currentMonth).longName} ${currentYear}`,
