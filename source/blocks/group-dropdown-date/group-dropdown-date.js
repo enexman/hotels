@@ -1,5 +1,6 @@
 export default class GroupDropdownDate {
   constructor(parent) {
+    console.log('---', parent)
     if (!parent) return;
     this.inputStartNode = parent.querySelector('.js-group-dropdown-date__input_left');
     this.inputEndNode = parent.querySelector('.js-group-dropdown-date__input_right');
@@ -295,6 +296,6 @@ export default class GroupDropdownDate {
   }
 }
 
-new GroupDropdownDate(document.querySelector('#form-dropdown-date'));
-new GroupDropdownDate(document.querySelector('.js-card-find'));
+// new GroupDropdownDate(document.querySelector('#form-dropdown-date'));
+// new GroupDropdownDate(document.querySelector('.js-card-find'));
 new GroupDropdownDate(document.querySelector('.js-card-reserve'));
