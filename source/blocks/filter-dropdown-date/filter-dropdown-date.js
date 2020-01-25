@@ -56,6 +56,7 @@ export default class FilterDropdownDate {
     this.startDate = null;
     this.endDate = null;
     this.monthNumber = 0;
+    this._updateCalendar();
     this._drawDays(this.data.dates, this.numbersNode);
     this.inputNode.value = '';
   }
