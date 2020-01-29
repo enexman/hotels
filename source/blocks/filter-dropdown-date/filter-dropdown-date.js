@@ -1,9 +1,12 @@
 export default class FilterDropdownDate {
   constructor(input) {
-    if (!input) return;
     this.inputNode = input;
-    this.containerClassName = `.${input.parentNode.className} .card-calendar`;
+    this._defaultState();
+    this._addEventListeners();
+  }
 
+  _defaultState() {
+    this.containerClassName = `.${this.inputNode.parentNode.className} .card-calendar`;
     this.cardCalendarNode = document.querySelector(this.containerClassName);
     this.titleNode = this.cardCalendarNode.querySelector('.js-card-calendar__title');
     this.numbersNode = this.cardCalendarNode.querySelector('.js-card-calendar__numbers');
@@ -19,7 +22,9 @@ export default class FilterDropdownDate {
     this.monthNumber = 0;
     this._drawTitle(this.data.title);
     this._drawDays(this.data.dates, this.numbersNode);
+  }
 
+  _addEventListeners() {
     this.buttonRightNode.addEventListener('click', () => {
       this.monthNumber += 1;
       this._updateCalendar();
@@ -288,4 +293,8 @@ export default class FilterDropdownDate {
   }
 }
 
-new FilterDropdownDate(document.querySelector('.js-filter-dropdown-date__input'));
+const filterDropdownDate = document.querySelector('.js-filter-dropdown-date__input');
+
+if (filterDropdownDate) {
+  new FilterDropdownDate(filterDropdownDate);
+}

@@ -1,9 +1,14 @@
 export default class GroupDropdownDate {
   constructor(parent) {
-    if (!parent) return;
-    this.inputStartNode = parent.querySelector('.js-group-dropdown-date__input_left');
-    this.inputEndNode = parent.querySelector('.js-group-dropdown-date__input_right');
-    this.containerClassName = `.${parent.className.split(' ')[0]} .card-calendar`;
+    this.parentNode = parent;
+    this._defaultState();
+    this._addEventListeners();
+  }
+
+  _defaultState() {
+    this.inputStartNode = this.parentNode.querySelector('.js-group-dropdown-date__input_left');
+    this.inputEndNode = this.parentNode.querySelector('.js-group-dropdown-date__input_right');
+    this.containerClassName = `.${this.parentNode.className.split(' ')[0]} .card-calendar`;
 
     this.cardCalendarNode = document.querySelector(this.containerClassName);
     this.titleNode = this.cardCalendarNode.querySelector('.js-card-calendar__title');
@@ -20,7 +25,9 @@ export default class GroupDropdownDate {
     this.monthNumber = 0;
     this._drawTitle(this.data.title);
     this._drawDays(this.data.dates, this.numbersNode);
+  }
 
+  _addEventListeners() {
     this.buttonRightNode.addEventListener('click', () => {
       this.monthNumber += 1;
       this._updateCalendar();
@@ -297,6 +304,20 @@ export default class GroupDropdownDate {
   }
 }
 
-new GroupDropdownDate(document.querySelector('.js-main-form-elements__group-dropdown-date'));
-new GroupDropdownDate(document.querySelector('.js-card-find'));
-new GroupDropdownDate(document.querySelector('.js-card-reserve'));
+const groupDropdownDateFormElement = document.querySelector(
+  '.js-main-form-elements__group-dropdown-date',
+);
+const groupDropdownDateCardFind = document.querySelector('.js-card-find');
+const groupDropdownDateCardReserve = document.querySelector('.js-card-reserve');
+
+if (groupDropdownDateFormElement) {
+  new GroupDropdownDate(groupDropdownDateFormElement);
+}
+
+if (groupDropdownDateCardFind) {
+  new GroupDropdownDate(groupDropdownDateCardFind);
+}
+
+if (groupDropdownDateCardReserve) {
+  new GroupDropdownDate(groupDropdownDateCardReserve);
+}
