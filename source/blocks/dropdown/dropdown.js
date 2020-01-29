@@ -1,21 +1,15 @@
-export default class Dropdown {
-  constructor(id) {
-    this.blockNode = document.querySelector(id);
-    if (!this.blockNode) return;
-
-    this.listNode = this.blockNode.querySelector('.js-dropdown__list');
-    this.liNodes = this.blockNode.querySelectorAll('.js-dropdown__option');
-    this.inputNode = this.blockNode.querySelector('.js-dropdown__text');
-    this.listNode.classList.remove('dropdown__list_open');
-
-    this._defaultData();
-
-    this._toggleList();
-
+class Dropdown {
+  constructor(elementNode) {
+    this.blockNode = elementNode;
+    this._defaultState();
     this._addEventListeners();
   }
 
   _addEventListeners() {
+    this.inputNode.addEventListener('click', () => {
+      this.listNode.classList.toggle('dropdown__list_open');
+    });
+
     Array.from(this.liNodes).forEach((it, idx) => {
       const numeric = it.querySelector('.js-dropdown__numeric');
       const minus = it.querySelector('.js-dropdown__button-minus');
@@ -36,12 +30,6 @@ export default class Dropdown {
 
         this._disableMinusButton(numeric, minus);
       });
-    });
-  }
-
-  _toggleList() {
-    this.inputNode.addEventListener('click', () => {
-      this.listNode.classList.toggle('dropdown__list_open');
     });
   }
 
@@ -90,7 +78,11 @@ export default class Dropdown {
     this.inputNode.value = (bedRooms + beds + bathRooms).slice(2, -1);
   }
 
-  _defaultData() {
+  _defaultState() {
+    this.listNode = this.blockNode.querySelector('.js-dropdown__list');
+    this.liNodes = this.blockNode.querySelectorAll('.js-dropdown__option');
+    this.inputNode = this.blockNode.querySelector('.js-dropdown__text');
+    this.listNode.classList.remove('dropdown__list_open');
     this.bedRoom = 0;
     this.bed = 0;
     this.bathRoom = 0;
@@ -107,5 +99,13 @@ export default class Dropdown {
   }
 }
 
-new Dropdown('#drop-fe');
-new Dropdown('#drop-fe-second');
+const dropdownFormElement = document.querySelector('#drop-fe');
+const dropdownFormElementSecond = document.querySelector('#drop-fe-second');
+
+if (dropdownFormElement) {
+  new Dropdown(dropdownFormElement);
+}
+
+if (dropdownFormElementSecond) {
+  new Dropdown(dropdownFormElementSecond);
+}

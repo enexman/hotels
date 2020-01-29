@@ -1,21 +1,11 @@
-export default class DropdownButtons {
-  constructor(id) {
-    this.blockNode = document.querySelector(id);
-    if (!this.blockNode) return;
-    this.listNode = this.blockNode.querySelector('.js-dropdown-buttons__list');
-    this.liNodes = this.blockNode.querySelectorAll('.js-dropdown-buttons__option');
-    this.submitNode = this.blockNode.querySelector('.js-dropdown-buttons__button-bottom_submit');
-    this.clearNode = this.blockNode.querySelector('.js-dropdown-buttons__button-bottom_clear');
-    this.inputNode = this.blockNode.querySelector('.js-dropdown-buttons__input');
+class DropdownButtons {
+  constructor(elementNode) {
+    this.blockNode = elementNode;
+    this._defaultState();
+    this._addEventListeners();
+  }
 
-    this._defaultData();
-
-    this._toggleList();
-
-    if (this.clearNode) {
-      this.clearNode.style.display = 'none';
-    }
-
+  _addEventListeners() {
     this._addEventListenerToSubmit();
 
     this._addEventListenerToClear();
@@ -26,7 +16,9 @@ export default class DropdownButtons {
   _addEventListenerToClear() {
     this.clearNode.addEventListener('click', () => {
       this.inputNode.value = '';
-      this._defaultData();
+      this.guest = 0;
+      this.baby = 0;
+
       Array.from(this.liNodes).forEach((it) => {
         const item = it.querySelector('.js-dropdown-buttons__numeric');
         if (item) item.textContent = ' 0 ';
@@ -89,9 +81,18 @@ export default class DropdownButtons {
     });
   }
 
-  _defaultData() {
+  _defaultState() {
+    this.listNode = this.blockNode.querySelector('.js-dropdown-buttons__list');
+    this.liNodes = this.blockNode.querySelectorAll('.js-dropdown-buttons__option');
+    this.submitNode = this.blockNode.querySelector('.js-dropdown-buttons__button-bottom_submit');
+    this.clearNode = this.blockNode.querySelector('.js-dropdown-buttons__button-bottom_clear');
+    this.inputNode = this.blockNode.querySelector('.js-dropdown-buttons__input');
     this.guest = 0;
     this.baby = 0;
+    this._toggleList();
+    if (this.clearNode) {
+      this.clearNode.style.display = 'none';
+    }
   }
 
   _disableMinusButton(numeric, minus) {
@@ -105,6 +106,18 @@ export default class DropdownButtons {
   }
 }
 
-new DropdownButtons('#drop-first');
-new DropdownButtons('#drop-second');
-new DropdownButtons('#drop-third');
+const dropdownButtonsFirst = document.querySelector('#drop-first');
+const dropdownButtonsSecond = document.querySelector('#drop-second');
+const dropdownButtonsThird = document.querySelector('#drop-third');
+
+if (dropdownButtonsFirst) {
+  new DropdownButtons(dropdownButtonsFirst);
+}
+
+if (dropdownButtonsSecond) {
+  new DropdownButtons(dropdownButtonsSecond);
+}
+
+if (dropdownButtonsThird) {
+  new DropdownButtons(dropdownButtonsThird);
+}
