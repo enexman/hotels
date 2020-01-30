@@ -106,18 +106,8 @@ class DropdownButtons {
   }
 }
 
-const dropdownButtonsFirst = document.querySelector('#drop-first');
-const dropdownButtonsSecond = document.querySelector('#drop-second');
-const dropdownButtonsThird = document.querySelector('#drop-third');
+const dropdownButtons = document.querySelectorAll('.js-dropdown-buttons');
 
-if (dropdownButtonsFirst) {
-  new DropdownButtons(dropdownButtonsFirst);
-}
-
-if (dropdownButtonsSecond) {
-  new DropdownButtons(dropdownButtonsSecond);
-}
-
-if (dropdownButtonsThird) {
-  new DropdownButtons(dropdownButtonsThird);
-}
+Array.from(dropdownButtons).forEach(it => {
+  new DropdownButtons(it);
+});

@@ -99,13 +99,8 @@ class Dropdown {
   }
 }
 
-const dropdownFormElement = document.querySelector('#drop-fe');
-const dropdownFormElementSecond = document.querySelector('#drop-fe-second');
+const dropdowns = document.querySelectorAll('.js-dropdown');
 
-if (dropdownFormElement) {
-  new Dropdown(dropdownFormElement);
-}
-
-if (dropdownFormElementSecond) {
-  new Dropdown(dropdownFormElementSecond);
-}
+Array.from(dropdowns).forEach(it => {
+  new Dropdown(it);
+});

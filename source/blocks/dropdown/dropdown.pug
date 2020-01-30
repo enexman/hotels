@@ -1,7 +1,7 @@
 mixin dropdown(parameters)
-	- const { text, title, values, id } = parameters
+	- const { text, title, values } = parameters
 
-	div(id=id).dropdown.dropdown_medium
+	.dropdown.dropdown_medium.js-dropdown
 		if title
 			p.dropdown__top
 				span #{title}

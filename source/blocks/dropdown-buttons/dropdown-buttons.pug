@@ -1,7 +1,7 @@
 mixin dropdown-buttons(parameters)
-	- const { title, values, id } = parameters
+	- const { title, values } = parameters
 
-	div(id=id).dropdown-buttons
+	.dropdown-buttons.js-dropdown-buttons
 		if title
 			p.dropdown-buttons__title #{title}
 		input(class="dropdown-buttons__input js-dropdown-buttons__input" type="text" placeholder="Сколько гостей" readonly)

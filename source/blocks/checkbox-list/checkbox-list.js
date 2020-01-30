@@ -1,10 +1,13 @@
-export default class CheckboxList {
-  constructor(id) {
-    this.container = document.querySelector(id);
-    if (!this.container) return;
+class CheckboxList {
+  constructor(block) {
+    this.container = block;
+    this._defaultState();
+    this._openList();
+  }
+
+  _defaultState() {
     this.title = this.container.querySelector('.js-checkbox-list__title');
     this.list = this.container.querySelector('.js-checkbox-list__list');
-    this._openList();
   }
 
   _openList() {
@@ -16,5 +19,8 @@ export default class CheckboxList {
   }
 }
 
-new CheckboxList('#checkbox-first');
-new CheckboxList('#checkbox-second');
+const checkboxes = document.querySelectorAll('.js-checkbox-list');
+
+Array.from(checkboxes).forEach(it => {
+  new CheckboxList(it);
+});

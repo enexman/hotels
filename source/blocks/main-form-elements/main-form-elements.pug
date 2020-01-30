@@ -34,8 +34,7 @@ mixin main-form-elements()
 							{ title: 'взрослые', num: 0},
 							{ title: 'дети', num: 0},
 							{ title: 'младенцы', num: 0}
-						],
-						id: 'drop-first'
+						]
 					})
 					.main-form-elements__masked-text-field
 						+text-field({type: 'text', placeholder: 'ДД.ММ.ГГГГ', title: 'Masked text field'})
@@ -87,8 +86,7 @@ mixin main-form-elements()
 								{ title: 'спальни', num: 0},
 								{ title: 'кровати', num: 0},
 								{ title: 'ванные комнаты', num: 0}
-							],
-							id: 'drop-fe'
+							]
 						})
 						+dropdown({
 							text: 'Комнаты',
@@ -97,8 +95,7 @@ mixin main-form-elements()
 								{ title: 'спальни', num: 0},
 								{ title: 'кровати', num: 0},
 								{ title: 'ванные комнаты', num: 0}
-							],
-							id: 'drop-fe-second'
+							]
 						})
 				.main-form-elements__col
 					+dropdown-buttons({
@@ -108,8 +105,7 @@ mixin main-form-elements()
 							{ title: 'взрослые', num: 0},
 							{ title: 'дети', num: 0},
 							{ title: 'младенцы', num: 0}
-						],
-						id: 'drop-second'
+						]
 					})
 				.main-form-elements__col
 					+dropdown-buttons({
@@ -119,13 +115,11 @@ mixin main-form-elements()
 							{ title: 'взрослые', num: 0},
 							{ title: 'дети', num: 0},
 							{ title: 'младенцы', num: 0}
-						],
-						id: 'drop-third'
+						]
 					})
 				.main-form-elements__col
 					.main-form-elements__checkbox-list
 						+checkbox-list({
-							id: 'checkbox-first',
 							values: [
 								{title: '', text: 'Завтрак', checked: false},
 								{title: '', text: 'Письменный стол', checked: true},
@@ -140,7 +134,6 @@ mixin main-form-elements()
 						})
 						.main-form-elements__checkbox
 							+checkbox-list({
-								id: 'checkbox-second',
 								values: [
 									{title: '', text: 'Завтрак', checked: false},
 									{title: '', text: 'Письменный стол', checked: true},
