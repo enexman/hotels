@@ -1,4 +1,4 @@
-export default class GroupDropdownDate {
+class GroupDropdownDate {
   constructor(parent) {
     this.parentNode = parent;
     this._defaultState();
@@ -28,36 +28,13 @@ export default class GroupDropdownDate {
   }
 
   _addEventListeners() {
-    this.buttonRightNode.addEventListener('click', () => {
-      this.monthNumber += 1;
-      this._updateCalendar();
-    });
-
-    this.buttonLeftNode.addEventListener('click', () => {
-      this.monthNumber -= 1;
-      this._updateCalendar();
-    });
-
-    this.numbersNode.addEventListener('click', this._onNumbersNodeClick.bind(this));
-
-    this.buttonClearNode.addEventListener('click', () => {
-      this._clearDates();
-    });
-
-    this.buttonSubmitNode.addEventListener('click', () => {
-      const pad = (n) => (n < 10 ? `0${n}` : n);
-
-      this.cardCalendarNode.classList.add('card-calendar_close');
-      if (this.startDate) {
-        this.inputStartNode.value = `${pad(this.startDate.date)}.${pad(this.startDate.month + 1)}.${this.data.year}`;
-      }
-      if (this.endDate) {
-        this.inputEndNode.value = `${pad(this.endDate.date)}.${pad(this.endDate.month + 1)}.${this.data.year}`;
-      }
-    });
-
-    this.inputStartNode.addEventListener('click', this._onInputNodeClick.bind(this));
-    this.inputEndNode.addEventListener('click', this._onInputNodeClick.bind(this));
+    this.buttonRightNode.addEventListener('click', this._handleButtonRightNodeClick.bind(this));
+    this.buttonLeftNode.addEventListener('click', this._handleButtonLeftNodeClick.bind(this));
+    this.numbersNode.addEventListener('click', this._handleNumbersNodeClick.bind(this));
+    this.buttonClearNode.addEventListener('click', this._handleButtonClearNodeClick.bind(this));
+    this.buttonSubmitNode.addEventListener('click', this._handleButtonSubmitNodeClick.bind(this));
+    this.inputStartNode.addEventListener('click', this._handleInputNodeClick.bind(this));
+    this.inputEndNode.addEventListener('click', this._handleInputNodeClick.bind(this));
   }
 
   _clearDates() {
@@ -76,21 +53,45 @@ export default class GroupDropdownDate {
     this.inputEndNode.value = '';
   }
 
-  _onInputNodeClick() {
+  _handleButtonRightNodeClick() {
+    this.monthNumber += 1;
+    this._updateCalendar();
+  }
+
+  _handleButtonLeftNodeClick() {
+    this.monthNumber -= 1;
+    this._updateCalendar();
+  }
+
+  _handleButtonClearNodeClick() {
+    this._clearDates();
+  }
+
+  _handleButtonSubmitNodeClick() {
+    const pad = (n) => (n < 10 ? `0${n}` : n);
+
+    this.cardCalendarNode.classList.add('card-calendar_close');
+    if (this.startDate) {
+      this.inputStartNode.value = `${pad(this.startDate.date)}.${pad(this.startDate.month + 1)}.${this.data.year}`;
+    }
+    if (this.endDate) {
+      this.inputEndNode.value = `${pad(this.endDate.date)}.${pad(this.endDate.month + 1)}.${this.data.year}`;
+    }
+  }
+
+  _handleInputNodeClick() {
     this.cardCalendarNode.classList.toggle('card-calendar_close');
   }
 
-  _onNumbersNodeClick(ev) {
+  _handleNumbersNodeClick(ev) {
     const { year, month } = this._getDates(this.monthNumber);
 
-    // если клик другой месяц
     if (ev.target.classList.contains('card-calendar__number_empty')) {
       for (let i = 0; i < this.data.dates.length; i += 1) {
         if (
           this.data.dates[i].number === +ev.target.textContent
           && this.data.dates[i].otherMonth
         ) {
-          // если клик другой месяц вперед
           if (this.data.dates[i].month - 1 === month) {
             this.monthNumber += 1;
             this._updateCalendar();
@@ -102,7 +103,6 @@ export default class GroupDropdownDate {
             return;
           }
 
-          // если клик другой месяц назад
           if (this.data.dates[i].month + 1 === month) {
             this.monthNumber -= 1;
             this._updateCalendar();
@@ -133,7 +133,6 @@ export default class GroupDropdownDate {
 
     // если есть старт дата и нет енд даты
     if (this.startDate && !this.endDate) {
-      // если клик на нужный класс с цифрой
       if (ev.target.classList.contains('card-calendar__number')) {
         // если енд дата больше старт даты
         if (this.startDate.parse < Date.parse(new Date(year, month, +ev.target.textContent))) {

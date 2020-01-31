@@ -6,31 +6,37 @@ class Dropdown {
   }
 
   _addEventListeners() {
-    this.inputNode.addEventListener('click', () => {
-      this.listNode.classList.toggle('dropdown__list_open');
-    });
+    this.inputNode.addEventListener('click', this._handleInputNodeClick.bind(this));
 
     Array.from(this.liNodes).forEach((it, idx) => {
+      it.addEventListener('click', this._handleLiNodeClick(it, idx).bind(this));
+    });
+  }
+
+  _handleLiNodeClick(it, idx) {
+    return (ev) => {
       const numeric = it.querySelector('.js-dropdown__numeric');
       const minus = it.querySelector('.js-dropdown__button-minus');
 
-      it.addEventListener('click', (ev) => {
-        this._updateNumeric(numeric, idx);
+      this._updateNumeric(numeric, idx);
 
-        if (ev.target.classList.contains('dropdown__button_plus')) {
-          numeric.textContent = +numeric.textContent + 1;
-          this._updateInputValuePlus(idx);
-        }
+      if (ev.target.classList.contains('dropdown__button_plus')) {
+        numeric.textContent = +numeric.textContent + 1;
+        this._updateInputValuePlus(idx);
+      }
 
-        if (ev.target.classList.contains('dropdown__button_minus')) {
-          if (!+numeric.textContent) return;
-          numeric.textContent = +numeric.textContent - 1;
-          this._updateInputValueMinus(idx);
-        }
+      if (ev.target.classList.contains('dropdown__button_minus')) {
+        if (!+numeric.textContent) return;
+        numeric.textContent = +numeric.textContent - 1;
+        this._updateInputValueMinus(idx);
+      }
 
-        this._disableMinusButton(numeric, minus);
-      });
-    });
+      this._disableMinusButton(numeric, minus);
+    };
+  }
+
+  _handleInputNodeClick() {
+    this.listNode.classList.toggle('dropdown__list_open');
   }
 
   _updateNumeric(numeric, idx) {
@@ -101,6 +107,6 @@ class Dropdown {
 
 const dropdowns = document.querySelectorAll('.js-dropdown');
 
-Array.from(dropdowns).forEach(it => {
+Array.from(dropdowns).forEach((it) => {
   new Dropdown(it);
 });

@@ -1,4 +1,4 @@
-export default class FilterDropdownDate {
+class FilterDropdownDate {
   constructor(input) {
     this.inputNode = input;
     this._defaultState();
@@ -25,30 +25,17 @@ export default class FilterDropdownDate {
   }
 
   _addEventListeners() {
-    this.buttonRightNode.addEventListener('click', () => {
-      this.monthNumber += 1;
-      this._updateCalendar();
-    });
+    this.buttonRightNode.addEventListener('click', this._handleButtonRightNodeClick.bind(this));
 
-    this.buttonLeftNode.addEventListener('click', () => {
-      this.monthNumber -= 1;
-      this._updateCalendar();
-    });
+    this.buttonLeftNode.addEventListener('click', this._handleButtonLeftNodeClick.bind(this));
 
-    this.numbersNode.addEventListener('click', this._onNumbersNodeClick.bind(this));
+    this.numbersNode.addEventListener('click', this._handleNumbersNodeClick.bind(this));
 
-    this.buttonClearNode.addEventListener('click', () => {
-      this._clearDates();
-    });
+    this.buttonClearNode.addEventListener('click', this._handleButtonClearNodeClick.bind(this));
 
-    this.buttonSubmitNode.addEventListener('click', () => {
-      this.cardCalendarNode.classList.add('card-calendar_close');
-      if (this.startDate && this.endDate) {
-        this.inputNode.value = `${this.startDate.date} ${this._getNameMonth(this.startDate.month).name} - ${this.endDate.date} ${this._getNameMonth(this.endDate.month).name}`;
-      }
-    });
+    this.buttonSubmitNode.addEventListener('click', this._handleButtonSubmitNodeClick.bind(this));
 
-    this.inputNode.addEventListener('click', this._onInputNodeClick.bind(this));
+    this.inputNode.addEventListener('click', this._handleInputNodeClick.bind(this));
   }
 
   _clearDates() {
@@ -66,21 +53,40 @@ export default class FilterDropdownDate {
     this.inputNode.value = '';
   }
 
-  _onInputNodeClick() {
+  _handleButtonRightNodeClick() {
+    this.monthNumber += 1;
+    this._updateCalendar();
+  }
+
+  _handleButtonLeftNodeClick() {
+    this.monthNumber -= 1;
+    this._updateCalendar();
+  }
+
+  _handleButtonClearNodeClick() {
+    this._clearDates();
+  }
+
+  _handleButtonSubmitNodeClick() {
+    this.cardCalendarNode.classList.add('card-calendar_close');
+    if (this.startDate && this.endDate) {
+      this.inputNode.value = `${this.startDate.date} ${this._getNameMonth(this.startDate.month).name} - ${this.endDate.date} ${this._getNameMonth(this.endDate.month).name}`;
+    }
+  }
+
+  _handleInputNodeClick() {
     this.cardCalendarNode.classList.toggle('card-calendar_close');
   }
 
-  _onNumbersNodeClick(ev) {
+  _handleNumbersNodeClick(ev) {
     const { year, month } = this._getDates(this.monthNumber);
 
-    // если клик другой месяц
     if (ev.target.classList.contains('card-calendar__number_empty')) {
       for (let i = 0; i < this.data.dates.length; i += 1) {
         if (
           this.data.dates[i].number === +ev.target.textContent
           && this.data.dates[i].otherMonth
         ) {
-          // если клик другой месяц вперед
           if (this.data.dates[i].month - 1 === month) {
             this.monthNumber += 1;
             this._updateCalendar();
@@ -92,7 +98,6 @@ export default class FilterDropdownDate {
             return;
           }
 
-          // если клик другой месяц назад
           if (this.data.dates[i].month + 1 === month) {
             this.monthNumber -= 1;
             this._updateCalendar();
@@ -121,11 +126,8 @@ export default class FilterDropdownDate {
       }
     }
 
-    // если есть старт дата и нет енд даты
     if (this.startDate && !this.endDate) {
-      // если клик на нужный класс с цифрой
       if (ev.target.classList.contains('card-calendar__number')) {
-        // если енд дата больше старт даты
         if (this.startDate.parse < Date.parse(new Date(year, month, +ev.target.textContent))) {
           this.endDate = {
             date: +ev.target.textContent,

@@ -11,16 +11,18 @@ class CheckboxList {
   }
 
   _openList() {
-    this.title.addEventListener('click', () => {
-      this.title.classList.toggle('checkbox-list__title_close');
-      this.title.classList.toggle('checkbox-list__title_open');
-      this.list.classList.toggle('checkbox-list__list_open');
-    });
+    this.title.addEventListener('click', this._handleTitleClick.bind(this));
+  }
+
+  _handleTitleClick() {
+    this.title.classList.toggle('checkbox-list__title_close');
+    this.title.classList.toggle('checkbox-list__title_open');
+    this.list.classList.toggle('checkbox-list__list_open');
   }
 }
 
 const checkboxes = document.querySelectorAll('.js-checkbox-list');
 
-Array.from(checkboxes).forEach(it => {
+Array.from(checkboxes).forEach((it) => {
   new CheckboxList(it);
 });
