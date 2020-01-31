@@ -130,11 +130,9 @@ class GroupDropdownDate {
         return;
       }
     }
-
-    // если есть старт дата и нет енд даты
+    
     if (this.startDate && !this.endDate) {
       if (ev.target.classList.contains('card-calendar__number')) {
-        // если енд дата больше старт даты
         if (this.startDate.parse < Date.parse(new Date(year, month, +ev.target.textContent))) {
           this.endDate = {
             date: +ev.target.textContent,
