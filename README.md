@@ -19,3 +19,5 @@ FSD The 2nd task
 
 ## Опубликованный проект:
 >https://hotels700.000webhostapp.com/
+
+---
